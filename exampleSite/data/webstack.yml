@@ -5,15 +5,23 @@
     - title: GitHub
       logo: github.png
       url: https://github.com/
-      description: GitHub 开源社区。
+      description: ''
+    - title: Arxiv
+      logo: https://arxiv.org/static/browse/0.3.4/images/icons/favicon-32x32.png
+      url: https://arxiv.org/
+      description: ''
     - title: 知乎
       logo: 知乎.png
       url: https://www.zhihu.com/
-      description: 知乎社区。
+      description: ''
     - title: Hugging Face
       logo: https://huggingface.co/front/assets/huggingface_logo-noborder.svg
       url: https://huggingface.co/
-      description: Hugging Face 社区。
+      description: ''
+    - title: Docker Hub
+      logo: https://hub.docker.com/favicon.ico
+      url: https://hub.docker.com/explore
+      description: Docker Hub
 
 
 - taxonomy: AI 相关
@@ -22,17 +30,41 @@
     - term: AI 产品
       links:
         - title: ChatGPT
-          logo: ''
+          logo: https://auth.openai.com/assets/favicon-yEqImUA_.svg
           url: https://chat.openai.com/chat
-          description: ChatGPT 是一个大型语言模型。
+          description: ''
         - title: Gemini
-          logo: ''
+          logo: https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg
           url: https://gemini.google.com/app
-          description: Gemini 是 Google 的大型语言模型。
+          description: ''
         - title: Google AI Studio
-          logo: ''
+          logo: https://www.gstatic.com/aistudio/ai_studio_favicon_256x256.png
           url: https://aistudio.google.com/
-          description: Google 的 AI Studio。
+          description: ''
+        - title: Grok
+          logo: https://grok.com/images/favicon-dark.png
+          url: https://grok.com/
+          description: ''
+        - title: DeepSeek
+          logo: https://chat.deepseek.com/favicon.svg
+          url: https://chat.deepseek.com/
+          description: ''
+        - title: Kimi
+          logo: https://statics.moonshot.cn/kimi-chat/favicon.ico
+          url: https://kimi.moonshot.cn/
+          description: ''
+        - title: 秘塔AI搜索
+          logo: ''
+          url: https://metaso.cn/
+          description: ''
+        - title: 纳米AI搜索
+          logo: https://www.n.cn/favicon.ico
+          url: https://www.n.cn/
+          description: ''
+        - title: Perplexity
+          logo: https://perplexity.ai/favicon.ico
+          url: https://www.perplexity.ai/
+          description: ''
     - term: LLM 工具
       links:
         - title: LLM API Pricing Calculator
@@ -42,7 +74,7 @@
     - term: LLM Leaderboard
       links:
         - title: LiveBench
-          logo: ''
+          logo: https://livebench.ai/favicon.ico
           url: https://livebench.ai/
           description: LLM 综合能力榜单
         - title: LMSYS LMArena
@@ -50,7 +82,7 @@
           url: https://lmarena.ai/
           description: LLM 聊天和创意写作竞技场
         - title: EQ-Bench
-          logo: ''
+          logo: https://eqbench.com/images/eqbench_logo_sml.png
           url: https://eqbench.com/index.html
           description: LLM 情商和创意写作榜单
         - title: MTEB
@@ -64,11 +96,11 @@
     - term: MCP 相关
       links:
         - title: Glama Open-Source MCP
-          logo: ''
+          logo: https://glama.ai/logo.png
           url: https://glama.ai/mcp/servers
           description: MCP 服务器列表。
         - title: Smithery
-          logo: ''
+          logo: https://smithery.ai/icon.svg?d16eab68faeeea71
           url: https://smithery.ai/
           description: MCP 服务器列表。
         - title: MCP.so Playground
@@ -85,8 +117,20 @@
         - title: JSON Viewer
           logo: ''
           url: https://jsonviewer.arianv.com/
-          description: JSON 格式化工具。
-    - term: Infra 相关
+          description: JSON 格式化工具
+        - title: Composerizer
+          logo: https://www.composerize.com/favicon.ico
+          url: https://www.composerize.com/
+          description: Docker 命令转 Docker-Compose 文件
+        - title: Decomposer
+          logo: https://www.decomposerize.com/favicon.ico
+          url: https://www.decomposerize.com/
+          description: Docker-Compose 文件转 Docker 命令
+        - title: Composeverter
+          logo: https://www.composeverter.com/favicon.ico
+          url: https://www.composeverter.com/
+          description: Docker-Compose 文件 v1 转 v2 转换器
+    - term: 云平台
       links:
         - title: AWS 定价计算器
           logo: ''
