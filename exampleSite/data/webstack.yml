@@ -107,6 +107,12 @@
           logo: https://mcp.so/logo.png
           url: https://mcp.so/
           description: MCP 服务器列表 & PlayGround。
+    - term: AIGC 相关
+      links:
+        - title: Civitai
+          logo: https://civitai.com/favicon-blue.ico
+          url: https://civitai.com/
+          description: ''
 
 
 - taxonomy: 开发相关
