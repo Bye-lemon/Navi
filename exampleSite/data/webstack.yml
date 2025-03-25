@@ -10,9 +10,9 @@
       logo: https://arxiv.org/static/browse/0.3.4/images/icons/favicon-32x32.png
       url: https://arxiv.org/
       description: ''
-    - title: 知乎
-      logo: 知乎.png
-      url: https://www.zhihu.com/
+    - title: Google Scholar
+      logo: https://scholar.google.com/favicon.ico
+      url: https://scholar.google.com/
       description: ''
     - title: Hugging Face
       logo: https://huggingface.co/front/assets/huggingface_logo-noborder.svg
@@ -22,10 +22,14 @@
       logo: https://hub.docker.com/favicon.ico
       url: https://hub.docker.com/explore
       description: Docker Hub
+    - title: 知乎
+      logo: 知乎.png
+      url: https://www.zhihu.com/
+      description: ''
 
 
 - taxonomy: AI 相关
-  icon: far fa-star
+  icon: far fa-free-code-camp fa-lg
   list: 
     - term: AI 产品
       links:
@@ -54,7 +58,7 @@
           url: https://kimi.moonshot.cn/
           description: ''
         - title: 秘塔AI搜索
-          logo: ''
+          logo: https://favicon.im/metaso.cn?larger=true
           url: https://metaso.cn/
           description: ''
         - title: 纳米AI搜索
@@ -65,10 +69,11 @@
           logo: https://perplexity.ai/favicon.ico
           url: https://www.perplexity.ai/
           description: ''
+
     - term: LLM 工具
       links:
         - title: LLM API Pricing Calculator
-          logo: ''
+          logo: https://www.helicone.ai/_next/image?url=%2Fstatic%2Fpricing-calc%2Fcoins.webp&w=256&q=100
           url: https://www.helicone.ai/llm-cost
           description: 大模型调用价格计算器。
     - term: LLM Leaderboard
@@ -116,12 +121,12 @@
 
 
 - taxonomy: 开发相关
-  icon: far fa-star
+  icon: far fa-code fa-lg
   list: 
     - term: 在线工具
       links:
         - title: JSON Viewer
-          logo: ''
+          logo: https://jsonviewer.arianv.com/favicon-96x96.png
           url: https://jsonviewer.arianv.com/
           description: JSON 格式化工具
         - title: Composerizer
@@ -155,24 +160,16 @@
 - taxonomy: 科研办公
   icon: fas fa-flask fa-lg
   list:
-    - term: 办公学习
+    - term: 论文科研
       links:
-        - title: 有道词典
-          logo: 有道词典.png
-          url: https://www.youdao.com/
-          description: 免费，即时的多语种在线翻译。
-        - title: 有道翻译
-          logo: 有道词典.png
-          url: http://fanyi.youdao.com/
-          description: 有道翻译。
-        - title: 谷歌翻译
-          logo: 谷歌翻译.jpg
-          url: https://translate.google.cn/
-          description: 谷歌翻译。
-        - title: ProcessOn
-          logo: ProcessOn.png
-          url: https://www.processon.com/
-          description: 免费在线作图、实时协作。
+        - title: STORM
+          logo: https://favicon.im/storm.genie.stanford.edu?larger=true
+          url: https://storm.genie.stanford.edu/
+          description: 斯坦福STORM学术引擎
+        - title: PaSa
+          logo: ''
+          url: https://pasa-agent.ai/
+          description: 字节跳动开发的AI学术论文搜索引擎
       
 - taxonomy: 素材资源
   icon: far fa-folder-open fa-lg
@@ -198,16 +195,6 @@
 - taxonomy: 资讯学习
   icon: fas fa-pencil-alt fa-lg
   list: 
-    - term: 资讯书籍
-      links:
-        - title: 微信读书
-          url: https://weread.qq.com/
-          logo: 微信读书.jpg
-          description: 微信读书电脑版。
-        - title: 书栈网
-          url: https://www.bookstack.cn/
-          logo: 书栈网.jpg
-          description: IT 互联网开源编程书籍免费阅读与下载。
     - term: 博客论坛
       links:
         - title: Hacker News
@@ -220,6 +207,10 @@
           description: 阮一峰，科技爱好者周刊。
         - title: 通往AGI之路
           url: https://www.waytoagi.com/zh
-          logo: ''
+          logo: https://www.waytoagi.com/favicon.ico
           description: 通往AGI之路，探索人工智能的未来。
+        - title: Lil'Log
+          url: https://lilianweng.github.io/
+          logo: https://lilianweng.github.io/favicon_wine.ico
+          description: Lilian Weng 的博客。
         
