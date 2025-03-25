@@ -170,6 +170,20 @@
           logo: ''
           url: https://pasa-agent.ai/
           description: 字节跳动开发的AI学术论文搜索引擎
+        - title: Google Dataset Search
+          logo: https://www.gstatic.com/images/branding/product/ico/googleg_lodp.ico
+          url: https://datasetsearch.research.google.com/
+          description: ''
+    - term: 信息聚合
+      links:
+        - title: 专利之星
+          logo: https://feedly.com/favicon.ico
+          url: https://cprs.patentstar.com.cn/
+          description: ''
+        - title: 行业标准信息服务平台
+          logo: https://feedly.com/favicon.ico
+          url: https://hbba.sacinfo.org.cn/
+          description: ''
       
 - taxonomy: 素材资源
   icon: far fa-folder-open fa-lg
