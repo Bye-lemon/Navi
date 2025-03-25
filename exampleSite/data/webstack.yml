@@ -1,19 +1,62 @@
 ---
-- taxonomy: 开发工具
+- taxonomy: AI 相关
   icon: far fa-star
   list: 
+    - term: AI 产品
+      links:
+        - title: ChatGPT
+          logo: ''
+          url: https://chat.openai.com/chat
+          description: ChatGPT 是一个大型语言模型。
+        - title: Gemini
+          logo: ''
+          url: https://gemini.google.com/app
+          description: Gemini 是 Google 的大型语言模型。
+        - title: Google AI Studio
+          logo: ''
+          url: https://aistudio.google.com/
+          description: Google 的 AI Studio。
     - term: LLM 工具
       links:
         - title: LLM API Pricing Calculator
-          logo: 语雀.webp
+          logo: ''
           url: https://www.helicone.ai/llm-cost
           description: 大模型调用价格计算器。
-    - term: 开发工具
+    - term: MCP 相关
+      links:
+        - title: Glama Open-Source MCP
+          logo: ''
+          url: https://glama.ai/mcp/servers
+          description: MCP 服务器列表。
+        - title: Smithery
+          logo: ''
+          url: https://smithery.ai/
+          description: MCP 服务器列表。
+
+
+- taxonomy: 开发相关
+  icon: far fa-star
+  list: 
+    - term: 在线工具
       links:
         - title: JSON Viewer
-          logo: postman.png
+          logo: ''
           url: https://jsonviewer.arianv.com/
           description: JSON 格式化工具。
+    - term: Infra 相关
+      links:
+        - title: AWS 定价计算器
+          logo: ''
+          url: https://calculator.aws/
+          description: AWS 服务定价计算器。
+        - title: Azure 定价计算器
+          logo: ''
+          url: https://azure.microsoft.com/en-us/pricing/calculator/
+          description: Azure 服务定价计算器。
+        - title: GCP 定价计算器 
+          logo: ''
+          url: https://cloud.google.com/products/calculator
+          description: GCP 服务定价计算器。
 
 
 - taxonomy: 常用推荐
@@ -124,8 +167,8 @@
           url: http://www.ruanyifeng.com/blog/
           logo: 阮一峰.png
           description: 阮一峰，科技爱好者周刊。
-        - title: 酷壳
-          url: https://www.coolshell.cn/
+        - title: 通往AGI之路
+          url: https://www.waytoagi.com/zh
           logo: ''
-          description: 酷 壳 – CoolShell。
+          description: 通往AGI之路，探索人工智能的未来。
         
