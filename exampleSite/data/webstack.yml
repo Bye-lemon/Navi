@@ -3,7 +3,7 @@
   icon: far fa-star
   links: 
     - title: GitHub
-      logo: github.png
+      logo: https://github.githubassets.com/assets/github-octocat-13c86b8b336d.png
       url: https://github.com/
       description: ''
     - title: Arxiv
@@ -23,13 +23,13 @@
       url: https://hub.docker.com/explore
       description: Docker Hub
     - title: 知乎
-      logo: 知乎.png
+      logo: https://static.zhihu.com/heifetz/favicon.ico
       url: https://www.zhihu.com/
       description: ''
 
 
 - taxonomy: AI 相关
-  icon: far fa-free-code-camp fa-lg
+  icon: far fa-gem fa-lg
   list: 
     - term: AI 产品
       links:
@@ -121,7 +121,7 @@
 
 
 - taxonomy: 开发相关
-  icon: far fa-code fa-lg
+  icon: far fa-file-code fa-lg
   list: 
     - term: 在线工具
       links:
@@ -144,15 +144,15 @@
     - term: 云平台
       links:
         - title: AWS 定价计算器
-          logo: ''
+          logo: https://calculator.aws/favicon.ico
           url: https://calculator.aws/
           description: AWS 服务定价计算器。
         - title: Azure 定价计算器
-          logo: ''
+          logo: https://azure.microsoft.com/cdn-classic/cvt-44c7363d160faed86fa1280ef1458c84ef2c4f9d94108e844d31f46693f38b02/images/shared/social/azure-icon-250x250.png
           url: https://azure.microsoft.com/en-us/pricing/calculator/
           description: Azure 服务定价计算器。
         - title: GCP 定价计算器 
-          logo: ''
+          logo: https://www.gstatic.com/devrel-devsite/prod/v0d244f667a3683225cca86d0ecf9b9b81b1e734e55a030bdcd3f3094b835c987/cloud/images/favicons/onecloud/favicon.ico
           url: https://cloud.google.com/products/calculator
           description: GCP 服务定价计算器。
 
@@ -177,18 +177,18 @@
     - term: 图标素材
       links:
         - title: Iconfinder
-          logo: Iconfinder.png
+          logo: https://www.iconfinder.com/static/img/meta-generic.png?d34117af5a
           url: https://www.iconfinder.com
           description: 2,100,000+ free and premium vector icons.
         - title: iconfont
-          logo: iconfont.png
+          logo: https://img.alicdn.com/imgextra/i4/O1CN01Z5paLz1O0zuCC7osS_!!6000000001644-55-tps-83-82.svg
           url: http://www.iconfont.cn/
           description: 阿里巴巴矢量图标库。
     - term: 字体资源
       links:
         - title: Google Font
           url: https://fonts.google.com/
-          logo: googlefont.png
+          logo: https://www.gstatic.com/images/icons/material/apps/fonts/1x/catalog/v5/favicon.svg
           description: Making the web more beautiful, fast, and open through great typography.
 
 
@@ -199,7 +199,7 @@
       links:
         - title: Hacker News
           url: https://news.ycombinator.com/
-          logo: hacker-news.jpg
+          logo: https://news.ycombinator.com/y18.svg
           description: 一家关于计算机黑客和创业公司的社会化新闻网站。
         - title: 阮一峰的网络日志
           url: http://www.ruanyifeng.com/blog/
