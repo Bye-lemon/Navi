@@ -1,4 +1,21 @@
 ---
+- taxonomy: 常用推荐
+  icon: far fa-star
+  links: 
+    - title: GitHub
+      logo: github.png
+      url: https://github.com/
+      description: GitHub 开源社区。
+    - title: 知乎
+      logo: 知乎.png
+      url: https://www.zhihu.com/
+      description: 知乎社区。
+    - title: Hugging Face
+      logo: https://huggingface.co/front/assets/huggingface_logo-noborder.svg
+      url: https://huggingface.co/
+      description: Hugging Face 社区。
+
+
 - taxonomy: AI 相关
   icon: far fa-star
   list: 
@@ -22,6 +39,28 @@
           logo: ''
           url: https://www.helicone.ai/llm-cost
           description: 大模型调用价格计算器。
+    - term: LLM Leaderboard
+      links:
+        - title: LiveBench
+          logo: ''
+          url: https://livebench.ai/
+          description: LLM 综合能力榜单
+        - title: LMSYS LMArena
+          logo: ''
+          url: https://lmarena.ai/
+          description: LLM 聊天和创意写作竞技场
+        - title: EQ-Bench
+          logo: ''
+          url: https://eqbench.com/index.html
+          description: LLM 情商和创意写作榜单
+        - title: MTEB
+          logo: ''
+          url: https://huggingface.co/spaces/mteb/leaderboard
+          description: Embeddings 和文本检索基准
+        - title: BigCodeBench
+          logo: ''
+          url: https://huggingface.co/spaces/bigcode/bigcodebench-leaderboard
+          description: BigCode 开源代码大模型能力榜单
     - term: MCP 相关
       links:
         - title: Glama Open-Source MCP
@@ -32,6 +71,10 @@
           logo: ''
           url: https://smithery.ai/
           description: MCP 服务器列表。
+        - title: MCP.so Playground
+          logo: https://mcp.so/logo.png
+          url: https://mcp.so/
+          description: MCP 服务器列表 & PlayGround。
 
 
 - taxonomy: 开发相关
@@ -57,48 +100,6 @@
           logo: ''
           url: https://cloud.google.com/products/calculator
           description: GCP 服务定价计算器。
-
-
-- taxonomy: 常用推荐
-  icon: far fa-star
-  links: 
-    - title: 语雀
-      logo: 语雀.webp
-      url: https://www.yuque.com/
-      description: 专业的云端知识库。
-    - title: QQ 邮箱
-      logo: qq邮箱.png
-      url: http://mail.qq.com/
-      description: 腾讯 QQ 邮箱。
-    - title: 开源中国
-      logo: 开源中国.jpg
-      url: https://www.oschina.net/
-      description: 中文开源技术交流社区。
-    - title: 公众号平台
-      logo: 微信公众号.png
-      url: https://mp.weixin.qq.com/
-      description: 再小的个体也有自己的品牌。
-    - title: GitHub
-      logo: github.png
-      url: https://github.com/
-      description: GitHub 开源社区。
-    - title: 搜狗微信
-      logo: 搜狗微信.jpg
-      url: https://weixin.sogou.com/
-      description: 搜狗微信搜索，一搜即达。
-    - title: 知乎
-      logo: 知乎.png
-      url: https://www.zhihu.com/
-      description: 知乎社区。
-    - title: V2EX
-      logo: v2ex.jpg
-      url: https://www.v2ex.com/
-      description: V2EX 创意工作者的社区。
-    - title: 关注我们
-      logo: 关注.jpg
-      url: https://www.bioitee.com
-      qrcode: qrcode.jpg
-      description: 微信公众号：BioIT 爱好者！
 
 
 - taxonomy: 科研办公
