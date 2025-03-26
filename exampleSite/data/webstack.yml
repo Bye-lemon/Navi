@@ -69,6 +69,10 @@
           logo: https://perplexity.ai/favicon.ico
           url: https://www.perplexity.ai/
           description: ''
+        - title: NotebookLM
+          logo: https://notebooklm.google.com/_/static/branding/v5/og/notebook_lm_share.png
+          url: https://notebooklm.google.com/
+          description: ''
 
     - term: LLM 工具
       links:
@@ -76,6 +80,18 @@
           logo: https://www.helicone.ai/_next/image?url=%2Fstatic%2Fpricing-calc%2Fcoins.webp&w=256&q=100
           url: https://www.helicone.ai/llm-cost
           description: 大模型调用价格计算器。
+        - title: Glama Open-Source MCP
+          logo: https://glama.ai/logo.png
+          url: https://glama.ai/mcp/servers
+          description: MCP 服务器列表。
+        - title: Smithery
+          logo: https://smithery.ai/icon.svg?d16eab68faeeea71
+          url: https://smithery.ai/
+          description: MCP 服务器列表。
+        - title: MCP.so Playground
+          logo: https://mcp.so/logo.png
+          url: https://mcp.so/
+          description: MCP 服务器列表 & PlayGround。
     - term: LLM Leaderboard
       links:
         - title: LiveBench
@@ -98,20 +114,10 @@
           logo: ''
           url: https://huggingface.co/spaces/bigcode/bigcodebench-leaderboard
           description: BigCode 开源代码大模型能力榜单
-    - term: MCP 相关
-      links:
-        - title: Glama Open-Source MCP
-          logo: https://glama.ai/logo.png
-          url: https://glama.ai/mcp/servers
-          description: MCP 服务器列表。
-        - title: Smithery
-          logo: https://smithery.ai/icon.svg?d16eab68faeeea71
-          url: https://smithery.ai/
-          description: MCP 服务器列表。
-        - title: MCP.so Playground
-          logo: https://mcp.so/logo.png
-          url: https://mcp.so/
-          description: MCP 服务器列表 & PlayGround。
+        - title: WebDev Arena
+          logo: https://web.lmarena.ai/_next/image?url=%2Fimages%2Flmsys.jpg&w=64&q=75
+          url: https://web.lmarena.ai/leaderboard
+          description: Web 开发竞技场
     - term: AIGC 相关
       links:
         - title: Civitai
