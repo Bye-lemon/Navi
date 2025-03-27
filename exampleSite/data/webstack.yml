@@ -130,6 +130,10 @@
           logo: https://gorilla.cs.berkeley.edu/assets/img/Cal.png
           url: https://gorilla.cs.berkeley.edu/leaderboard.html
           description: LLM 函数调用能力评价榜单
+        - title: Open Japanese LLM Leaderboard
+          logo: ''
+          url: https://huggingface.co/spaces/llm-jp/open-japanese-llm-leaderboard
+          description: LLM-JP 日本开源 LLM 榜单 
     - term: AIGC 相关
       links:
         - title: Civitai
