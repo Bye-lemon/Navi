@@ -94,6 +94,10 @@
           description: MCP 服务器列表 & PlayGround。
     - term: LLM Leaderboard
       links:
+        - title: LLM Stat
+          logo: https://llm-stats.com/logo.svg
+          url: https://llm-stats.com/
+          description: 汇总 MMLU、GPQA、HumanEval、DROP、MATH 基准结果
         - title: LiveBench
           logo: https://livebench.ai/favicon.ico
           url: https://livebench.ai/
@@ -118,6 +122,14 @@
           logo: https://web.lmarena.ai/_next/image?url=%2Fimages%2Flmsys.jpg&w=64&q=75
           url: https://web.lmarena.ai/leaderboard
           description: Web 开发竞技场
+        - title: HHEM Leaderboard
+          logo: https://avatars.githubusercontent.com/u/108304503?s=200&v=4
+          url: https://huggingface.co/spaces/vectara/leaderboard
+          description: LLM 幻觉程度评价榜单
+        - title: BFCL Leaderboard
+          logo: https://gorilla.cs.berkeley.edu/assets/img/Cal.png
+          url: https://gorilla.cs.berkeley.edu/leaderboard.html
+          description: LLM 函数调用能力评价榜单
     - term: AIGC 相关
       links:
         - title: Civitai
