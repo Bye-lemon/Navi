@@ -122,6 +122,10 @@
           logo: https://web.lmarena.ai/_next/image?url=%2Fimages%2Flmsys.jpg&w=64&q=75
           url: https://web.lmarena.ai/leaderboard
           description: Web 开发竞技场
+        - title: LiveCodeBench
+          logo: https://livecodebench.github.io/images/favicon.svg
+          url: https://livecodebench.github.io/leaderboard.html
+          description: 代码大模型能力榜单
         - title: HHEM Leaderboard
           logo: https://avatars.githubusercontent.com/u/108304503?s=200&v=4
           url: https://huggingface.co/spaces/vectara/leaderboard
