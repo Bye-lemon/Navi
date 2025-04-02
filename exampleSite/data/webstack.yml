@@ -144,6 +144,14 @@
           logo: https://civitai.com/favicon-blue.ico
           url: https://civitai.com/
           description: ''
+        - title: Civitai Green
+          logo: https://civitai.com/favicon-green.ico
+          url: https://civitai.green/
+          description: ''
+        - title: Shakker
+          logo: https://models-online-persist.shakker.cloud/img/11f2f2699f1045faa4fdd828d018a480/47059982063149a177b46b5e7de47397e91ac61f541d4bb63718d1c186fd04b1.png
+          url: https://www.shakker.ai/
+          description: ''
 
 
 - taxonomy: 开发相关
