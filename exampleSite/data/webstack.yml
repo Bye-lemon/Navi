@@ -126,6 +126,10 @@
           logo: https://livecodebench.github.io/images/favicon.svg
           url: https://livecodebench.github.io/leaderboard.html
           description: 代码大模型能力榜单
+        - title: Aider Leaderboard
+          logo: https://aider.chat/assets/leaderboard.jpg
+          url: https://aider.chat/docs/leaderboards/
+          description: 基于 Aider 的代码编写和重构榜单
         - title: HHEM Leaderboard
           logo: https://avatars.githubusercontent.com/u/108304503?s=200&v=4
           url: https://huggingface.co/spaces/vectara/leaderboard
