@@ -22,6 +22,10 @@
       logo: https://hub.docker.com/favicon.ico
       url: https://hub.docker.com/explore
       description: Docker Hub
+    - title: Cloudflare Dashboard
+      logo: https://dash.cloudflare.com/favicon-196x196.png
+      url: https://dash.cloudflare.com/login
+      description: ''
     - title: 知乎
       logo: https://static.zhihu.com/heifetz/favicon.ico
       url: https://www.zhihu.com/
@@ -73,6 +77,10 @@
           logo: https://notebooklm.google.com/_/static/branding/v5/og/notebook_lm_share.png
           url: https://notebooklm.google.com/
           description: ''
+        - title: Firebase Studio
+          logo: https://www.gstatic.com/monospace/250314/favicon.ico
+          url: https://studio.firebase.google.com/
+          description: Google 快速原型 APP 开发平台
         - title: Cursor
           logo: https://www.cursor.com/en/opengraph-image.png?7a8fd201c972abca
           url: https://www.cursor.com/
