@@ -73,6 +73,10 @@
           logo: https://notebooklm.google.com/_/static/branding/v5/og/notebook_lm_share.png
           url: https://notebooklm.google.com/
           description: ''
+        - title: Cursor
+          logo: https://www.cursor.com/en/opengraph-image.png?7a8fd201c972abca
+          url: https://www.cursor.com/
+          description: ''
         - title: Napkin
           logo: https://www.napkin.ai/favicon-32x32.png?v=2
           url: https://www.napkin.ai/
