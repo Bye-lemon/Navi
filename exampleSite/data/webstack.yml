@@ -224,6 +224,10 @@
   list:
     - term: 论文科研
       links:
+        - title: AlphaXiv
+          logo: https://static.alphaxiv.org/logos/alphaxiv_logo.png
+          url: https://www.alphaxiv.org/
+          description: Chat with axriv papers.
         - title: STORM
           logo: https://favicon.im/storm.genie.stanford.edu?larger=true
           url: https://storm.genie.stanford.edu/
@@ -289,4 +293,7 @@
           url: https://lilianweng.github.io/
           logo: https://lilianweng.github.io/favicon_wine.ico
           description: Lilian Weng 的博客。
-        
+        - title: 科学空间|Scientific Spaces
+          url: https://spaces.ac.cn/
+          logo: https://spaces.ac.cn/usr/themes/geekg/favicon.ico
+          description: 苏剑林的个人博客
