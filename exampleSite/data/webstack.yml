@@ -3,7 +3,7 @@
   icon: far fa-star
   links: 
     - title: GitHub
-      logo: https://github.githubassets.com/assets/github-octocat-13c86b8b336d.png
+      logo: https://github.githubassets.com/favicons/favicon-dark.svg
       url: https://github.com/
       description: ''
     - title: Arxiv
@@ -74,7 +74,7 @@
           url: https://www.perplexity.ai/
           description: ''
         - title: NotebookLM
-          logo: https://notebooklm.google.com/_/static/branding/v5/og/notebook_lm_share.png
+          logo: https://notebooklm.google.com/_/static/branding/v5/light_mode/favicon/favicon.svg
           url: https://notebooklm.google.com/
           description: ''
         - title: Firebase Studio
@@ -82,7 +82,7 @@
           url: https://studio.firebase.google.com/
           description: Google 快速原型 APP 开发平台
         - title: Cursor
-          logo: https://www.cursor.com/en/opengraph-image.png?7a8fd201c972abca
+          logo: https://www.cursor.com/favicon.svg
           url: https://www.cursor.com/
           description: ''
         - title: Napkin
@@ -92,22 +92,18 @@
 
     - term: LLM 工具
       links:
+        - title: OpenRouter
+          logo: https://openrouter.ai/favicon.ico
+          url: https://openrouter.ai/
+          description: LLM API 统一调用平台。
         - title: LLM API Pricing Calculator
           logo: https://www.helicone.ai/_next/image?url=%2Fstatic%2Fpricing-calc%2Fcoins.webp&w=256&q=100
           url: https://www.helicone.ai/llm-cost
           description: 大模型调用价格计算器。
-        - title: Glama Open-Source MCP
-          logo: https://glama.ai/logo.png
-          url: https://glama.ai/mcp/servers
-          description: MCP 服务器列表。
-        - title: Smithery
-          logo: https://smithery.ai/icon.svg?d16eab68faeeea71
-          url: https://smithery.ai/
-          description: MCP 服务器列表。
-        - title: MCP.so Playground
-          logo: https://mcp.so/logo.png
-          url: https://mcp.so/
-          description: MCP 服务器列表 & PlayGround。
+        - title: MCP Registry Registry
+          logo: https://mastra.ai/favicon/icon-512.png
+          url: https://mastra.ai/mcp-registry-registry
+          description: MCP 服务器列表合集站。
     - term: LLM Leaderboard
       links:
         - title: LLM Stat
@@ -173,7 +169,7 @@
           url: https://civitai.green/
           description: ''
         - title: Shakker
-          logo: https://models-online-persist.shakker.cloud/img/11f2f2699f1045faa4fdd828d018a480/47059982063149a177b46b5e7de47397e91ac61f541d4bb63718d1c186fd04b1.png
+          logo: https://liblibai-web-static.liblib.cloud/shakker/favicon.png
           url: https://www.shakker.ai/
           description: ''
         - title: 即梦AI
@@ -257,7 +253,7 @@
     - term: 图标素材
       links:
         - title: Iconfinder
-          logo: https://www.iconfinder.com/static/img/meta-generic.png?d34117af5a
+          logo: https://www.iconfinder.com/static/img/favicons/favicon-96x96.png?ea0174d544
           url: https://www.iconfinder.com
           description: 2,100,000+ free and premium vector icons.
         - title: iconfont
