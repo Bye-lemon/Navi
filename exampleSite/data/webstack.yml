@@ -115,7 +115,7 @@
           url: https://livebench.ai/
           description: LLM 综合能力榜单
         - title: LMSYS LMArena
-          logo: ''
+          logo: https://avatars.githubusercontent.com/u/126381704?s=200&v=4
           url: https://lmarena.ai/
           description: LLM 聊天和创意写作竞技场
         - title: EQ-Bench
@@ -123,11 +123,11 @@
           url: https://eqbench.com/index.html
           description: LLM 情商和创意写作榜单
         - title: MTEB
-          logo: ''
+          logo: https://avatars.githubusercontent.com/u/103029531?s=200&v=4
           url: https://huggingface.co/spaces/mteb/leaderboard
           description: Embeddings 和文本检索基准
         - title: BigCodeBench
-          logo: ''
+          logo: https://avatars.githubusercontent.com/u/110470554?s=200&v=4
           url: https://huggingface.co/spaces/bigcode/bigcodebench-leaderboard
           description: BigCode 开源代码大模型能力榜单
         - title: WebDev Arena
@@ -139,7 +139,7 @@
           url: https://livecodebench.github.io/leaderboard.html
           description: 代码大模型能力榜单
         - title: Aider Leaderboard
-          logo: https://aider.chat/assets/leaderboard.jpg
+          logo: https://aider.chat/assets/icons/favicon-32x32.png
           url: https://aider.chat/docs/leaderboards/
           description: 基于 Aider 的代码编写和重构榜单
         - title: HHEM Leaderboard
@@ -151,7 +151,7 @@
           url: https://gorilla.cs.berkeley.edu/leaderboard.html
           description: LLM 函数调用能力评价榜单
         - title: Open Japanese LLM Leaderboard
-          logo: ''
+          logo: https://avatars.githubusercontent.com/u/134031702?s=200&v=4
           url: https://huggingface.co/spaces/llm-jp/open-japanese-llm-leaderboard
           description: LLM-JP 日本开源 LLM 榜单 
     - term: AIGC 相关
