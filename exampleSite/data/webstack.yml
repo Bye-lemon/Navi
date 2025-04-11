@@ -229,7 +229,7 @@
           url: https://storm.genie.stanford.edu/
           description: 斯坦福STORM学术引擎
         - title: PaSa
-          logo: ''
+          logo: https://lf3-transtudio.bytetos.com/obj/lab-mt-public/lab-academic/static/image/logo.55bf6955.png
           url: https://pasa-agent.ai/
           description: 字节跳动开发的AI学术论文搜索引擎
         - title: Google Dataset Search
