@@ -154,6 +154,10 @@
           logo: https://avatars.githubusercontent.com/u/134031702?s=200&v=4
           url: https://huggingface.co/spaces/llm-jp/open-japanese-llm-leaderboard
           description: LLM-JP 日本开源 LLM 榜单 
+        - title: Swallow LLM Leaderboard
+          logo: https://swallow-llm.github.io/leaderboard/static/favicon.svg
+          url: https://swallow-llm.github.io/leaderboard/index-chat.ja.html
+          description: Swallow LLM 日本语榜单
     - term: AIGC 相关
       links:
         - title: Midjourney
