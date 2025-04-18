@@ -248,6 +248,10 @@
           logo: https://static.alphaxiv.org/logos/alphaxiv_logo.png
           url: https://www.alphaxiv.org/
           description: Chat with axriv papers.
+        - title: Papers Cool
+          logo: https://papers.cool/static/favicon.ico
+          url: https://papers.cool/
+          description: 苏剑林的 Arxiv 论文 AI 解读列表。
         - title: STORM
           logo: https://favicon.im/storm.genie.stanford.edu?larger=true
           url: https://storm.genie.stanford.edu/
