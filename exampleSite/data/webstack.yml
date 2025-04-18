@@ -191,6 +191,14 @@
           logo: https://jsonviewer.arianv.com/favicon-96x96.png
           url: https://jsonviewer.arianv.com/
           description: JSON 格式化工具
+        - title: Mermaid Live Editor
+          logo: https://mermaid.live/favicon.svg
+          url: https://mermaid.live/edit/
+          description: Mermaid 官方在线编辑器
+        - title: TebleConvert
+          logo: https://tableconvert.com/images/favicon.png
+          url: https://tableconvert.com/
+          description: 在线转换 CSV、DB、MD、Latex 等各种类型表格数据
         - title: Composerizer
           logo: https://www.composerize.com/favicon.ico
           url: https://www.composerize.com/
