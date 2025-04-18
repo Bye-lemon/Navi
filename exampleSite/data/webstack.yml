@@ -199,6 +199,14 @@
           logo: https://tableconvert.com/images/favicon.png
           url: https://tableconvert.com/
           description: 在线转换 CSV、DB、MD、Latex 等各种类型表格数据
+        - title: Excalidraw
+          logo: https://excalidraw.com/favicon-32x32.png
+          url: https://excalidraw.com/
+          description: 在线手绘风图表绘制工具
+        - title: Convertio
+          logo: https://static.convertio.co/img/apple-touch-icon-76x76-precomposed.png
+          url: https://convertio.co/zh/
+          description: 在线文件格式转换工具
         - title: Composerizer
           logo: https://www.composerize.com/favicon.ico
           url: https://www.composerize.com/
