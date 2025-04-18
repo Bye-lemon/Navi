@@ -26,6 +26,10 @@
       logo: https://dash.cloudflare.com/favicon-196x196.png
       url: https://dash.cloudflare.com/login
       description: ''
+    - title: PyPI
+      logo: https://pypi.org/static/images/favicon.35549fe8.ico
+      url: https://pypi.org/
+      description: ''
     - title: 知乎
       logo: https://static.zhihu.com/heifetz/favicon.ico
       url: https://www.zhihu.com/
@@ -161,7 +165,7 @@
     - term: AIGC 相关
       links:
         - title: Midjourney
-          logo: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADpUlEQVRYhe2WDUyUdRzHP4fHUXfcAcEhnS68LjKcLdcbRC+SK9udUmsWwjId1RyryC2tIS8OIyWzTGMmWBkzmZY4sCR7oaSR4ViuF14ixANGEXB3tHvuBO+4g/Y8bfayO+9s3GiN3/bf83//f/Z7+e6Rjbk9k0yjhU3n4zMAMwBBATid56YX4LEnnqKwuJShYUtIAGSBdOBEYxOtre38MvAri264nuysh6YUIKAH0hffwVlzD9vKNhMZqSK/oASr1caq1WvZ/+5BvF5vaAFkMhnJyfPp/OkMGcuNPJ7zKCUvlLGp6Hlq646xMjuHwcGh0AGIds+SdBobm6R+UpKBgvwN7CqvoOKN1wgPD2fds/l0dXWHDsBg0NPT23dhrNMlsGF9Hi+/soudO8qIiY5m9563/hVEUABiGMT2V9PPS2SZ6T4++PA4y0xLSU25mfLdexkYGJx6AH+25O67pOpYuHABzadaKNy4nq0vvXpJiRk0wOSk72pdl5dLReU+sjJX0PDFl2StXME7VdVTC+B0OlGpVD7XYmKi0emuJDbuClpaTnN7Wgrd3WZGRn4LCiCgEInW8Hkjbrcbk3Gpz3VRF/ZU7uMagx69PhGtNo7a2mNSogayoDzwWcMJ0hffyfj4OJ2dXXx18hRfN7dwpvusNBcXF4vdbsdovJfjHzdguFqPxWrl3OhowLvlgTb80NpOX1+/JD7yWXJJB7TaWCYmJujo6KSqpxqX201//8/YrCN4PB7yN5ZgNvdSX/8JmQ8/eNH7LxoCMfHW5OSSkWHkgQwTCoXC777vvm9lXuJVREQosNsFqTpE8KgojZQnN9246NIAHA4n5p5eBEFAEJzYBQGH4JC+guDA6/EyyR9HZcikvqgVSuXlaNRqNFEaXOddHK6pY0tpMampt/gE8BuCb05/y6H3j3D/chMajZq5c3VEaTRSX2xyuf/oieGpOXKUtrYODla/TXy81u/eWUXFm0p8ekBwUHe0XkouUenE2KvVkew/cIjDNbW4XC7mX5sk7a3/6FP2vlkl5Yvo/tfLK6VKEO9oOtnMnDk6aezLfIagdMt2LotQ8ExeLmNj5ynbtkPSgaGhYVY9ksltqbdyoPo96UHR7QuSr2PN6mza2n+koHAzaWkpDA9bKCp4DqVSyYtbt5OQEM/TT64NDkCs+X8mnMPhkCDCwv6s3NHRMSkBVSrlhTmPx4vNZmP27Pi/nbdYrD69EJQQhdL++3/FMwD/e4DfAf5WhGt8Cd3XAAAAAElFTkSuQmCC
+          logo: https://cdn.svgporn.com/logos/midjourney.svg
           url: https://www.midjourney.com/
           description: ''
         - title: Civitai
@@ -280,6 +284,14 @@
           logo: https://img.alicdn.com/imgextra/i4/O1CN01Z5paLz1O0zuCC7osS_!!6000000001644-55-tps-83-82.svg
           url: http://www.iconfont.cn/
           description: 阿里巴巴矢量图标库。
+        - title: Svgl
+          logo: https://svgl.app/images/logo.svg
+          url: https://svgl.app/
+          description: SVG Logo 库
+        - title: SVG LOGOS
+          logo: https://svglogos.dev/brand/favicon-32x32.png
+          url: https://svglogos.dev/
+          description: SVG Logo 库
     - term: 字体资源
       links:
         - title: Google Font
