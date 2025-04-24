@@ -195,6 +195,10 @@
           logo: https://jsonviewer.arianv.com/favicon-96x96.png
           url: https://jsonviewer.arianv.com/
           description: JSON 格式化工具
+        - title: SVG Viewer
+          logo: https://www.svgviewer.dev/images/logo.svg
+          url: https://www.svgviewer.dev/
+          description: SVG 压缩、预览和格式化工具
         - title: Mermaid Live Editor
           logo: https://mermaid.live/favicon.svg
           url: https://mermaid.live/edit/
