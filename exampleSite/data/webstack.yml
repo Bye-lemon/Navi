@@ -195,6 +195,10 @@
           logo: https://jsonviewer.arianv.com/favicon-96x96.png
           url: https://jsonviewer.arianv.com/
           description: JSON 格式化工具
+        - title: Regex 101
+          logo: https://regex101.com/static/assets/icon-192.png
+          url: https://regex101.com/
+          description: 正则表达式在线测试工具
         - title: SVG Viewer
           logo: https://www.svgviewer.dev/images/logo.svg
           url: https://www.svgviewer.dev/
