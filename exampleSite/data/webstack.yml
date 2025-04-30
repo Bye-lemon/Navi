@@ -97,6 +97,10 @@
           logo: https://www.napkin.ai/favicon-32x32.png?v=2
           url: https://www.napkin.ai/
           description: 可视化图形/PPT 生成工具
+        - title: DeepWiki
+          logo: https://deepwiki.com/favicon.ico
+          url: https://deepwiki.com/
+          description: Devin 团队开发 Github 主流仓库 Wiki 和问答平台
 
     - term: LLM 工具
       links:
@@ -134,6 +138,10 @@
           logo: https://avatars.githubusercontent.com/u/103029531?s=200&v=4
           url: https://huggingface.co/spaces/mteb/leaderboard
           description: Embeddings 和文本检索基准
+        - title: ViDoRe Leaderboard
+          logo: https://cdn-avatars.huggingface.co/v1/production/uploads/6264f9655f6f2e14d6ac981c/48Z31MM2apXsj6rQWilUh.png
+          url: https://huggingface.co/spaces/vidore/vidore-leaderboard
+          description: Text2Vision Document 检索榜单
         - title: BigCodeBench
           logo: https://avatars.githubusercontent.com/u/110470554?s=200&v=4
           url: https://huggingface.co/spaces/bigcode/bigcodebench-leaderboard
@@ -162,6 +170,7 @@
           logo: https://swallow-llm.github.io/leaderboard/static/favicon.svg
           url: https://swallow-llm.github.io/leaderboard/index-chat.ja.html
           description: Swallow LLM 日本语榜单
+
     - term: AIGC 相关
       links:
         - title: Midjourney
