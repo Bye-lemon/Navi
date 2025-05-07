@@ -264,6 +264,16 @@
           logo: https://hf-mirror.com/favicon.ico
           url: https://hf-mirror.com/
           description: ""
+        - title: NPM Mirror
+          logo: https://npmmirror.com/cnpm.png
+          url: https://npmmirror.com/
+          description: ""
+    - term: 开发者文档
+      links:
+        - title: Mozilla 开发者网络
+          logo: https://developer.mozilla.org/favicon-48x48.bc390275e955dacb2e65.png
+          url: https://developer.mozilla.org/en-US/
+          description: MDN Web Docs 是由 Mozilla 提供的 Web 开发者文档。
 
 
 - taxonomy: 科研办公
