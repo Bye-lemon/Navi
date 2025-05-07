@@ -254,6 +254,16 @@
           logo: https://www.gstatic.com/devrel-devsite/prod/v0d244f667a3683225cca86d0ecf9b9b81b1e734e55a030bdcd3f3094b835c987/cloud/images/favicons/onecloud/favicon.ico
           url: https://cloud.google.com/products/calculator
           description: GCP 服务定价计算器。
+    - term: Mirror 镜像
+      links:
+        - title: TUNA 镜像站
+          logo: https://mirrors.tuna.tsinghua.edu.cn/static/img/logo-small-dark.png
+          url: https://mirrors.tuna.tsinghua.edu.cn/
+          description: ""
+        - title: HF 镜像站
+          logo: https://hf-mirror.com/favicon.ico
+          url: https://hf-mirror.com/
+          description: ""
 
 
 - taxonomy: 科研办公
