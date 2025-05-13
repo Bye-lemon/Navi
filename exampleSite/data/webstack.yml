@@ -110,12 +110,23 @@
           url: https://deepwiki.com/
           description: Devin 团队开发 Github 主流仓库 Wiki 和问答平台
 
-    - term: LLM 工具
+    - term: LLM 服务平台
       links:
         - title: OpenRouter
           logo: https://openrouter.ai/favicon.ico
           url: https://openrouter.ai/
           description: LLM API 统一调用平台。
+        - title: 硅基流动
+          logo: https://platform.openai.com/favicon.ico
+          url: https://account.siliconflow.cn/zh/login
+          description: ""
+        - title: 阿里云百炼
+          logo: https://img.alicdn.com/tfs/TB1_ZXuNcfpK1RjSZFOXXa6nFXa-32-32.ico
+          url: https://bailian.console.aliyun.com/
+          description: ""
+
+    - term: LLM 工具
+      links:
         - title: LLM API Pricing Calculator
           logo: https://www.helicone.ai/_next/image?url=%2Fstatic%2Fpricing-calc%2Fcoins.webp&w=256&q=100
           url: https://www.helicone.ai/llm-cost
