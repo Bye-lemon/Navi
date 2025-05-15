@@ -30,7 +30,7 @@
       logo: https://pypi.org/static/images/favicon.35549fe8.ico
       url: https://pypi.org/
       description: ''
-    - title: Modelscope
+    - title: ModelScope
       logo: https://g.alicdn.com/sail-web/maas/2.7.30/favicon/128.ico
       url: https://www.modelscope.cn/home
       description: ''
@@ -52,10 +52,6 @@
         - title: Gemini
           logo: https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg
           url: https://gemini.google.com/app
-          description: ''
-        - title: Google AI Studio
-          logo: https://www.gstatic.com/aistudio/ai_studio_favicon_256x256.png
-          url: https://aistudio.google.com/
           description: ''
         - title: Grok
           logo: https://grok.com/images/favicon-dark.png
@@ -117,12 +113,32 @@
           url: https://openrouter.ai/
           description: LLM API 统一调用平台。
         - title: 硅基流动
-          logo: https://platform.openai.com/favicon.ico
+          logo: https://favicon.im/www.siliconflow.cn
           url: https://account.siliconflow.cn/zh/login
+          description: ""
+        - title: Google AI Studio
+          logo: https://www.gstatic.com/aistudio/ai_studio_favicon_256x256.png
+          url: https://aistudio.google.com/
+          description: ''
+        - title: xAI Cloud Console
+          logo: https://console.x.ai/favicon.ico
+          url: https://console.x.ai/
           description: ""
         - title: 阿里云百炼
           logo: https://img.alicdn.com/tfs/TB1_ZXuNcfpK1RjSZFOXXa6nFXa-32-32.ico
           url: https://bailian.console.aliyun.com/
+          description: ""
+        - title: MiniMax 开放平台
+          logo: https://filecdn.minimax.chat/public/25289820-59cd-4365-9829-a3f32b365451.ico
+          url: https://platform.minimaxi.com/login
+          description: ""
+        - title: Moonshot 开放平台
+          logo: https://moonshot.cn/favicon.ico
+          url: https://platform.moonshot.cn/console/
+          description: ""
+        - title: DeepSeek 开放平台
+          logo: https://platform.deepseek.com/favicon.svg
+          url: https://platform.deepseek.com/sign_in
           description: ""
 
     - term: LLM 工具
@@ -204,10 +220,10 @@
           logo: https://civitai.com/favicon-green.ico
           url: https://civitai.green/
           description: ''
-        - title: Shakker
-          logo: https://liblibai-web-static.liblib.cloud/shakker/favicon.png
-          url: https://www.shakker.ai/
-          description: ''
+        - title: 海螺AI
+          logo: https://cdn.hailuoai.com/hailuo-video-web/public_assets/favicon.png
+          url: https://hailuoai.com/
+          description: MiniMax 发布图像视频生成平台
         - title: 即梦AI
           logo: https://lf3-lv-buz.vlabstatic.com/obj/image-lvweb-buz/common/images/dreamina-v5.ico
           url: https://jimeng.jianying.com/
@@ -259,6 +275,10 @@
           logo: https://www.composeverter.com/favicon.ico
           url: https://www.composeverter.com/
           description: Docker-Compose 文件 v1 转 v2 转换器
+        - title: Favicon.im
+          logo: https://favicon.im/favicon.im
+          url: https://favicon.im/
+          description: 获取网站的 Favicon
     - term: 云平台
       links:
         - title: AWS 定价计算器
@@ -375,7 +395,7 @@
           description: 一家关于计算机黑客和创业公司的社会化新闻网站。
         - title: 阮一峰的网络日志
           url: http://www.ruanyifeng.com/blog/
-          logo: 阮一峰.png
+          logo: https://favicon.im/www.ruanyifeng.com
           description: 阮一峰，科技爱好者周刊。
         - title: 通往AGI之路
           url: https://www.waytoagi.com/zh
