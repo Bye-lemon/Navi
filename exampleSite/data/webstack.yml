@@ -205,6 +205,10 @@
           logo: https://swallow-llm.github.io/leaderboard/static/favicon.svg
           url: https://swallow-llm.github.io/leaderboard/index-chat.ja.html
           description: Swallow LLM 日本语榜单
+        - title: IDP Leaderboard
+          logo: https://cdn.prod.website-files.com/602f5458a0b1d868c6c84d5b/6042246c9be859d3bc2c0506_favicon-32x32.png
+          url: https://idp-leaderboard.org/
+          description: LLM 文档处理任务榜单
 
     - term: AIGC 相关
       links:
