@@ -295,6 +295,10 @@
           logo: https://favicon.im/favicon.im
           url: https://favicon.im/
           description: 获取网站的 Favicon
+        - title: Favicon.io
+          logo: https://favicon.io/assets/static/favicon.b9532cc.ed88c65f76fa003989a0c683d668c765.png
+          url: https://favicon.io/
+          description: 在线转换和生成 Favicon 图标
     - term: 云平台
       links:
         - title: AWS 定价计算器
@@ -344,6 +348,10 @@
           logo: https://papers.cool/static/favicon.ico
           url: https://papers.cool/
           description: 苏剑林的 Arxiv 论文 AI 解读列表。
+        - title: Sci-Hub
+          logo: https://sci-hub.se/pictures/ravenround.png
+          url: https://sci-hub.se/
+          description: 提供学术论文的免费下载服务。
         - title: STORM
           logo: https://favicon.im/storm.genie.stanford.edu?larger=true
           url: https://storm.genie.stanford.edu/
@@ -356,6 +364,14 @@
           logo: https://www.gstatic.com/images/branding/product/ico/googleg_lodp.ico
           url: https://datasetsearch.research.google.com/
           description: ''
+        - title: 国家自然科学基金大数据知识管理服务门户
+          logo: https://kd.nsfc.cn/favicon.ico
+          url: https://kd.nsfc.cn/
+          description: ''
+        - title: Letpub
+          logo: https://www.letpub.com.cn/images/favicon.ico
+          url: https://www.letpub.com.cn/index.php?page=grant
+          description: 第三方国家自然科学基金项目查询系统
     - term: 信息聚合
       links:
         - title: 专利之星
@@ -366,14 +382,6 @@
           logo: https://feedly.com/favicon.ico
           url: https://hbba.sacinfo.org.cn/
           description: ''
-        - title: 国家自然科学基金大数据知识管理服务门户
-          logo: https://kd.nsfc.cn/favicon.ico
-          url: https://kd.nsfc.cn/
-          description: ''
-        - title: Letpub
-          logo: https://www.letpub.com.cn/images/favicon.ico
-          url: https://www.letpub.com.cn/index.php?page=grant
-          description: 第三方国家自然科学基金项目查询系统
         - title: e-Gov 法令検索
           logo: https://www.e-gov.go.jp/sites/default/files/filebrowser/favicon.ico
           url: https://laws.e-gov.go.jp/
