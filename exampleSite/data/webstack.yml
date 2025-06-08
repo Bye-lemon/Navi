@@ -366,6 +366,18 @@
           logo: https://feedly.com/favicon.ico
           url: https://hbba.sacinfo.org.cn/
           description: ''
+        - title: 国家自然科学基金大数据知识管理服务门户
+          logo: https://kd.nsfc.cn/favicon.ico
+          url: https://kd.nsfc.cn/
+          description: ''
+        - title: Letpub
+          logo: https://www.letpub.com.cn/images/favicon.ico
+          url: https://www.letpub.com.cn/index.php?page=grant
+          description: 第三方国家自然科学基金项目查询系统
+        - title: e-Gov 法令検索
+          logo: https://www.e-gov.go.jp/sites/default/files/filebrowser/favicon.ico
+          url: https://laws.e-gov.go.jp/
+          description: 日本国法律法规官方搜索引擎
       
 - taxonomy: 素材资源
   icon: far fa-folder-open fa-lg
@@ -425,6 +437,10 @@
           url: https://spaces.ac.cn/
           logo: https://spaces.ac.cn/usr/themes/geekg/favicon.ico
           description: 苏剑林的个人博客
+        - title: Matrix67 The Aha Moments
+          url: https://matrix67.com/blog/
+          logo: https://pbs.twimg.com/profile_images/2315765843/Matrix67_bg_400x400.png
+          description: ''
         - title: Hello Github
           url: https://hellogithub.com/
           logo: https://hellogithub.com/favicon/favicon-96x96.png
