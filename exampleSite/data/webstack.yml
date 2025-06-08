@@ -34,6 +34,10 @@
       logo: https://g.alicdn.com/sail-web/maas/2.7.30/favicon/128.ico
       url: https://www.modelscope.cn/home
       description: ''
+    - title: Python Extension Packages for Windows 
+      logo: https://www.cgohlke.com/cgohlke.ico
+      url: https://www.cgohlke.com/
+      description: Windows 平台下 Python 第三方库预编译二进制轮子下载
     - title: 知乎
       logo: https://static.zhihu.com/heifetz/favicon.ico
       url: https://www.zhihu.com/
@@ -296,6 +300,22 @@
           logo: https://favicon.io/assets/static/favicon.b9532cc.ed88c65f76fa003989a0c683d668c765.png
           url: https://favicon.io/
           description: 在线转换和生成 Favicon 图标
+        - title: Lorem Ipsum
+          logo: https://cn.lipsum.com/favicon.ico
+          url: https://cn.lipsum.com/
+          description: 乱数假文生成器
+        - title: Placeholder Image Generator
+          logo: https://placeholderimage.dev/statics/icons/favicon-32x32.png
+          url: https://placeholderimage.dev/
+          description: 在线生成占位图像
+        - title: Compiler Explorer
+          logo: https://godbolt.org/favicon.ico?v=1
+          url: https://godbolt.org/
+          description: 多语言在线编译器
+        - title: TextKool ASCII Art Generator
+          logo: https://textkool.com/static/icons/favicon-32x32.png
+          url: https://textkool.com/en/ascii-art-generator?hl=default&vl=default&font=Red%20Phoenix&text=Your%20text%20here%20
+          description: 在线文字转换 ASCII 字符画
     - term: 云平台
       links:
         - title: AWS 定价计算器
@@ -378,6 +398,10 @@
         - title: 行业标准信息服务平台
           logo: https://feedly.com/favicon.ico
           url: https://hbba.sacinfo.org.cn/
+          description: ''
+        - title: 国家市场监督管理总局合同示范文本库
+          logo: https://feedly.com/favicon.ico
+          url: https://htsfwb.samr.gov.cn/
           description: ''
         - title: e-Gov 法令検索
           logo: https://www.e-gov.go.jp/sites/default/files/filebrowser/favicon.ico
