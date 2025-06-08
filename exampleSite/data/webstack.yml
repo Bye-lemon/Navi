@@ -105,6 +105,26 @@
           logo: https://deepwiki.com/favicon.ico
           url: https://deepwiki.com/
           description: Devin 团队开发 Github 主流仓库 Wiki 和问答平台
+        - title: Midjourney
+          logo: https://cdn.svgporn.com/logos/midjourney.svg
+          url: https://www.midjourney.com/
+          description: ''
+        - title: Civitai
+          logo: https://civitai.com/favicon-blue.ico
+          url: https://civitai.com/
+          description: ''
+        - title: Civitai Green
+          logo: https://civitai.com/favicon-green.ico
+          url: https://civitai.green/
+          description: ''
+        - title: 海螺AI
+          logo: https://cdn.hailuoai.com/hailuo-video-web/public_assets/favicon.png
+          url: https://hailuoai.com/
+          description: MiniMax 发布图像视频生成平台
+        - title: 即梦AI
+          logo: https://lf3-lv-buz.vlabstatic.com/obj/image-lvweb-buz/common/images/dreamina-v5.ico
+          url: https://jimeng.jianying.com/
+          description: 字节剪映旗下全功能 AIGC 平台
 
     - term: LLM 服务平台
       links:
@@ -221,29 +241,6 @@
           logo: https://cdn-avatars.huggingface.co/v1/production/uploads/61b85ce86eb1f2c5e6233736/pCka87yd0Yvl2JzI5h2Oq.png
           url: https://huggingface.co/spaces/hf-audio/open_asr_leaderboard
           description: Hugging Face ASR 语音识别榜单
-
-    - term: AIGC 相关
-      links:
-        - title: Midjourney
-          logo: https://cdn.svgporn.com/logos/midjourney.svg
-          url: https://www.midjourney.com/
-          description: ''
-        - title: Civitai
-          logo: https://civitai.com/favicon-blue.ico
-          url: https://civitai.com/
-          description: ''
-        - title: Civitai Green
-          logo: https://civitai.com/favicon-green.ico
-          url: https://civitai.green/
-          description: ''
-        - title: 海螺AI
-          logo: https://cdn.hailuoai.com/hailuo-video-web/public_assets/favicon.png
-          url: https://hailuoai.com/
-          description: MiniMax 发布图像视频生成平台
-        - title: 即梦AI
-          logo: https://lf3-lv-buz.vlabstatic.com/obj/image-lvweb-buz/common/images/dreamina-v5.ico
-          url: https://jimeng.jianying.com/
-          description: 字节剪映旗下全功能 AIGC 平台
 
 
 - taxonomy: 开发相关
