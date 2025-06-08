@@ -417,3 +417,9 @@
           url: https://hellogithub.com/
           logo: https://hellogithub.com/favicon/favicon-96x96.png
           description: Hello GitHub 是一个开源项目推荐平台，致力于帮助开发者发现和学习优秀的开源项目。
+    - term: 生活百科
+      links:
+        - title: 默沙东医学手册
+          url: https://www.msdmanuals.cn/
+          logo: https://www.msdmanuals.cn/_next/static/media/favicon.f7343459.ico
+          description: 默沙东医学手册是一本权威的医学参考书，提供了丰富的医学知识和临床信息，帮助医疗专业人员和患者更好地理解疾病和治疗方案。
