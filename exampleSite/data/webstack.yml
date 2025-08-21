@@ -229,9 +229,9 @@
           logo: https://avatars.githubusercontent.com/u/134031702?s=200&v=4
           url: https://huggingface.co/spaces/llm-jp/open-japanese-llm-leaderboard
           description: LLM-JP 日本开源 LLM 榜单 
-        - title: Swallow LLM Leaderboard
+        - title: Swallow LLM Leaderboard v2
           logo: https://swallow-llm.github.io/leaderboard/static/favicon.svg
-          url: https://swallow-llm.github.io/leaderboard/index-chat.ja.html
+          url: https://swallow-llm.github.io/leaderboard/index-post.ja.html
           description: Swallow LLM 日本语榜单
         - title: IDP Leaderboard
           logo: https://cdn.prod.website-files.com/602f5458a0b1d868c6c84d5b/6042246c9be859d3bc2c0506_favicon-32x32.png
