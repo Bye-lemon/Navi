@@ -81,10 +81,6 @@
           logo: https://favicon.im/metaso.cn?larger=true
           url: https://metaso.cn/
           description: ''
-        - title: 纳米AI搜索
-          logo: https://www.n.cn/favicon.ico
-          url: https://www.n.cn/
-          description: ''
         - title: Perplexity
           logo: https://perplexity.ai/favicon.ico
           url: https://www.perplexity.ai/
@@ -93,10 +89,6 @@
           logo: https://notebooklm.google.com/_/static/branding/v5/light_mode/favicon/favicon.svg
           url: https://notebooklm.google.com/
           description: ''
-        - title: Firebase Studio
-          logo: https://www.gstatic.com/monospace/250314/favicon.ico
-          url: https://studio.firebase.google.com/
-          description: Google 快速原型 APP 开发平台
         - title: Cursor
           logo: https://www.cursor.com/favicon.svg
           url: https://www.cursor.com/
