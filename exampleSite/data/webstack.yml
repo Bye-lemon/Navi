@@ -77,10 +77,6 @@
           logo: https://favicon.im/metaso.cn?larger=true
           url: https://metaso.cn/
           description: ''
-        - title: 纳米AI搜索
-          logo: https://www.n.cn/favicon.ico
-          url: https://www.n.cn/
-          description: ''
         - title: Perplexity
           logo: https://perplexity.ai/favicon.ico
           url: https://www.perplexity.ai/
@@ -217,9 +213,9 @@
           logo: https://avatars.githubusercontent.com/u/134031702?s=200&v=4
           url: https://huggingface.co/spaces/llm-jp/open-japanese-llm-leaderboard
           description: LLM-JP 日本开源 LLM 榜单 
-        - title: Swallow LLM Leaderboard
+        - title: Swallow LLM Leaderboard v2
           logo: https://swallow-llm.github.io/leaderboard/static/favicon.svg
-          url: https://swallow-llm.github.io/leaderboard/index-chat.ja.html
+          url: https://swallow-llm.github.io/leaderboard/index-post.ja.html
           description: Swallow LLM 日本语榜单
         - title: IDP Leaderboard
           logo: https://cdn.prod.website-files.com/602f5458a0b1d868c6c84d5b/6042246c9be859d3bc2c0506_favicon-32x32.png
@@ -361,6 +357,10 @@
           logo: https://sci-hub.se/pictures/ravenround.png
           url: https://sci-hub.se/
           description: 提供学术论文的免费下载服务。
+        - title: Engineering Village
+          logo: https://www.engineeringvillage.com/app/static/images/ei_x.png
+          url: https://www.engineeringvillage.com/app/search/quick/
+          description: EI 索引数据库。
         - title: STORM
           logo: https://favicon.im/storm.genie.stanford.edu?larger=true
           url: https://storm.genie.stanford.edu/
@@ -381,12 +381,24 @@
           logo: https://www.letpub.com.cn/images/favicon.ico
           url: https://www.letpub.com.cn/index.php?page=grant
           description: 第三方国家自然科学基金项目查询系统
+        - title: 发表云
+          logo: https://www.fabiao.com.cn/favicon.ico
+          url: https://www.fabiao.com.cn/
+          description: 期刊杂志收录情况和影响因子查询
     - term: 信息聚合
       links:
         - title: 专利之星
           logo: https://feedly.com/favicon.ico
           url: https://cprs.patentstar.com.cn/
           description: ''
+        - title: 中国及多国专利审查信息查询
+          logo: https://cpquery.cponline.cnipa.gov.cn/imgs/logo/logoNew.png
+          url: https://cpquery.cponline.cnipa.gov.cn/chinesepatent/index
+          description: 专利审查进度查询
+        - title: 中国版权登记查询服务平台
+          logo: https://register.ccopyright.com.cn/logo.png
+          url: https://register.ccopyright.com.cn/query.html
+          description: 软件著作权登记查询
         - title: 行业标准信息服务平台
           logo: https://feedly.com/favicon.ico
           url: https://hbba.sacinfo.org.cn/
@@ -425,6 +437,10 @@
           logo: https://svglogos.dev/brand/favicon-32x32.png
           url: https://svglogos.dev/
           description: SVG Logo 库
+        - title: Lobehub Icons
+          logo: https://lobehub.com/_next/static/media/logo.98482105.png
+          url: https://lobehub.com/zh/icons
+          description: AI / LLM 模型图标集
     - term: 字体资源
       links:
         - title: Google Font
@@ -458,6 +474,10 @@
           url: https://spaces.ac.cn/
           logo: https://spaces.ac.cn/usr/themes/geekg/favicon.ico
           description: 苏剑林的个人博客
+        - title: Ahead of AI
+          url: https://magazine.sebastianraschka.com/
+          logo: https://substackcdn.com/image/fetch/$s_!ktrK!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F342e39ec-514c-4b4d-8a76-6acf0cbd8248%2Ffavicon-48x48.png
+          description: Sebastian Raschka 博士的 LLM 技术博客
         - title: Matrix67 The Aha Moments
           url: https://matrix67.com/blog/
           logo: https://pbs.twimg.com/profile_images/2315765843/Matrix67_bg_400x400.png
@@ -466,6 +486,16 @@
           url: https://hellogithub.com/
           logo: https://hellogithub.com/favicon/favicon-96x96.png
           description: Hello GitHub 是一个开源项目推荐平台，致力于帮助开发者发现和学习优秀的开源项目。
+    - term: 日语辞典
+      links:
+        - title: 辞典横断検索 Metapedia
+          url: http://metapedia.jp/
+          logo: https://favicon.im/metapedia.jp
+          description: 491の辞典・辞書・事典・用語集・図鑑を一括検索
+        - title: IT 用语辞典
+          url: https://e-words.jp/
+          logo: https://p.e-words.jp/favicon.png
+          description: ''
     - term: 生活百科
       links:
         - title: 默沙东医学手册
@@ -476,7 +506,7 @@
 - taxonomy: 冷备份
   icon: fas fa-pencil-alt fa-lg
   list: 
-    - term: 博客论坛
+    - term: 杂项工具
       links:
         - title: Z.ai
           logo: https://z-cdn.chatglm.cn/z-ai/frontend/static/apple-touch-icon.png
