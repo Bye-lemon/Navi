@@ -73,10 +73,6 @@
           logo: https://assets.alicdn.com/g/qwenweb/qwen-webui-fe/0.0.87/favicon.png
           url: https://chat.qwen.ai/
           description: ''
-        - title: Z.ai
-          logo: https://z-cdn.chatglm.cn/z-ai/frontend/static/apple-touch-icon.png
-          url: https://chat.z.ai/
-          description: ''
         - title: 秘塔AI搜索
           logo: https://favicon.im/metaso.cn?larger=true
           url: https://metaso.cn/
@@ -93,18 +89,10 @@
           logo: https://notebooklm.google.com/_/static/branding/v5/light_mode/favicon/favicon.svg
           url: https://notebooklm.google.com/
           description: ''
-        - title: Firebase Studio
-          logo: https://www.gstatic.com/monospace/250314/favicon.ico
-          url: https://studio.firebase.google.com/
-          description: Google 快速原型 APP 开发平台
         - title: Cursor
           logo: https://www.cursor.com/favicon.svg
           url: https://www.cursor.com/
           description: ''
-        - title: Napkin
-          logo: https://www.napkin.ai/favicon-32x32.png?v=2
-          url: https://www.napkin.ai/
-          description: 可视化图形/PPT 生成工具
         - title: DeepWiki
           logo: https://deepwiki.com/favicon.ico
           url: https://deepwiki.com/
@@ -344,6 +332,10 @@
           logo: https://npmmirror.com/cnpm.png
           url: https://npmmirror.com/
           description: ""
+        - title: MSDN I Tell You
+          logo: https://static.itellyou.cn/images/logo.png
+          url: hhttps://msdn.itellyou.cn/
+          description: ""
     - term: 开发者文档
       links:
         - title: Mozilla 开发者网络
@@ -480,3 +472,21 @@
           url: https://www.msdmanuals.cn/
           logo: https://www.msdmanuals.cn/_next/static/media/favicon.f7343459.ico
           description: 默沙东医学手册是一本权威的医学参考书，提供了丰富的医学知识和临床信息，帮助医疗专业人员和患者更好地理解疾病和治疗方案。
+
+- taxonomy: 冷备份
+  icon: fas fa-pencil-alt fa-lg
+  list: 
+    - term: 博客论坛
+      links:
+        - title: Z.ai
+          logo: https://z-cdn.chatglm.cn/z-ai/frontend/static/apple-touch-icon.png
+          url: https://chat.z.ai/
+          description: ''
+        - title: Firebase Studio
+          logo: https://www.gstatic.com/monospace/250314/favicon.ico
+          url: https://studio.firebase.google.com/
+          description: Google 快速原型 APP 开发平台
+        - title: Napkin
+          logo: https://www.napkin.ai/favicon-32x32.png?v=2
+          url: https://www.napkin.ai/
+          description: 可视化图形/PPT 生成工具
