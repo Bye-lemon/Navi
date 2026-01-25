@@ -170,7 +170,7 @@
           url: https://llm-stats.com/
           description: 汇总 MMLU、GPQA、HumanEval、DROP、MATH 基准结果
         - title: Artificial Analysis
-          logo: https://artificialanalysis.ai/img/general-frontend/logo-without-bg.svg
+          logo: https://artificialanalysis.ai/favicon.ico
           url: https://artificialanalysis.ai/
           description: LLM、Image、Audio、Video 等多任务综合竞技场
         - title: LiveBench
@@ -387,6 +387,10 @@
           logo: https://www.e-gov.go.jp/sites/default/files/filebrowser/favicon.ico
           url: https://laws.e-gov.go.jp/
           description: 日本国法律法规官方搜索引擎
+        - title: IPA 情報処理推進機構
+          logo: https://www.ipa.go.jp/icon-192x192.png
+          url: https://www.ipa.go.jp/
+          description: 日本信息处理推进机构
       
 - taxonomy: 素材资源
   icon: far fa-folder-open fa-lg
