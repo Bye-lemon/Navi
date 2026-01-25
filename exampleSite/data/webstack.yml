@@ -185,26 +185,10 @@
           logo: https://avatars.githubusercontent.com/u/103029531?s=200&v=4
           url: https://huggingface.co/spaces/mteb/leaderboard
           description: Embeddings 和文本检索基准
-        - title: ViDoRe Leaderboard
-          logo: https://cdn-avatars.huggingface.co/v1/production/uploads/6264f9655f6f2e14d6ac981c/48Z31MM2apXsj6rQWilUh.png
-          url: https://huggingface.co/spaces/vidore/vidore-leaderboard
-          description: Text2Vision Document 检索榜单
-        - title: BigCodeBench
-          logo: https://avatars.githubusercontent.com/u/110470554?s=200&v=4
-          url: https://huggingface.co/spaces/bigcode/bigcodebench-leaderboard
-          description: BigCode 开源代码大模型能力榜单
-        - title: LiveCodeBench
-          logo: https://livecodebench.github.io/images/favicon.svg
-          url: https://livecodebench.github.io/leaderboard.html
-          description: 代码大模型能力榜单
         - title: Aider Leaderboard
           logo: https://aider.chat/assets/icons/favicon-32x32.png
           url: https://aider.chat/docs/leaderboards/
           description: 基于 Aider 的代码编写和重构榜单
-        - title: HHEM Leaderboard
-          logo: https://avatars.githubusercontent.com/u/108304503?s=200&v=4
-          url: https://huggingface.co/spaces/vectara/leaderboard
-          description: LLM 幻觉程度评价榜单
         - title: BFCL Leaderboard
           logo: https://gorilla.cs.berkeley.edu/assets/img/Cal.png
           url: https://gorilla.cs.berkeley.edu/leaderboard.html
@@ -217,18 +201,6 @@
           logo: https://swallow-llm.github.io/leaderboard/static/favicon.svg
           url: https://swallow-llm.github.io/leaderboard/index-post.ja.html
           description: Swallow LLM 日本语榜单
-        - title: IDP Leaderboard
-          logo: https://cdn.prod.website-files.com/602f5458a0b1d868c6c84d5b/6042246c9be859d3bc2c0506_favicon-32x32.png
-          url: https://idp-leaderboard.org/
-          description: LLM 文档处理任务榜单
-        - title: TTS Arena
-          logo: https://cdn-avatars.huggingface.co/v1/production/uploads/62e54f0eae9d3f10acb95cb9/hPKWQ49ksoluWJZlQfQ-4.png
-          url: https://huggingface.co/spaces/TTS-AGI/TTS-Arena-V2
-          description: ""
-        - title: Open ASR Leaderboard
-          logo: https://cdn-avatars.huggingface.co/v1/production/uploads/61b85ce86eb1f2c5e6233736/pCka87yd0Yvl2JzI5h2Oq.png
-          url: https://huggingface.co/spaces/hf-audio/open_asr_leaderboard
-          description: Hugging Face ASR 语音识别榜单
 
 
 - taxonomy: 开发相关
