@@ -159,6 +159,10 @@
           logo: https://mastra.ai/favicon/icon-512.png
           url: https://mastra.ai/mcp-registry-registry
           description: MCP 服务器列表合集站。
+        - title: SkillsMP
+          logo: https://skillsmp.com/favicon.ico
+          url: https://skillsmp.com/
+          description: SKILL.MD 市场。
     - term: LLM Leaderboard
       links:
         - title: LLM Stat
