@@ -50,7 +50,7 @@
     - term: AI 产品
       links:
         - title: ChatGPT
-          logo: https://auth.openai.com/assets/favicon-yEqImUA_.svg
+          logo: https://chatgpt.com/cdn/assets/favicon-eex17e9e.ico
           url: https://chat.openai.com/chat
           description: ''
         - title: Gemini
@@ -58,7 +58,7 @@
           url: https://gemini.google.com/app
           description: ''
         - title: Grok
-          logo: https://grok.com/images/favicon-dark.png
+          logo: https://grok.com/images/favicon.ico
           url: https://grok.com/
           description: ''
         - title: DeepSeek
@@ -76,10 +76,6 @@
         - title: 秘塔AI搜索
           logo: https://favicon.im/metaso.cn?larger=true
           url: https://metaso.cn/
-          description: ''
-        - title: Perplexity
-          logo: https://perplexity.ai/favicon.ico
-          url: https://www.perplexity.ai/
           description: ''
         - title: NotebookLM
           logo: https://notebooklm.google.com/_/static/branding/v5/light_mode/favicon/favicon.svg
@@ -197,9 +193,9 @@
           logo: https://gorilla.cs.berkeley.edu/assets/img/Cal.png
           url: https://gorilla.cs.berkeley.edu/leaderboard.html
           description: LLM 函数调用能力评价榜单
-        - title: Open Japanese LLM Leaderboard
+        - title: Open Japanese LLM Leaderboard V2
           logo: https://avatars.githubusercontent.com/u/134031702?s=200&v=4
-          url: https://huggingface.co/spaces/llm-jp/open-japanese-llm-leaderboard
+          url: https://huggingface.co/spaces/llm-jp/open-japanese-llm-leaderboard-v2
           description: LLM-JP 日本开源 LLM 榜单 
         - title: Swallow LLM Leaderboard v2
           logo: https://swallow-llm.github.io/leaderboard/static/favicon.svg
@@ -269,7 +265,7 @@
           url: https://placeholderimage.dev/
           description: 在线生成占位图像
         - title: Compiler Explorer
-          logo: https://godbolt.org/favicon.ico?v=1
+          logo: https://static.ce-cdn.net/favicon.ico
           url: https://godbolt.org/
           description: 多语言在线编译器
         - title: TextKool ASCII Art Generator
@@ -311,7 +307,7 @@
     - term: 开发者文档
       links:
         - title: Mozilla 开发者网络
-          logo: https://developer.mozilla.org/favicon-48x48.bc390275e955dacb2e65.png
+          logo: https://developer.mozilla.org/favicon.ico
           url: https://developer.mozilla.org/en-US/
           description: MDN Web Docs 是由 Mozilla 提供的 Web 开发者文档。
 
@@ -397,9 +393,9 @@
   list:
     - term: 图标素材
       links:
-        - title: Iconfinder
-          logo: https://www.iconfinder.com/static/img/favicons/favicon-96x96.png?ea0174d544
-          url: https://www.iconfinder.com
+        - title: Freepik
+          logo: https://cdn-front.freepik.com/favicons/favicon-96x96.png
+          url: https://www.freepik.com/icons
           description: 2,100,000+ free and premium vector icons.
         - title: iconfont
           logo: https://img.alicdn.com/imgextra/i4/O1CN01Z5paLz1O0zuCC7osS_!!6000000001644-55-tps-83-82.svg
@@ -410,7 +406,7 @@
           url: https://yesicon.app/
           description: 开源矢量 icon 库。
         - title: Svgl
-          logo: https://svgl.app/images/logo.svg
+          logo: https://svgl.app/images/svgl_ico.ico
           url: https://svgl.app/
           description: SVG Logo 库
         - title: SVG LOGOS
