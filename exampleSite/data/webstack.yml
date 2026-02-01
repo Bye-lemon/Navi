@@ -137,7 +137,7 @@
           url: https://platform.minimaxi.com/login
           description: ""
         - title: Moonshot 开放平台
-          logo: https://moonshot.cn/favicon.ico
+          logo: https://statics.moonshot.cn/moonshot-ai/favicon.ico
           url: https://platform.moonshot.cn/console/
           description: ""
         - title: DeepSeek 开放平台
