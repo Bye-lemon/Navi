@@ -151,6 +151,10 @@
           logo: https://www.helicone.ai/_next/image?url=%2Fstatic%2Fpricing-calc%2Fcoins.webp&w=256&q=100
           url: https://www.helicone.ai/llm-cost
           description: 大模型调用价格计算器。
+        - title: Models.dev
+          logo: https://models.dev/favicon-aq6crjze.svg
+          url: https://models.dev/
+          description: 开源 LLM/Provider 信息和价格数据库。
         - title: MCP Registry Registry
           logo: https://mastra.ai/favicon/icon-512.png
           url: https://mastra.ai/mcp-registry-registry
@@ -329,6 +333,10 @@
           logo: https://sci-hub.se/pictures/ravenround.png
           url: https://sci-hub.se/
           description: 提供学术论文的免费下载服务。
+        - title: Prism
+          logo: https://prism.openai.com/icon.svg?v=2&scheme=dark
+          url: https://prism.openai.com/
+          description: OpenAI 推出的 AI 辅助 Latex 在线 IDE。
         - title: Engineering Village
           logo: https://www.engineeringvillage.com/app/static/images/ei_x.png
           url: https://www.engineeringvillage.com/app/search/quick/
