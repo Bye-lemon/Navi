@@ -53,6 +53,14 @@
           logo: https://chatgpt.com/cdn/assets/favicon-eex17e9e.ico
           url: https://chat.openai.com/chat
           description: ''
+        - title: Manus
+          logo: https://manus.im/favicon.ico
+          url: https://manus.im/
+          description: ''
+        - title: Cursor
+          logo: https://www.cursor.com/favicon.svg
+          url: https://www.cursor.com/
+          description: ''
         - title: Gemini
           logo: https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg
           url: https://gemini.google.com/app
@@ -80,10 +88,6 @@
         - title: NotebookLM
           logo: https://notebooklm.google.com/_/static/branding/v5/light_mode/favicon/favicon.svg
           url: https://notebooklm.google.com/
-          description: ''
-        - title: Cursor
-          logo: https://www.cursor.com/favicon.svg
-          url: https://www.cursor.com/
           description: ''
         - title: DeepWiki
           logo: https://deepwiki.com/favicon.ico
