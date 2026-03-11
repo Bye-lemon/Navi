@@ -85,6 +85,10 @@
           logo: https://favicon.im/metaso.cn?larger=true
           url: https://metaso.cn/
           description: ''
+        - title: MiroThinker
+          logo: https://dr.miromind.ai/favicon.svg
+          url: https://dr.miromind.ai/
+          description: ''
         - title: NotebookLM
           logo: https://notebooklm.google.com/_/static/branding/v5/light_mode/favicon/favicon.svg
           url: https://notebooklm.google.com/
