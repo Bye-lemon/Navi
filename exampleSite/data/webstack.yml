@@ -167,6 +167,10 @@
           logo: https://skillsmp.com/favicon.ico
           url: https://skillsmp.com/
           description: SKILL.MD 市场。
+        - title: Skills.sh
+          logo: https://skills.sh/favicon.ico
+          url: https://skills.sh/
+          description: Vercel 收录开源 Skills 目录。
     - term: LLM Leaderboard
       links:
         - title: LLM Stat
@@ -307,7 +311,11 @@
         - title: NPM Mirror
           logo: https://npmmirror.com/cnpm.png
           url: https://npmmirror.com/
-          description: ""
+          description: 阿里巴巴 NPM 镜像站。
+        - title: RsProxy
+          logo: https://lf-cdn-tos.bytescm.com/obj/static/rsproxy/favicon.svg
+          url: https://rsproxy.cn/
+          description: 字节跳动 Rust crates.io 镜像站。
         - title: MSDN I Tell You
           logo: https://static.itellyou.cn/images/logo.png
           url: hhttps://msdn.itellyou.cn/
