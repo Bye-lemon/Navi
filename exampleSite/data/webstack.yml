@@ -175,6 +175,10 @@
           logo: https://skills.sh/favicon.ico
           url: https://skills.sh/
           description: Vercel 收录开源 Skills 目录。
+        - title: ACP Registry
+          logo: https://agentclientprotocol.com/mintlify-assets/_mintlify/favicons/zed-685ed6d6/FRQhP3nE5XCe1eY2/_generated/favicon-dark/favicon-16x16.png
+          url: https://agentclientprotocol.com/get-started/registry
+          description: ACP 协议应用列表。
     - term: LLM Leaderboard
       links:
         - title: LLM Stat
