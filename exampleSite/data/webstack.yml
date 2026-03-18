@@ -312,10 +312,14 @@
           logo: https://mirrors.tuna.tsinghua.edu.cn/static/img/logo-small-dark.png
           url: https://mirrors.tuna.tsinghua.edu.cn/
           description: ""
-        - title: HF 镜像站
+        - title: HF Mirror
           logo: https://hf-mirror.com/favicon.ico
           url: https://hf-mirror.com/
-          description: ""
+          description: Hugging Face 镜像站
+        - title: GH-Proxy
+          logo: https://gh-proxy.com/favicon.ico
+          url: https://gh-proxy.com/
+          description: GitHub、SourceForge 镜像站
         - title: NPM Mirror
           logo: https://npmmirror.com/cnpm.png
           url: https://npmmirror.com/
