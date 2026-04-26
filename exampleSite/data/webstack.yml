@@ -34,6 +34,10 @@
       logo: https://g.alicdn.com/sail-web/maas/2.7.30/favicon/128.ico
       url: https://www.modelscope.cn/home
       description: ''
+    - title: Zotero Web Library
+      logo: https://www.zotero.org/static/images/home/privacy.svg
+      url: https://www.zotero.org/mylibrary
+      description: ''
     - title: Python Extension Packages for Windows 
       logo: https://www.cgohlke.com/cgohlke.ico
       url: https://www.cgohlke.com/
