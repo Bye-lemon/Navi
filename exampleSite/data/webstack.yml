@@ -179,10 +179,22 @@
           logo: https://skills.sh/favicon.ico
           url: https://skills.sh/
           description: Vercel 收录开源 Skills 目录。
+        - title: SkillForge
+          logo: https://skills.yangsir.net/favicon.ico?favicon.0b3bf435.ico
+          url: https://skills.yangsir.net/
+          description: 按职业查找适合的 Skill
         - title: ACP Registry
           logo: https://agentclientprotocol.com/mintlify-assets/_mintlify/favicons/zed-685ed6d6/FRQhP3nE5XCe1eY2/_generated/favicon-dark/favicon-16x16.png
           url: https://agentclientprotocol.com/get-started/registry
           description: ACP 协议应用列表。
+        - title: ClawHub
+          logo: https://clawhub.ai/favicon.ico
+          url: https://clawhub.ai/
+          description: OpenClaw 官方 Skill 仓库
+        - title: n8n 官方工作流模板库
+          logo: https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/n8n-color.png
+          url: https://n8n.io/workflows/
+          description: ''
     - term: LLM Leaderboard
       links:
         - title: LLM Stat
@@ -201,6 +213,10 @@
           logo: https://avatars.githubusercontent.com/u/126381704?s=200&v=4
           url: https://beta.lmarena.ai/leaderboard
           description: LLM 综合竞技场（文本、图像、Web、Copilot、文生图）
+        - title: Design Arena
+          logo: https://www.designarena.ai/design-arena.png
+          url: https://www.designarena.ai/leaderboard
+          description: LLM UI 设计能力竞技场（网站、数据可视化、SVG等）
         - title: EQ-Bench
           logo: https://eqbench.com/images/eqbench_logo_sml.png
           url: https://eqbench.com/index.html
@@ -431,6 +447,10 @@
           logo: https://openalternative.org/favicon.png
           url: https://openalternative.co/
           description: 软件的开源替代品搜索引擎
+        - title: World Monitor
+          logo: https://www.worldmonitor.app/favico/favicon.ico
+          url: https://www.worldmonitor.app/
+          description: 告诉你世界正在发生什么的面板
       
 - taxonomy: 素材资源
   icon: far fa-folder-open fa-lg
@@ -506,6 +526,32 @@
           url: https://hellogithub.com/
           logo: https://hellogithub.com/favicon/favicon-96x96.png
           description: Hello GitHub 是一个开源项目推荐平台，致力于帮助开发者发现和学习优秀的开源项目。
+        - title: Latent.Space
+          url: https://substackcdn.com/image/fetch/$s_!J-V9!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffeff84b7-b3cb-4c54-95d5-bd2a208f3f6d%2Ffavicon-32x32.png
+          logo: https://latentspace.ai/favicon.ico
+          description: 每工作日更新的 AI 日刊
+        - title: DailyBit
+          url: https://www.dailybit.cc/home
+          logo: https://dailybit.ai/favicon.ico
+          description: HN Popularity Contest 2025 独立博客的每日更新日报
+        - title: 智语观潮·Daily
+          url: https://ai.daily.yangsir.net/daily
+          logo: https://ai.daily.yangsir.net/favicon.ico
+          description: 专注 AI 领域的精选日报，每日整合最新进展、工具发现与深度观点。
+    - term: 大厂博客
+      links:
+        - title: Manus Blog
+          url: https://manus.im/zh-cn/blog
+          logo: https://manus.im/favicon.ico
+          description: Manus 产品及 Agent 技术
+        - title: Zilliz Blog
+          url: https://zilliz.com/blog
+          logo: https://zilliz.com/favicon.svg
+          description: Milvus 产品及向量搜索和 RAG 技术
+        - title: BentoML Blog
+          url: https://www.bentoml.com/blog
+          logo: https://www.bentoml.com/bentoml-favicon/favicon-16x16.png
+          description: BentoML 产品及 LLM 模型和部署技术
     - term: 日语辞典
       links:
         - title: 辞典横断検索 Metapedia
@@ -516,12 +562,20 @@
           url: https://e-words.jp/
           logo: https://p.e-words.jp/favicon.png
           description: ''
+        - title: NINJAL-LWP for BCCWJ
+          url: https://nlb.ninjal.ac.jp/
+          logo: https://nlb.ninjal.ac.jp/static/images/toppage/top.ico
+          description: 日本语词频用法语料库
     - term: 生活百科
       links:
         - title: 默沙东医学手册
           url: https://www.msdmanuals.cn/
           logo: https://www.msdmanuals.cn/_next/static/media/favicon.f7343459.ico
           description: 默沙东医学手册是一本权威的医学参考书，提供了丰富的医学知识和临床信息，帮助医疗专业人员和患者更好地理解疾病和治疗方案。
+        - title: Chronas
+          url: https://chronas.org/
+          logo: https://chronas.org/images/favicon.ico
+          description: 交互式世界历史地图
 
 - taxonomy: 冷备份
   icon: fas fa-pencil-alt fa-lg
