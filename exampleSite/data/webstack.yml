@@ -383,8 +383,12 @@
           description: 苏剑林的 Arxiv 论文 AI 解读列表。
         - title: Sci-Hub
           logo: https://sci-hub.se/pictures/ravenround.png
-          url: https://sci-hub.se/
-          description: 提供学术论文的免费下载服务。
+          url: https://sci-hub.box/
+          description: 
+        - title: Sci-Bot
+          logo: https://sci-bot.ru/sci-hub.png
+          url: https://sci-bot.ru/
+          description: Sci-Hub 的 AI 论文知识库问答。
         - title: Prism
           logo: https://prism.openai.com/icon.svg?v=2&scheme=dark
           url: https://prism.openai.com/
