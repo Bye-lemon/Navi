@@ -70,11 +70,11 @@
           url: https://gemini.google.com/app
           description: ''
         - title: Grok
-          logo: https://grok.com/images/favicon.ico
+          logo: https://grok.com/images/favicon.svg
           url: https://grok.com/
           description: ''
         - title: DeepSeek
-          logo: https://chat.deepseek.com/favicon.svg
+          logo: https://fe-static.deepseek.com/chat/favicon.svg
           url: https://chat.deepseek.com/
           description: ''
         - title: Kimi
@@ -175,7 +175,7 @@
     - term: LLM 工具
       links:
         - title: XSCT Bench
-          logo: https://xsct.ai/static/favicon.ico
+          logo: https://a.favicon.im/xsct.ai
           url: https://xsct.ai/
           description: 社区驱动的业务场景评测和选型平台。
         - title: LLM API Pricing Calculator
@@ -187,7 +187,7 @@
           url: https://models.dev/
           description: 开源 LLM/Provider 信息和价格数据库。
         - title: MCP Registry Registry
-          logo: https://mastra.ai/favicon/icon-512.png
+          logo: https://mastra.ai/favicon/new-brand/icon.svg
           url: https://mastra.ai/mcp-registry-registry
           description: MCP 服务器列表合集站。
         - title: SkillsMP
@@ -207,7 +207,7 @@
           url: https://agentclientprotocol.com/get-started/registry
           description: ACP 协议应用列表。
         - title: ClawHub
-          logo: https://clawhub.ai/favicon.ico
+          logo: https://a.favicon.im/clawhub.ai
           url: https://clawhub.ai/
           description: OpenClaw 官方 Skill 仓库
         - title: n8n 官方工作流模板库
@@ -221,7 +221,7 @@
     - term: LLM Leaderboard
       links:
         - title: LLM Stat
-          logo: https://llm-stats.com/logo.svg
+          logo: https://llm-stats.com/icon.svg
           url: https://llm-stats.com/
           description: 汇总 MMLU、GPQA、HumanEval、DROP、MATH 基准结果
         - title: Artificial Analysis
@@ -261,7 +261,7 @@
           url: https://huggingface.co/spaces/llm-jp/open-japanese-llm-leaderboard-v2
           description: LLM-JP 日本开源 LLM 榜单 
         - title: Swallow LLM Leaderboard v2
-          logo: https://swallow-llm.github.io/leaderboard/static/favicon.svg
+          logo: https://swallow-llm.github.io/static/favicon.svg
           url: https://swallow-llm.github.io/leaderboard/index-post.ja.html
           description: Swallow LLM 日本语榜单
 
@@ -280,7 +280,7 @@
           url: https://jsonviewer.arianv.com/
           description: JSON 格式化工具
         - title: Regex 101
-          logo: https://regex101.com/static/assets/icon-192.png
+          logo: https://regex101.com/static/assets/icons/favicon-196.png
           url: https://regex101.com/
           description: 正则表达式在线测试工具
         - title: SVG Viewer
@@ -400,18 +400,18 @@
           logo: https://papers.cool/static/favicon.ico
           url: https://papers.cool/
           description: 苏剑林的 Arxiv 论文 AI 解读列表。
+        - title: Paper with code
+          logo: https://paperswithcode.co/favicon-32.png?v=2
+          url: https://paperswithcode.co/
+          description: AI 前沿论文跟踪。
         - title: Sci-Hub
           logo: https://sci-hub.se/pictures/ravenround.png
           url: https://sci-hub.box/
           description: 
         - title: Sci-Bot
-          logo: https://sci-bot.ru/sci-hub.png
+          logo: https://a.favicon.im/sci-bot.ru
           url: https://sci-bot.ru/
           description: Sci-Hub 的 AI 论文知识库问答。
-        - title: Prism
-          logo: https://prism.openai.com/icon.svg?v=2&scheme=dark
-          url: https://prism.openai.com/
-          description: OpenAI 推出的 AI 辅助 Latex 在线 IDE。
         - title: Engineering Village
           logo: https://www.engineeringvillage.com/app/static/images/ei_x.png
           url: https://www.engineeringvillage.com/app/search/quick/
@@ -443,7 +443,7 @@
     - term: 信息聚合
       links:
         - title: 专利之星
-          logo: https://feedly.com/favicon.ico
+          logo: https://a.favicon.im/prs.patentstar.com.cn
           url: https://cprs.patentstar.com.cn/
           description: ''
         - title: 中国及多国专利审查信息查询
@@ -455,11 +455,11 @@
           url: https://register.ccopyright.com.cn/query.html
           description: 软件著作权登记查询
         - title: 行业标准信息服务平台
-          logo: https://feedly.com/favicon.ico
+          logo: https://hbba.sacinfo.org.cn/statics/hb/shareLogo.png
           url: https://hbba.sacinfo.org.cn/
           description: ''
         - title: 国家市场监督管理总局合同示范文本库
-          logo: https://feedly.com/favicon.ico
+          logo: https://a.favicon.im/htsfwb.samr.gov.cn
           url: https://htsfwb.samr.gov.cn/
           description: ''
         - title: e-Gov 法令検索
@@ -471,11 +471,11 @@
           url: https://www.ipa.go.jp/
           description: 日本信息处理推进机构
         - title: Open Alternative
-          logo: https://openalternative.org/favicon.png
+          logo: https://openalternative.co/favicon.svg
           url: https://openalternative.co/
           description: 软件的开源替代品搜索引擎
         - title: World Monitor
-          logo: https://www.worldmonitor.app/favico/favicon.ico
+          logo: https://www.worldmonitor.app/favico/favicon-32x32.png
           url: https://www.worldmonitor.app/
           description: 告诉你世界正在发生什么的面板
       
@@ -505,7 +505,7 @@
           url: https://svglogos.dev/
           description: SVG Logo 库
         - title: Lobehub Icons
-          logo: https://lobehub.com/_next/static/media/logo.98482105.png
+          logo: https://web-assets.lobehub.com/landing-rr/prod/assets/logo-DauBOjoN.png
           url: https://lobehub.com/zh/icons
           description: AI / LLM 模型图标集
     - term: 字体资源
