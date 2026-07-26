@@ -156,6 +156,21 @@
           logo: https://platform.deepseek.com/favicon.svg
           url: https://platform.deepseek.com/sign_in
           description: ""
+    
+    - term: Agent 服务
+      links:
+        - title: Agent Mail
+          logo: https://res.wx.qq.com/t/webmail/webmail/res/static/images/public/index_bot/favicon/favicon_48h.d14be67.png
+          url: https://agent.qq.com/
+          description: 腾讯 Agent 独立邮箱。
+        - title: AnySearch
+          logo: https://www.anysearch.com/favicon.ico
+          url: https://www.anysearch.com/home
+          description: AI 搜索 MCP 和 Skill 基础设施。
+        - title: Context7
+          logo: https://context7.com/favicon.ico
+          url: https://context7.com/
+          description: 代码文档检索基础设施。
 
     - term: LLM 工具
       links:
@@ -199,6 +214,10 @@
           logo: https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/n8n-color.png
           url: https://n8n.io/workflows/
           description: ''
+        - title: Phistory
+          logo: https://a.favicon.im/phistory.cc
+          url: https://phistory.cc/
+          description: CC 等 CLI Agent 系统提示词 Trace。
     - term: LLM Leaderboard
       links:
         - title: LLM Stat
