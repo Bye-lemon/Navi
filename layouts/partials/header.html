@@ -1,33 +1,64 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="{{ .Site.LanguageCode | default "zh-CN" }}">
 
 <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="theme-color" content="#f9f9f9" />
-    <title>{{ .Site.Title }}</title>
-    <link rel="shortcut icon" href="{{ absURL $.Site.Params.images.favicon }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="{{ if .Site.Params.nightMode }}dark{{ else }}light{{ end }}" />
+    <meta name="theme-color" content="{{ if .Site.Params.nightMode }}#111111{{ else }}#f9f9f9{{ end }}" />
+    <script>
+        // 在首次绘制前应用已保存的主题，避免闪烁（FOUC）。
+        try {
+            const saved = localStorage.getItem("color-scheme");
+            if (saved === "light" || saved === "dark") {
+                document.querySelector('meta[name="color-scheme"]').content = saved;
+                document.querySelector('meta[name="theme-color"]').content = saved === "dark" ? "#111111" : "#f9f9f9";
+            }
+        } catch (_) { /* 隐私模式禁用存储时忽略 */ }
+    </script>
+
+    {{- $title := .Site.Title -}}
+    {{- if not .IsHome -}}
+        {{- if eq .Kind "404" -}}{{- $title = printf "404 · %s" .Site.Title -}}
+        {{- else -}}{{- $title = printf "%s · %s" .Title .Site.Title -}}{{- end -}}
+    {{- end -}}
+    {{- $description := .Description | default .Site.Params.description -}}
+    <title>{{ $title }}</title>
+    <meta name="description" content="{{ $description }}" />
+    <meta property="og:title" content="{{ $title }}" />
+    <meta property="og:description" content="{{ $description }}" />
+    <meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+
+    <link rel="icon" href="{{ absURL $.Site.Params.images.favicon }}" />
     <meta name="keywords" content="{{ .Site.Title }}" />
     {{ if $.Site.Params.seo.baiduSiteVer }}
     <meta name="baidu-site-verification" content="{{ $.Site.Params.seo.baiduSiteVer }}" />
     {{ end }}
+
+    <style>
+        :root {
+            --search-image-light: url("{{ absURL .Site.Params.images.searchImageL }}");
+            --search-image-dark: url("{{ absURL .Site.Params.images.searchImageD }}");
+        }
+    </style>
+
     <link rel="stylesheet" id="block-library-css"
         href="{{ absURL "assets/css/block-library.min-5.6.2.css" }}" type="text/css" media="all" />
     <link rel="stylesheet" id="iconfont-css" href="{{ absURL "assets/css/iconfont-3.03029.1.css" }}"
         type="text/css" media="all" />
     <link rel="stylesheet" id="bootstrap-css" href="{{ absURL "assets/css/bootstrap.min-4.3.1.css" }}"
         type="text/css" media="all" />
-    <link rel="stylesheet" id="fancybox-css" href="{{ absURL "assets/css/fancybox.min-3.5.7.css" }}"
-        type="text/css" media="all" />
     <link rel="stylesheet" id="iowen-css" href="{{ absURL "assets/css/style-3.03029.1.css" }}"
         type="text/css" media="all" />
     <link rel="stylesheet" id="custom-css" href="{{ absURL "assets/css/custom-style.css" }}"
         type="text/css" media="all" />
-    <link rel="stylesheet" id="fortawesome-css" href="{{ absURL "assets/fontawesome-5.15.4/css/all.min.css" }}" type="text/css" />
+    <link rel="stylesheet" id="fortawesome-css" href="{{ absURL "assets/fontawesome-5.15.4/css/all.min.css" }}"
+        type="text/css" media="all" />
+
     <script type="text/javascript" src="{{ absURL "assets/js/jquery.min-3.2.1.js" }}" id="jquery-js"></script>
-    <script type="text/javascript" src="{{ absURL "assets/js/content-search.js" }}"  id="content-search-js"></script>
+    <script type="text/javascript" src="{{ absURL "assets/js/content-search.js" }}" id="content-search-js" defer></script>
+
     <!-- 百度统计 -->
     <script>
         {{ with .Site.Params.seo.baiduhmid }}
@@ -45,8 +76,8 @@
     <!-- 51.LA 网站统计 -->
     {{ with .Site.Params.seo.tj51laid }}
     <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
-    <script>LA.init({id:"{{ $.Site.Params.seo.tj51laid }}",ck:"{{ $.Site.Params.seo.tj51lack }}"})</script>    
-    {{ end }} 
+    <script>LA.init({id:"{{ $.Site.Params.seo.tj51laid }}",ck:"{{ $.Site.Params.seo.tj51lack }}"})</script>
+    {{ end }}
     <!-- end 51.LA 网站统计 -->
 
     <!-- Google AdSense -->
@@ -56,10 +87,11 @@
     <!-- end Google AdSense -->
 
     <!-- Fancybox -->
-    {{if .Page.Site.Params.fancybox }}
-    <link rel="stylesheet" id="fancybox-css" href="{{ absURL "assets/css/fancybox.min-3.5.7.css" }}"/>
+    {{ if .Page.Site.Params.fancybox }}
+    <link rel="stylesheet" id="fancybox-css" href="{{ absURL "assets/css/fancybox.min-3.5.7.css" }}" media="all" />
     <script type="text/javascript" id="fancybox-js" src="{{ absURL "assets/js/fancybox.min-3.5.7.js" }}"></script>
     {{ end }}
     <!-- end Fancybox -->
 
+    <noscript><style>#loading{display:none!important}</style></noscript>
 </head>

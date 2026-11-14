@@ -26,16 +26,22 @@
 
                         <ul class="navbar-nav site-menu" style="margin-right: 16px;">
                         {{ range .Site.Data.headers }}
+                        {{ $href := .link }}
+                        {{ if eq .link "/" }}{{ $href = $.Site.Home.RelPermalink }}
+                        {{ else if not (or (hasPrefix .link "http://") (hasPrefix .link "https://")) }}{{ $href = .link | relURL }}{{ end }}
 			<li {{ if .list }}class="menu-item-has-children"{{ end }}>
-				<a href="{{ .link }}">
-                                    <i class="{{ .icon }} fa-lg mr-2"></i>
+				<a href="{{ $href }}">
+                                    <i class="{{ .icon }} fa-lg mr-2" aria-hidden="true"></i>
                                     <span>{{ .item }}</span>
                                 </a>
+				{{ with .list }}
 				<ul class="sub-menu">
-				{{ range .list }}
-				    <li><a href="{{ .url }}">{{ .name }}</a></li>
+				{{ range . }}
+				    {{ $sub := .url }}{{ if not (or (hasPrefix .url "http://") (hasPrefix .url "https://")) }}{{ $sub = .url | relURL }}{{ end }}
+				    <li><a href="{{ $sub }}">{{ .name }}</a></li>
 				{{ end }}
 				</ul>
+				{{ end }}
 			    </li>
 			{{ end }}
 			</ul>
@@ -85,17 +91,12 @@
                                     })
                                     .catch(console.error)
                             </script>                           
-                            <div id="hitokoto"><a href="#" target="_blank" id="hitokoto_text">疏影横斜水清浅，暗香浮动月黄昏。</a></div>
+                            <div id="hitokoto"><a href="#" target="_blank" rel="noopener noreferrer" id="hitokoto_text">疏影横斜水清浅，暗香浮动月黄昏。</a></div>
                         </li>
                         {{ end }}
                         <!-- 一言 end -->
-                        <!--li class="nav-search ml-3 ml-md-4">
-                            <a href="javascript:" data-toggle="modal" data-target="#search-modal"><i
-                                    class="iconfont icon-search icon-2x"></i></a>
-                        </li-->
                         <li class="nav-item d-md-none mobile-menu ml-3 ml-md-4">
-                            <a href="javascript:" id="sidebar-switch" data-toggle="modal"
-                                data-target="#sidebar"><i class="iconfont icon-classification icon-2x"></i></a>
+                            <button type="button" id="sidebar-switch" class="btn btn-link p-0" data-toggle="modal" data-target="#sidebar" aria-label="打开分类导航"><i class="iconfont icon-classification icon-2x" aria-hidden="true"></i></button>
                         </li>
                     </ul>
                 </div>

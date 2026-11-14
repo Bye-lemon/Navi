@@ -264,6 +264,14 @@
           logo: https://swallow-llm.github.io/static/favicon.svg
           url: https://swallow-llm.github.io/leaderboard/index-post.ja.html
           description: Swallow LLM 日本语榜单
+        - title: Ultralytics Benchmarks
+          logo: https://www.ultralytics.com/icon.svg
+          url: https://www.ultralytics.com/benchmarks
+          description: YOLO26 在 NVIDIA GPU 与手机 CPU/GPU/NPU 上的训练吞吐、推理延迟和能效基准。
+        - title: Ultralytics VLM Leaderboard
+          logo: https://www.ultralytics.com/icon.svg
+          url: https://www.ultralytics.com/benchmarks/vlm
+          description: 46 个视觉语言模型在真实检测数据集自动标注任务上的准确率、成本与速度排行。
 
 
 - taxonomy: 开发相关
@@ -291,7 +299,7 @@
           logo: https://mermaid.live/favicon.svg
           url: https://mermaid.live/edit/
           description: Mermaid 官方在线编辑器
-        - title: TebleConvert
+        - title: TableConvert
           logo: https://tableconvert.com/images/favicon.png
           url: https://tableconvert.com/
           description: 在线转换 CSV、DB、MD、Latex 等各种类型表格数据
@@ -377,7 +385,7 @@
           description: 字节跳动 Rust crates.io 镜像站。
         - title: MSDN I Tell You
           logo: https://static.itellyou.cn/images/logo.png
-          url: hhttps://msdn.itellyou.cn/
+          url: https://msdn.itellyou.cn/
           description: ""
     - term: 开发者文档
       links:
@@ -400,7 +408,7 @@
           logo: https://papers.cool/static/favicon.ico
           url: https://papers.cool/
           description: 苏剑林的 Arxiv 论文 AI 解读列表。
-        - title: Paper with code
+        - title: Papers with Code
           logo: https://paperswithcode.co/favicon-32.png?v=2
           url: https://paperswithcode.co/
           description: AI 前沿论文跟踪。
@@ -554,7 +562,7 @@
           logo: https://hellogithub.com/favicon/favicon-96x96.png
           description: Hello GitHub 是一个开源项目推荐平台，致力于帮助开发者发现和学习优秀的开源项目。
         - title: Latent.Space
-          url: https://substackcdn.com/image/fetch/$s_!J-V9!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ffeff84b7-b3cb-4c54-95d5-bd2a208f3f6d%2Ffavicon-32x32.png
+          url: https://www.latent.space/
           logo: https://latentspace.ai/favicon.ico
           description: 每工作日更新的 AI 日刊
         - title: DailyBit
@@ -605,7 +613,7 @@
           description: 交互式世界历史地图
 
 - taxonomy: 冷备份
-  icon: fas fa-pencil-alt fa-lg
+  icon: fas fa-archive fa-lg
   list: 
     - term: 杂项工具
       links:

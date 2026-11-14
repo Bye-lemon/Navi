@@ -1,8 +1,25 @@
-{{ if $.Site.Params.nightMode }}
-<body class="io-black-mode">
-{{ else }}
-<body class="io-grey-mode">
-{{ end }}
+<body class="{{ if .Site.Params.nightMode }}io-black-mode{{ else }}io-grey-mode{{ end }}">
+<script>
+    // 与 <head> 中的 color-scheme 保持一致，避免主题闪烁。
+    (() => {
+        const scheme = document.querySelector('meta[name="color-scheme"]')?.content;
+        const dark = scheme !== "light";
+        document.body.classList.toggle("io-black-mode", dark);
+        document.body.classList.toggle("io-grey-mode", !dark);
+    })();
+</script>
+<script>
+    // 在卡片图片开始加载前挂上兜底监听，避免首屏图片加载失败时错过 error 事件。
+    document.addEventListener("error", (event) => {
+        const image = event.target;
+        if (!(image instanceof HTMLImageElement)) return;
+        const fallback = image.dataset.fallback;
+        if (!fallback || image.dataset.fallbackApplied === "true") return;
+        image.dataset.fallbackApplied = "true";
+        image.removeAttribute("srcset");
+        image.src = fallback;
+    }, true);
+</script>
     {{ if $.Site.Params.enablePreLoad }}
     <div id="loading">
         <style>
@@ -72,13 +89,13 @@
                 <div class="sidebar-logo border-bottom border-color">
                     <!-- logo -->
                     <div class="logo overflow-hidden">
-                        <a href="" class="logo-expanded">
+                        <a href="{{ $.Site.Home.RelPermalink }}" class="logo-expanded">
                             <img src="{{ absURL $.Site.Params.images.logoExpandLight }}" height="40" class="logo-light"
                                 alt="{{ .Site.Title }}">
                             <img src="{{ absURL $.Site.Params.images.logoExpandDark }}" height="40" class="logo-dark d-none"
                                 alt="{{ .Site.Title }}">
                         </a>
-                        <a href="" class="logo-collapsed">
+                        <a href="{{ $.Site.Home.RelPermalink }}" class="logo-collapsed">
                             <img src="{{ absURL $.Site.Params.images.logoCollapseLight }}" height="40" class="logo-light"
                                 alt="{{ .Site.Title }}">
                             <img src="{{ absURL $.Site.Params.images.logoCollapseDark }}" height="40" class="logo-dark d-none"
@@ -87,7 +104,7 @@
                     </div>
                     <!-- logo end -->
                 </div>
-                <div class="sidebar-menu flex-fill">
+                <nav class="sidebar-menu flex-fill" aria-label="分类导航">
                     <div class="sidebar-scroll">
                         <div class="sidebar-menu-inner">
                             <ul>
@@ -95,9 +112,9 @@
                                     {{ if .list }}
                                     <li class="sidebar-item">
                                         <a href="#{{ range first 1 .list }}{{ md5 .term }}{{ end }}" class="smooth change-href" data-change="#{{ range first 1 .list }}{{ md5 .term }}{{ end }}">    
-                                            <i class="{{ .icon }} icon-fw icon-lg mr-2"></i>
+                                            <i class="{{ .icon }} icon-fw icon-lg mr-2" aria-hidden="true"></i>
                                             <span>{{ .taxonomy }}</span>
-                                            <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
+                                            <i class="iconfont icon-arrow-r-m sidebar-more text-sm" aria-hidden="true"></i>
                                         </a>
                                         <ul>
                                             {{ range .list }}
@@ -108,7 +125,7 @@
                                     {{ else }}
                                     <li class="sidebar-item">
                                         <a href="#{{ md5 .taxonomy }}" class="smooth">
-                                            <i class="{{ .icon }} fa-lg icon-fw icon-lg mr-2"></i>
+                                            <i class="{{ .icon }} fa-lg icon-fw icon-lg mr-2" aria-hidden="true"></i>
                                             <span>{{ .taxonomy }}</span>
                                         </a>
                                     </li>
@@ -117,16 +134,17 @@
                             </ul>           
                         </div>
                     </div>
-                </div>
+                </nav>
                 <div class="border-top py-2 border-color">
                     <div class="flex-bottom">
                         <ul>
-                            <li id="menu-item-237"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-237 sidebar-item">
-                                <a href="https://bye-lemon.github.io" target="_blank">
-                                    <i class="fas fa-file-upload icon-fw icon-lg mr-2"></i>
+                            {{ with $.Site.Params.authorPage }}
+                            <li class="sidebar-item">
+                                <a href="{{ . }}" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-user icon-fw icon-lg mr-2" aria-hidden="true"></i>
                                     <span>个人主页</span></a>
                             </li>
+                            {{ end }}
                         </ul>
                     </div>
                 </div>

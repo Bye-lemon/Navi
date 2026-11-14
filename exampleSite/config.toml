@@ -11,7 +11,8 @@ publishDir            = "public"				# 站点静态文件保存目录
 [params]
     author        = "Li Yingping"
     description   = "英平的任意门"
-    about         = "https://github.com/Bye-lemon"	          # 左侧导航栏的"关于导航"页面(./about)
+    about         = "https://github.com/Bye-lemon"	          # 作者/关于链接（当前模板未直接使用）
+    authorPage    = "https://bye-lemon.github.io"                    # 左侧导航底部“个人主页”链接
     repository    = "https://github.com/Bye-lemon/Navi"  
     enablePreLoad = true					# 网站完全打开前预加载动画
     textPreLoad   = "英平的任意门"				# 预加载的动画文字, 只有当enablePreLoad=true时生效

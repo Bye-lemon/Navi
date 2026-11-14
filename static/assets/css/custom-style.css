@@ -6,8 +6,16 @@ body,html{font-size:14px;}
 .sidebar-popup.sidebar-menu-inner ul{width:90px}
 .sidebar-popup.sidebar-menu-inner ul li{width:90px}
 
-/*隐藏左导航scrollbar*/
-.sidebar-menu.flex-fill::-webkit-scrollbar{display:none}
+/*左导航滚动条：使用标准属性，保留可发现性（不再完全隐藏）*/
+.sidebar-menu.flex-fill{
+    scrollbar-width:thin;
+    scrollbar-color:rgba(136,136,136,.45) transparent;
+}
+@supports not (scrollbar-color:auto){
+    .sidebar-menu.flex-fill::-webkit-scrollbar{width:6px;height:6px}
+    .sidebar-menu.flex-fill::-webkit-scrollbar-thumb{background:rgba(136,136,136,.45);border-radius:3px}
+    .sidebar-menu.flex-fill::-webkit-scrollbar-track{background:transparent}
+}
 
 /*搜索框搜索图标颜色*/
 #search button i{color:#6C757D;font-size:18px}
@@ -115,16 +123,141 @@ footer.main-footer .footer-text a:hover {
 }
 
 
+/* ==========================================================================
+   现代化改造（2026-11）
+   - 原生 color-scheme / accent-color / 焦点可见性 / 减少动效
+   - 原生 <dialog> 搜索弹层
+   - native radio 直接绘制选中标记，不再隐藏 input 后借用 label
+   ========================================================================== */
 
+:root{
+    color-scheme:light dark;
+    accent-color:#f1404b;
+}
+:root:has(> head > meta[name="color-scheme"][content="dark"]){color-scheme:dark}
+:root:has(> head > meta[name="color-scheme"][content="light"]){color-scheme:light}
 
+::selection{background:#f1404b;color:#fff}
 
+html{scroll-behavior:smooth;scroll-padding-top:90px}
 
+/* 搜索区背景图由 <head> 中的 CSS 变量提供，主题切换无需 JS 改内联样式 */
+.header-big.css-color{background-image:var(--search-image-light)}
+.io-black-mode .header-big.css-color{background-image:var(--search-image-dark)}
 
+/* 键盘焦点始终可见 */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible{
+    outline:2px solid #f1404b;
+    outline-offset:2px;
+}
 
+/* 搜索类型：input 本身即点击目标，选中三角画在 input 上 */
+.search-type li{position:relative}
+.search-type input[type="radio"]{
+    appearance:none;
+    position:absolute;
+    inset:0;
+    inline-size:100%;
+    block-size:100%;
+    margin:0;
+    padding:0;
+    border:0;
+    background:transparent;
+    cursor:pointer;
+    z-index:1;
+}
+.search-type input[type="radio"]::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:50%;
+    margin-left:-8px;
+    border:8px solid transparent;
+    border-bottom-width:0;
+    border-top-color:rgba(0,0,0,.6);
+    opacity:0;
+}
+.search-type input[type="radio"]:checked::before{opacity:1}
+.search-type input[type="radio"]:focus-visible{
+    outline:2px solid currentColor;
+    outline-offset:2px;
+    border-radius:3px;
+}
+.header-big:not(.no-bg) .search-type input[type="radio"]::before{border-top-color:#fff}
+/* 移除旧版画在 label 上的三角 */
+.header-big .search-type input:checked+label:before{content:none}
 
+/* 原生 <dialog> 搜索弹层 */
+.search-dialog{
+    inline-size:min(92vw,800px);
+    max-inline-size:none;
+    max-block-size:calc(100dvh - 2rem);
+    margin:auto;
+    padding:0;
+    border:0;
+    background:transparent;
+    color:inherit;
+    overflow:visible;
+}
+.search-dialog::backdrop{
+    background:rgba(0,0,0,.5);
+    backdrop-filter:blur(10px);
+    overscroll-behavior:contain;
+}
+.search-dialog:modal{
+    overscroll-behavior:contain;
+}
+.search-dialog[open]{
+    animation:dialog-in .18s ease-out;
+}
+@keyframes dialog-in{
+    from{opacity:0;transform:translateY(8px) scale(.98)}
+}
+.search-dialog__content{
+    position:relative;
+    overflow:auto;
+    max-block-size:calc(100dvh - 2rem);
+}
+.search-dialog__close{
+    position:absolute;
+    top:.5rem;
+    right:.5rem;
+    z-index:2;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    inline-size:2.75rem;
+    block-size:2.75rem;
+    padding:0;
+    border:0;
+    border-radius:50%;
+    background:transparent;
+    color:#6c757d;
+    cursor:pointer;
+}
+.search-dialog__close:hover{color:#f1404b}
+.io-black-mode .search-dialog__close{color:#ddd}
+.io-black-mode .search-dialog__close:hover{color:#fff}
 
+/* 分类标题改为 h2 后保持原有 h4 的上下间距 */
+.content-site h2.text-lg{margin-top:1.33em}
 
+/* 二维码卡片使用 button 时的基础样式（当前数据未使用 qrcode 字段） */
+.url-card button.card{width:100%;font:inherit;color:inherit;text-align:inherit;cursor:pointer}
 
-
-
-
+@media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+    }
+    .search-dialog[open]{animation:none}
+}

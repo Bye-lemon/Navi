@@ -1,90 +1,116 @@
-//关键词sug
-var hotList = 0;
-$(function() {
-    //当键盘键被松开时发送Ajax获取数据
-    $('#search-text').keyup(function() {
-        var keywords = $(this).val();
-        if (keywords == '') { $('#word').hide(); return };
-        $.ajax({
-            url: 'https://suggestion.baidu.com/su?wd=' + keywords,
-            dataType: 'jsonp',
-            jsonp: 'cb', //回调函数的参数名(键值)key
-            // jsonpCallback: 'fun', //回调函数名(值) value
-            beforeSend: function() {
-                // $('#word').append('<li>正在加载。。。</li>');
-            },
-            success: function(res) {
-                $('#word').empty().show();
-                hotList = res.s.length;
-                if (hotList) {
-                    $("#word").css("display", "block");
-                    for (var i = 0; i < hotList-1; i++) {
-                        if (i===hotList-1){
-                            $("#word").append('<li id="lastHot"><span>' + (i + 1) + "</span>" + res.s[i] + "</li>");
-                        }
-                        else{
-                            $("#word").append("<li><span>" + (i + 1) + "</span>" + res.s[i] + "</li>");
-                        }
-                        $("#word li").eq(i).click(function() {
-                            $('#search-text').val(this.childNodes[1].nodeValue);
-                            window.open(thisSearch + this.childNodes[1].nodeValue);
-                            $('#word').css('display', 'none')
-                        });
-                        if (i === 0) {
-                            $("#word ul li").eq(i).css({
-                                "border-top": "none"
-                            });
-                            $("#word ul span").eq(i).css({
-                                "color": "#fff",
-                                "background": "#f54545"
-                            })
-                        } else if (i === 1) {
-                            $("#word ul span").eq(i).css({
-                                "color": "#fff",
-                                "background": "#ff8547"
-                            })
-                        } else if (i === 2) {
-                            $("#word ul span").eq(i).css({
-                                "color": "#fff",
-                                "background": "#ffac38"
-                            })
-                        }
-                    } 
-                } else {
-                        $("#word").css("display", "none")
-                }
-                    
-                /*
-                if (data.s == '') {
-                    //$('#word').append('<div class="error">Not find  "' + keywords + '"</div>');
-                    $('#word').empty();
-                    $('#word').hide();
-                }
-                $.each(data.s, function() {
-                    $('#word').append('<li>' + this + '</li>');
-                })*/
-            },
-            error: function() {
-                $('#word').empty().show();
-                //$('#word').append('<div class="click_work">Fail "' + keywords + '"</div>');
-                $('#word').hide();
-            }
-        })
-    })
+// 百度搜索联想（原生 JS + JSONP）。
+// 百度联想接口只提供 JSONP，因此这里保留脚本注入方式，但不依赖 jQuery。
+(() => {
+    "use strict";
 
-    //点击搜索数据复制给搜索框
-    $(document).on('click', '#word li', function() {
-        var word = $(this).text().replace(/^[0-9]/, '');
-        $('#search-text').val(word);
-        $('#word').empty();
-        $('#word').hide();
-        //$("form").submit();
-         $('.submit').trigger('click');//触发搜索事件
-    })
-    //$(document).on('click', '.container,.banner-video,nav', function() {
-    $(document).on('click', '.io-grey-mode', function() {
-        $('#word').empty();
-        $('#word').hide();
-    })
+    const input = document.getElementById("search-text");
+    const list = document.getElementById("word");
+    const form = input?.closest("form");
+    if (!input || !list || !form) return;
 
-})
+    const searchRoot = input.closest(".s-search") ?? form;
+    const DEBOUNCE_MS = 200;
+    const TIMEOUT_MS = 5000;
+    let timer = 0;
+    let sequence = 0;
+    let activeScript = null;
+
+    const hide = () => {
+        list.hidden = true;
+        list.replaceChildren();
+    };
+
+    const jsonp = (url, callbackName) => new Promise((resolve, reject) => {
+        const script = document.createElement("script");
+        const timerId = window.setTimeout(() => {
+            cleanup();
+            reject(new Error("suggestion request timed out"));
+        }, TIMEOUT_MS);
+
+        function cleanup() {
+            window.clearTimeout(timerId);
+            delete window[callbackName];
+            script.remove();
+            if (activeScript === script) activeScript = null;
+        }
+
+        window[callbackName] = (data) => {
+            cleanup();
+            resolve(data);
+        };
+        script.onerror = () => {
+            cleanup();
+            reject(new Error("suggestion request failed"));
+        };
+        script.src = url;
+        activeScript = script;
+        document.head.append(script);
+    });
+
+    const render = (items) => {
+        list.replaceChildren();
+        items.slice(0, 9).forEach((text, index) => {
+            const item = document.createElement("li");
+            const rank = document.createElement("span");
+            rank.textContent = String(index + 1);
+            item.dataset.value = text;
+            item.append(rank, document.createTextNode(text));
+            list.append(item);
+        });
+        list.hidden = items.length === 0;
+    };
+
+    const request = async (keyword, currentSequence) => {
+        const callbackName = `__baiduSug${Date.now()}_${currentSequence}`;
+        try {
+            const data = await jsonp(
+                `https://suggestion.baidu.com/su?wd=${encodeURIComponent(keyword)}&cb=${callbackName}`,
+                callbackName
+            );
+            if (currentSequence !== sequence) return;
+            const items = Array.isArray(data?.s) ? data.s : [];
+            render(items);
+        } catch (_) {
+            if (currentSequence === sequence) hide();
+        }
+    };
+
+    input.addEventListener("input", () => {
+        const keyword = input.value.trim();
+        window.clearTimeout(timer);
+        if (!keyword) {
+            sequence += 1;
+            hide();
+            return;
+        }
+        timer = window.setTimeout(() => {
+            request(keyword, ++sequence);
+        }, DEBOUNCE_MS);
+    });
+
+    list.addEventListener("click", (event) => {
+        const item = event.target.closest("li");
+        if (!item || !item.dataset.value) return;
+        input.value = item.dataset.value;
+        hide();
+        form.requestSubmit();
+    });
+
+    input.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") hide();
+    });
+
+    document.addEventListener("click", (event) => {
+        if (!searchRoot.contains(event.target)) hide();
+    });
+
+    input.addEventListener("blur", () => {
+        // 延迟隐藏，保证联想项可以接收点击。
+        window.setTimeout(hide, 150);
+    });
+
+    window.addEventListener("pagehide", () => {
+        activeScript?.remove();
+        activeScript = null;
+    });
+})();

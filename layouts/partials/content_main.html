@@ -1,57 +1,41 @@
-<div id="content" class="content-site customize-site">
+{{- $fallback := "" -}}
+{{- with .Site.Params.defaultLogo }}{{ $fallback = absURL . }}{{ end -}}
+<main id="content" class="content-site customize-site">
+    <h1 class="sr-only">{{ .Site.Title }} - {{ .Site.Params.description }}</h1>
     {{ range .Site.Data.webstack }}
         {{ if .list }}
             {{ range .list }}
-	    <!--正文网址导航--》
             <!-- {{ .term }} -->
             <div class="d-flex flex-fill">
-                <h4 class="text-gray text-lg mb-4">
-                    <i class="site-tag iconfont icon-tag icon-lg mr-1" id="{{ md5 .term }}"></i>
+                <h2 class="text-gray text-lg mb-4">
+                    <i class="site-tag iconfont icon-tag icon-lg mr-1" id="{{ md5 .term }}" aria-hidden="true"></i>
                     {{ .term }}
-                </h4>
+                </h2>
                 <div class="flex-fill"></div>
-                <!--a class='btn-move text-xs' href='#'>more+</a-->
             </div>
-            <!--获取内容列表-->
             <div class="row">
                 {{ range .links }}
+                {{- $logo := .logo -}}
+                {{- if not (hasPrefix .logo "http") }}{{ $logo = absURL (printf "%s/%s" $.Site.Params.logosPath .logo) }}{{ end -}}
                 <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
                     <div class="url-body default">
-			<!--去除 Tooltip
-                        <a href="{{ .url }}" target="_blank" data-id="" data-url="{{ .url }}" class="card no-c mb-4" title="{{ .title }}">
-			去除 Tooltip -->
-			{{ if .qrcode }}
+                        {{ if .qrcode }}
                             {{ if findRE "http.*?(.|\n)*?" .qrcode }}
-                    	        <a href="javascript:" target="" class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-html="true" 
-                                title="<img src='{{ .qrcode }}' width='128'>">
+                            <button type="button" class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-html="true"
+                                title="<img src='{{ .qrcode }}' width='128' alt='{{ .title }} 二维码'>">
                             {{ else }}
-                                <a href="javascript:" target="" class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-html="true"
-                                title="<img src='{{ $.Site.Params.logosPath }}/{{ .qrcode }}' width='128'>">
+                            <button type="button" class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-html="true"
+                                title="<img src='{{ $.Site.Params.logosPath }}/{{ .qrcode }}' width='128' alt='{{ .title }} 二维码'>">
                             {{ end }}
                         {{ else }}
-                            <a href="{{ .url }}" target="_blank" data-id="" data-url="{{ .url }}"
-                            class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-original-title="{{ .description }}">
-			{{ end }}
+                            <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" data-url="{{ .url }}"
+                                class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-original-title="{{ .description }}">
+                        {{ end }}
                             <div class="card-body">
                                 <div class="url-content d-flex align-items-center">
                                     <div class="url-img mr-2 d-flex align-items-center justify-content-center">
-                                        {{ if findRE "http.*?(.|\n)*?" .logo }}
-					    {{ if $.Site.Params.defaultLogo }}
-                                            <img class="lazy" src="{{ .logo }}" data-src="{{ .logo }}"
-                                                onerror="javascript:this.src='{{ $.Site.Params.defaultLogo }}'" alt="{{ .title }}">
-					    {{ else }}
-					    <img class="lazy" src="{{ .logo }}" data-src="{{ .logo }}"
-                                                onerror="javascript:this.src='{{ .logo }}'" alt="{{ .title }}">
-					    {{ end }}
-                                        {{ else }}
-					    {{ if $.Site.Params.defaultLogo }}
-					    <img class="lazy" src="{{ $.Site.Params.logosPath }}/{{ .logo }}" data-src="{{ $.Site.Params.logosPath }}/{{ .logo }}"
-                                                onerror="javascript:this.src='{{ $.Site.Params.defaultLogo }}'" alt="{{ .title }}">
-					    {{ else }}
-                                            <img class="lazy" src="{{ $.Site.Params.logosPath }}/{{ .logo }}" data-src="{{ $.Site.Params.logosPath }}/{{ .logo }}"
-                                                onerror="javascript:this.src='{{ $.Site.Params.logosPath }}/{{ .logo }}'" alt="{{ .title }}">
-					    {{ end }}
-                                        {{ end }}
+                                        <img class="lazy" src="{{ $logo }}" data-src="{{ $logo }}" loading="lazy" decoding="async"
+                                            alt="{{ .title }}"{{ with $fallback }} data-fallback="{{ . }}"{{ end }}>
                                     </div>
                                     <div class="url-info flex-fill">
                                         <div class="text-sm overflowClip_1">
@@ -61,10 +45,11 @@
                                     </div>
                                 </div>
                             </div>
-                        </a>
-                        <a href="{{ .url }}" class="togo text-center text-muted is-views" data-id="689"
-                            data-toggle="tooltip" data-placement="right" title="直达" rel="nofollow">
-                            <i class="iconfont icon-goto"></i>
+                        {{ if .qrcode }}</button>{{ else }}</a>{{ end }}
+                        <a href="{{ .url }}" class="togo text-center text-muted is-views"
+                            data-toggle="tooltip" data-placement="right" title="直达" rel="nofollow noopener noreferrer"
+                            aria-label="直达 {{ .title }}">
+                            <i class="iconfont icon-goto" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -74,56 +59,36 @@
             <!--END {{ .term }} -->
             {{ end }}
         {{ else }}
-	    <!--常用推荐-->
             <!-- {{ .taxonomy }} -->
             <div class="d-flex flex-fill">
-                <h4 class="text-gray text-lg mb-4">
-                    <i class="site-tag iconfont icon-tag icon-lg mr-1" id="{{ md5 .taxonomy }}"></i>
+                <h2 class="text-gray text-lg mb-4">
+                    <i class="site-tag iconfont icon-tag icon-lg mr-1" id="{{ md5 .taxonomy }}" aria-hidden="true"></i>
                     {{ .taxonomy }}
-                </h4>
-                <!--div class="flex-fill"></div>
-                <a class='btn-move text-xs' href='#'>more+</a-->
+                </h2>
             </div>
-            <!--获取内容列表-->
             <div class="row">
                 {{ range .links }}
+                {{- $logo := .logo -}}
+                {{- if not (hasPrefix .logo "http") }}{{ $logo = absURL (printf "%s/%s" $.Site.Params.logosPath .logo) }}{{ end -}}
                 <div class="url-card col-6  col-sm-6 col-md-4 col-xl-5a col-xxl-6a">
                     <div class="url-body default">
-			<!--去除 Tooltip
-			<a href="{{ .url }}" target="_blank" data-id="" data-url="{{ .url }}" class="card no-c mb-4" title="{{ .title }}">
-			-->
-			{{ if .qrcode }}
+                        {{ if .qrcode }}
                             {{ if findRE "http.*?(.|\n)*?" .qrcode }}
-			        <a href="javascript:" target="" class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-html="true" 
-                                title="<img src='{{ .qrcode }}' width='128'>">
+                            <button type="button" class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-html="true"
+                                title="<img src='{{ .qrcode }}' width='128' alt='{{ .title }} 二维码'>">
                             {{ else }}
-                                <a href="javascript:" target="" class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-html="true"
-                                title="<img src='{{ $.Site.Params.logosPath }}/{{ .qrcode }}' width='128'>">
+                            <button type="button" class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-html="true"
+                                title="<img src='{{ $.Site.Params.logosPath }}/{{ .qrcode }}' width='128' alt='{{ .title }} 二维码'>">
                             {{ end }}
                         {{ else }}
-                            <a href="{{ .url }}" target="_blank" data-id="" data-url="{{ .url }}" 
-                            class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-original-title="{{ .description }}">
-			{{ end }}
+                            <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" data-url="{{ .url }}"
+                                class="card no-c mb-4" data-toggle="tooltip" data-placement="bottom" data-original-title="{{ .description }}">
+                        {{ end }}
                             <div class="card-body">
                                 <div class="url-content d-flex align-items-center">
                                     <div class="url-img mr-2 d-flex align-items-center justify-content-center">
-                                        {{ if findRE "http.*?(.|\n)*?" .logo }}
-					    {{ if $.Site.Params.defaultLogo }}
-					    <img class="lazy" src="{{ .logo }}" data-src="{{ .logo }}"
-                                                onerror="javascript:this.src='{{ $.Site.Params.defaultLogo }}'" alt="{{ .title }}">
-					    {{ else }}
-                                            <img class="lazy" src="{{ .logo }}" data-src="{{ .logo }}"
-                                                onerror="javascript:this.src='{{ .logo }}'" alt="{{ .title }}">
-					    {{ end }}
-                                        {{ else }}
-					    {{ if $.Site.Params.defaultLogo }}
-                                            <img class="lazy" src="{{ $.Site.Params.logosPath }}/{{ .logo }}" data-src="{{ $.Site.Params.logosPath }}/{{ .logo }}"
-                                                onerror="javascript:this.src='{{ $.Site.Params.defaultLogo }}'" alt="{{ .title }}">
-					    {{ else }}
-                                            <img class="lazy" src="{{ $.Site.Params.logosPath }}/{{ .logo }}" data-src="{{ $.Site.Params.logosPath }}/{{ .logo }}"
-                                                onerror="javascript:this.src='{{ $.Site.Params.logosPath }}/{{ .logo }}'" alt="{{ .title }}">
-					    {{ end }}
-                                        {{ end }}
+                                        <img class="lazy" src="{{ $logo }}" data-src="{{ $logo }}" loading="lazy" decoding="async"
+                                            alt="{{ .title }}"{{ with $fallback }} data-fallback="{{ . }}"{{ end }}>
                                     </div>
                                     <div class="url-info flex-fill">
                                         <div class="text-sm overflowClip_1">
@@ -133,10 +98,11 @@
                                     </div>
                                 </div>
                             </div>
-                        </a>
-                        <a href="{{ .url }}" class="togo text-center text-muted is-views" data-id="689"
-                            data-toggle="tooltip" data-placement="right" title="直达" rel="nofollow">
-                            <i class="iconfont icon-goto"></i>
+                        {{ if .qrcode }}</button>{{ else }}</a>{{ end }}
+                        <a href="{{ .url }}" class="togo text-center text-muted is-views"
+                            data-toggle="tooltip" data-placement="right" title="直达" rel="nofollow noopener noreferrer"
+                            aria-label="直达 {{ .title }}">
+                            <i class="iconfont icon-goto" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -145,5 +111,5 @@
             <br />
             <!--END {{ .taxonomy }} -->
         {{ end }}
-    {{ end }}                        
-</div>
+    {{ end }}
+</main>

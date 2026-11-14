@@ -1,5 +1,5 @@
 <div class="header-big  post-top css-color mb-4" id="search-bg" style="">
-    <div class="s-search">
+    <search class="s-search" aria-label="站点搜索">
         <div id="search" class="s-search mx-auto">
             <div id="search-list-menu" class="hide-type-list">
                 <div class="s-type text-center">
@@ -13,41 +13,42 @@
             </div>
 
             <form action="https://www.google.com/search?q=" method="get" target="_blank" class="super-search-fm">
-                <input type="text" id="search-text" class="form-control smart-tips search-key" 
-                    zhannei="" placeholder="输入关键字搜索" style="outline:0" autocomplete="off">
-                <button class="submit" type="submit"><i class="iconfont icon-search"></i></button>
+                <label class="sr-only" for="search-text">搜索关键词</label>
+                <input type="search" id="search-text" name="q" class="form-control smart-tips search-key"
+                    zhannei="" placeholder="输入关键字搜索" autocomplete="off" enterkeyhint="search" spellcheck="false">
+                <button class="submit" type="submit" aria-label="搜索"><i class="iconfont icon-search" aria-hidden="true"></i></button>
             </form>
 
             <div id="search-list" class="hide-type-list">
                 <div class="search-group group-a">
                     <ul class="search-type">
-                        <li><input hidden="" type="radio" name="type" checked="checked"
+                        <li><input type="radio" name="type" checked="checked"
                             id="type-google"
-                            value="https://www.google.com/search?q=" 
+                            value="https://www.google.com/search?q="
                             data-placeholder="谷歌搜索">
             <label for="type-google"><span class="text-muted">谷歌</span></label>
                     </li>
-		        <li><input hidden="" type="radio" name="type"
+		        <li><input type="radio" name="type"
                                 id="type-baidu"
-                                value="https://www.baidu.com/s?wd=" 
+                                value="https://www.baidu.com/s?wd="
                                 data-placeholder="百度一下，你就知道">
                             <label for="type-baidu"><span class="text-muted">百度</span></label>
                         </li>
-				<li><input hidden="" type="radio" name="type"
+				<li><input type="radio" name="type"
                                 id="type-yahoo"
-                                value="https://search.yahoo.co.jp/search?p=" 
+                                value="https://search.yahoo.co.jp/search?p="
                                 data-placeholder="Yahoo Japan 搜索">
                             <label for="type-yahoo"><span class="text-muted">雅虎日本</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" 
+                        <li><input type="radio" name="type"
                                 id="type-bing"
-                                value="https://cn.bing.com/search?q=" 
+                                value="https://cn.bing.com/search?q="
                                 data-placeholder="微软 Bing 搜索">
 			    <label for="type-bing"><span class="text-muted">必应</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" 
+                        <li><input type="radio" name="type"
                                 id="type-scholar"
-                                value="https://scholar.google.com/scholar?q=" 
+                                value="https://scholar.google.com/scholar?q="
                                 data-placeholder="Google Scholar 搜索/文章标题/关键字">
 			    <label for="type-scholar"><span class="text-muted">文献</span></label>
                         </li>
@@ -55,27 +56,27 @@
                 </div>
                 <div class="search-group group-b">
                     <ul class="search-type">
-                        <li><input hidden="" type="radio" name="type" 
+                        <li><input type="radio" name="type"
                                 id="type-google1"
-                                value="https://www.google.com/search?q=" 
+                                value="https://www.google.com/search?q="
                                 data-placeholder="谷歌搜索">
                             <label for="type-google1"><span class="text-muted">谷歌</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" 
+                        <li><input type="radio" name="type"
                                 id="type-baidu1"
-                                value="https://www.baidu.com/s?wd=" 
+                                value="https://www.baidu.com/s?wd="
                                 data-placeholder="百度一下，你就知道">
                             <label for="type-baidu1"><span class="text-muted">百度</span></label>
                         </li>
-						<li><input hidden="" type="radio" name="type" 
+						<li><input type="radio" name="type"
                                 id="type-yahoo1"
-                                value="https://search.yahoo.co.jp/search?p=" 
+                                value="https://search.yahoo.co.jp/search?p="
                                 data-placeholder="Yahoo Japan 搜索">
                             <label for="type-yahoo1"><span class="text-muted">雅虎日本</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" 
+                        <li><input type="radio" name="type"
                                 id="type-bing1"
-                                value="https://cn.bing.com/search?q=" 
+                                value="https://cn.bing.com/search?q="
                                 data-placeholder="微软 Bing 搜索">
                             <label for="type-bing1"><span class="text-muted">必应</span></label>
                         </li>
@@ -83,27 +84,27 @@
                 </div>
                 <div class="search-group group-d">
                     <ul class="search-type">
-                        <li><input hidden="" type="radio" name="type" 
-                                id="type-zhihu" 
-                                value="https://www.zhihu.com/search?type=content&q=" 
+                        <li><input type="radio" name="type"
+                                id="type-zhihu"
+                                value="https://www.zhihu.com/search?type=content&q="
                                 data-placeholder="知乎">
                             <label for="type-zhihu"><span class="text-muted">知乎</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" 
-                                id="type-wechat" 
-                                value ="https://weixin.sogou.com/weixin?type=2&query=" 
+                        <li><input type="radio" name="type"
+                                id="type-wechat"
+                                value ="https://weixin.sogou.com/weixin?type=2&query="
                                 data-placeholder="微信">
                             <label for="type-wechat"><span class="text-muted">微信</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" 
-                                 id="type-weibo" 
-                                 value="https://s.weibo.com/weibo/" 
+                        <li><input type="radio" name="type"
+                                 id="type-weibo"
+                                 value="https://s.weibo.com/weibo/"
                                  data-placeholder="微博">
                             <label for="type-weibo"><span class="text-muted">微博</span></label>
                         </li>
-                        <li><input hidden="" type="radio" name="type" 
-                                 id="type-douban" 
-                                 value="https://www.douban.com/search?q=" 
+                        <li><input type="radio" name="type"
+                                 id="type-douban"
+                                 value="https://www.douban.com/search?q="
                                  data-placeholder="豆瓣">
                             <label for="type-douban"><span class="text-muted">豆瓣</span></label>
                         </li>
@@ -111,8 +112,8 @@
                 </div>
             </div>
             <div class="card search-smart-tips search-hot-text">
-                <ul id="word" style="display: none"></ul>
+                <ul id="word" hidden></ul>
             </div>
         </div>
-    </div>
+    </search>
 </div>
