@@ -19,9 +19,9 @@ Hugo 静态网址导航：**仓库根目录本身是主题**，`exampleSite/` �
 | 代码仓库 | <https://github.com/Bye-lemon/Navi> |
 | 发布分支 | `main` → Actions 构建 → 产物推到同仓库 `gh-pages` |
 | 构建工具 | Hugo **0.122.0**（非 extended）；仓库没有 Node 构建步骤 |
-| 前端 | 原生 HTML/CSS/ES2020；jQuery/Bootstrap 只服务主题旧脚本，新代码不依赖 |
+| 前端 | 原生 HTML/CSS/ES2020；无 jQuery、无 Bootstrap、无构建步骤 |
 | 站点语言 | 中文 `zh-CN`；标题 `LML - Li's Misc Library` |
-| 当前规模 | 7 个分类 / 18 个子分类 / **140** 条网址（首页 `class="url-card"` 数量应等于此值） |
+| 当前规模 | 7 个分类 / 18 个子分类 / **143** 条网址（首页 `class="desk-row"` 数量应等于此值） |
 | 许可 | MIT（`LICENSE`，版权人仍是模板占位符 `YOUR_NAME_HERE`） |
 
 当前各分类基线（改动后若数量变化，请顺手更新本节）：
@@ -29,13 +29,13 @@ Hugo 静态网址导航：**仓库根目录本身是主题**，`exampleSite/` �
 | 分类 | 子分类数 | 链接数 |
 |---|---:|---:|
 | 常用推荐 | 0（直挂） | 11 |
-| AI 相关 | 5 | 52 |
+| AI 相关 | 5 | 53 |
 | 开发相关 | 4 | 27 |
-| 科研办公 | 2 | 21 |
+| 科研办公 | 2 | 22 |
 | 素材资源 | 2 | 7 |
-| 资讯学习 | 4 | 19 |
+| 资讯学习 | 4 | 20 |
 | 冷备份 | 1 | 3 |
-| **合计** | **18** | **140** |
+| **合计** | **18** | **143** |
 
 ## 3. 目录地图
 
@@ -45,27 +45,33 @@ Hugo 静态网址导航：**仓库根目录本身是主题**，`exampleSite/` �
 | `exampleSite/config.toml` | 站点参数：标题、作者、logo、默认深色、天气 key、统计、页脚 | 偶尔，改前确认 |
 | `exampleSite/data/headers.yml` | 顶部横向菜单（首页 / 作者） | 偶尔 |
 | `exampleSite/content/about.md` | “关于网站”页正文 | 偶尔 |
-| `layouts/index.html` | 首页拼装顺序（header → sidebar → 搜索 → 卡片 → 页脚） | 很少 |
+| `layouts/index.html` | 首页拼装顺序（header → desk_home：顶栏 → 分类栏 → 索引列表） | 很少 |
 | `layouts/partials/*.html` | 各区块模板，见下一节 | 改样式/结构时 |
-| `layouts/_default/single.html` | 内容页（about）模板，无侧边栏 | 很少 |
-| `layouts/404.html` | 404 页（完整布局 + 返回首页） | 很少 |
-| `static/assets/css/custom-style.css` | **本项目的自定义样式** | 视觉调整 |
-| `static/assets/js/site.js` | 主题切换、原生 `<dialog>` 搜索、图片兜底、加载动画 | 交互改动 |
-| `static/assets/js/content-search.js` | 搜索框百度联想（原生 JS + JSONP） | 很少 |
-| `static/assets/css/style-3.03029.1.css` 等 | 第三方压缩样式/脚本 | **只读** |
-| `static/assets/fontawesome-5.15.4/` | Font Awesome 5 全套资源 | **只读** |
+| `layouts/_default/single.html` | 内容页（about）模板：共用顶栏 + 正文窄栏 | 很少 |
+| `layouts/404.html` | 404 页：共用顶栏 + 居中提示 | 很少 |
+| `static/assets/css/desk.css` | **全站唯一自定义样式**（首页 / 关于 / 404） | 视觉调整 |
+| `static/assets/js/site.js` | 主题切换、回到顶部（三个页面共用） | 交互改动 |
+| `static/assets/js/desk.js` | 首页索引台：即时筛选、高亮、键盘、滚动联动、搜索引擎切换 | 交互改动 |
+| `static/assets/fonts/brand-jp.woff2` | 字标用的 Noto Serif JP 子集（6 字，OFL，同目录 OFL.txt） | 换字标时重建 |
+| `static/assets/fontawesome-5.15.4/` | Font Awesome 5（分类图标） | **只读** |
 | `static/assets/images/` | 站点图片、`logos/default.webp` 兜底 logo | 加本地 logo 时 |
 | `.github/workflows/hugo.yml` | 构建 + 部署流水线 | 一般不动 |
 | `.history/` | JetBrains 本地历史，已 gitignore | **永远不要读取或提交** |
 
-模板分工：
+模板分工（2026-11 首页改版后的实际结构）：
 
 - `header.html`：`<head>`、CSS/JS 引入、统计代码、`<title>`
-- `sidebar.html`：`<body>` 与主题 class、左侧分类导航、页面加载动画
-- `content_header.html`：顶部横幅、横向菜单、天气、一言
-- `content_search.html` / `modal_search.html`：首页搜索区 / 右下角搜索弹窗
-- `content_main.html`：按 `webstack.yml` 渲染卡片（**两套几乎重复的循环**：有 `list` 与直挂 `links`）
-- `content_footer.html` / `footer.html`：页脚按钮（回到顶部/搜索/主题）、脚本加载；主题逻辑在 `site.js`
+- `desk_boot.html`：`<body>` 与主题 class、首帧应用主题、图片兜底监听（三个页面共用）
+- `desk_brand.html`：左上角品牌字标「英平的任意門」——日语明朝体 + 振假名；汉字用 `門`（日语形）而不是简体 `门`（日语字体里没有这个字），`lang="ja"` 让浏览器优先选日文字形。
+  - 假名**不用原生 `<ruby>`**：各引擎对 ruby 注释的定位不一致，会被行盒顶端裁掉；改成 5 列网格把两段假名压在对应汉字上。
+  - 字体：`static/assets/fonts/brand-jp.woff2`（Noto Serif JP 子集，只含那 6 个汉字，3.3KB，OFL 许可，许可证在同目录 `OFL.txt`）。换字或加字时要重新子集化：
+    `python -m fontTools.subset NotoSerifJP.ttf --text="英平的任意門" --flavor=woff2 --no-hinting --desubroutinize --output-file=brand-jp.woff2`，并同步 `desk.css` 里 `@font-face` 的 `unicode-range`。
+- `desk_home.html`：首页顶栏（品牌 / 万能搜索框 / 搜索引擎菜单 / 计数 / 关于）+ 分类栏 + 索引列表 + 空状态
+- `desk_row.html`：单条索引行（logo / 站名 / 域名 / 描述 / 跳转箭头），带筛选用的 data 属性
+- `desk_fabs.html`：右下角浮动按钮（回到顶部 / 搜索 / 深色浅色）
+- `site.js` + `desk.js`：见目录地图
+
+2026-11 清理：旧的 7 个 partial（sidebar / content_header / content_search / content_main / content_footer / footer / modal_search）以及它们依赖的 jQuery、Bootstrap、Fancybox、iconfont、xenon/app-mini 等 30 多个资源文件已全部删除（历史在 git 里）。现在全站只有：**Font Awesome（分类图标）+ `desk.css` + `site.js` + `desk.js` + 字标字体**。
 
 ## 4. 数据模型（webstack.yml）
 
@@ -108,13 +114,13 @@ Hugo 静态网址导航：**仓库根目录本身是主题**，`exampleSite/` �
 | `description` | 否 | 一句话中文说明；同时用于卡片副标题与悬停 tooltip；可为空字符串 |
 | `qrcode` | 否 | 可选；有值时卡片变成“显示二维码”而不跳转。当前没有任何条目使用 |
 
-**logo 解析规则**（`content_main.html`）：
+**logo 解析规则**（`desk_row.html`）：
 
 1. 以 `http(s)://` 开头 → 原样使用；
 2. 否则拼成 `{{logosPath}}/{{logo}}`，即 `static/assets/images/logos/<文件名>`；
 3. 加载失败 → `site.js` 捕获 `error`，回退到 `data-fallback` 指向的 `defaultLogo`（`assets/images/logos/default.webp`）。
 
-目前 140 条**全部使用外链 logo**，`static/assets/images/logos/` 里只有 `default.webp`。要放本地 logo，把图片放进该目录，`logo` 只写文件名。
+目前 143 条**全部使用外链 logo**，`static/assets/images/logos/` 里只有 `default.webp`。要放本地 logo，把图片放进该目录，`logo` 只写文件名。
 
 **锚点规则（重要）**：
 
@@ -136,7 +142,7 @@ Hugo 静态网址导航：**仓库根目录本身是主题**，`exampleSite/` �
 8. 不要把 `public/`、`resources/`、临时构建目录、`.hugo_build.lock` 提交进仓库。
 9. **不要在仓库根目录创建 `config.toml`、`data/`、`content/`**——站点内容只属于 `exampleSite/`；CI 会把 `exampleSite/*` 拷到根目录，根目录出现同名内容会造成数据被覆盖或双份加载。
 10. 不要执行 CI 里的 `cp -R exampleSite/* .` 来本地构建（会污染工作区），用第 7 节的方式。
-11. 新增交互写进 `static/assets/js/site.js`（主题、对话框、图片兜底、加载动画）或 `content-search.js`；不要新增 jQuery 插件，也不要写内联 `onclick`/`onerror`/`javascript:`。
+11. 新增交互写进 `static/assets/js/desk.js`（首页筛选、键盘、滚动联动、搜索引擎）或 `site.js`（主题、回到顶部、图片兜底）；不要新增 jQuery 插件，也不要写内联 `onclick`/`onerror`/`javascript:`。
 12. 主题偏好固定存 `localStorage["color-scheme"]`（`light`/`dark`）；默认值由 `config.toml` 的 `nightMode` 决定，不要改键名或默认值。
 
 ## 6. 常见任务
@@ -147,7 +153,7 @@ Hugo 静态网址导航：**仓库根目录本身是主题**，`exampleSite/` �
 2. 按模板追加到该子分类 **末尾**（或用户指定位置），默认不排序、不插队。
 3. 字段顺序沿用邻居：`title` → `logo` → `url` → `description`（少数条目是 `url` 在 `logo` 前，保持该条目自身风格即可，不要顺手改）。
 4. 描述写一句中文，说明“这是什么/用来做什么”，不重复标题，尽量 ≤ 40 字；拿不准就留空 `''`。
-5. 构建验证 + 卡片计数 +1。
+5. 构建验证 + 索引行计数 +1。
 6. 提交信息示例：`nav: add Hugging Face Papers`。
 
 ### 6.2 新增 / 调整分类
@@ -159,8 +165,8 @@ Hugo 静态网址导航：**仓库根目录本身是主题**，`exampleSite/` �
 
 ### 6.3 调整外观
 
-- 颜色、间距、网格背景、卡片圆角 → 只改 `static/assets/css/custom-style.css`，追加到文件末尾并写中文注释说明用途。
-- 不要改 `style-3.03029.1.css`（上游压缩样式）；要覆盖就写在 `custom-style.css`。
+- 首页 / 关于 / 404 的颜色、间距、行高、分类栏宽度 → 改 `static/assets/css/desk.css`（变量集中在文件顶部的 `:root` 与 `body.io-black-mode` / `body.io-grey-mode` 两块），追加到文件末尾并写中文注释说明用途。
+- 旧的 `custom-style.css` / `style-3.03029.1.css` 已随旧 partial 一起删除；所有样式只写在 `desk.css`。
 - 改模板（`layouts/partials/*`）后必须全站构建，并确认首页、`/about/`、404 三处都正常。
 - 站点级开关（默认深色、预加载文字、logo、页脚版权、天气）在 `exampleSite/config.toml`。天气 key 是客户端 key，明文公开，**不要往仓库里加任何真正的私密 token**。
 
@@ -198,19 +204,19 @@ hugo --themesDir ../.. --baseURL http://127.0.0.1:1313/Navi/ -d /tmp/navi-public
 构建后检查：
 
 1. 退出码 0，无 `ERROR`；唯一可忽略的告警是 `found no layout file for "html" for kind "taxonomy"`（Hugo 默认 tags/categories 没有模板，不影响页面）。
-2. 卡片数：
+2. 索引行数：
 
 ```powershell
-(Select-String -Path "$env:TEMP\navi-public\index.html" -Pattern 'class="url-card' -AllMatches).Matches.Count
+(Select-String -Path "$env:TEMP\navi-public\index.html" -Pattern 'class="desk-row"' -AllMatches).Matches.Count
 ```
 
-   应等于 140 加上本次新增数。数量对不上说明 YAML 结构或缩进错了。
+   应等于 143 加上本次新增数。数量对不上说明 YAML 结构或缩进错了。
 3. 首页与 `/about/` 均返回 200；随机点开 2–3 个新条目确认能跳转。
 4. JS 语法自检（不需要 Node 构建）：
 
 ```powershell
 node --check static/assets/js/site.js
-node --check static/assets/js/content-search.js
+node --check static/assets/js/desk.js
 ```
 5. `git diff --stat` 只应包含你打算改的文件；`git status` 里不应出现构建产物。
 
@@ -231,30 +237,31 @@ node --check static/assets/js/content-search.js
 
 | # | 现象 | 位置 | 处理建议 |
 |---|---|---|---|
-| 1 | 没有站内导航全文搜索，搜索只转发到第三方引擎 | `content_search.html`、`modal_search.html`、`app-mini.js` | 这是功能缺口，不是改数据能解决的 |
-| 2 | 首页搜索区与搜索弹窗都存在 `id="search"`（上游遗留的重复 ID） | `content_search.html`、`modal_search.html` | 改 ID 会牵动 `app-mini.js` 的 `parents('#search')`，没有充分测试不要动 |
+| 1 | 站内检索是**纯前端按字符串筛 DOM**，没有分词/拼音/同义词 | `desk.js` | 命中只看站名、域名、描述（故意不含分类名，否则命中无法自证）；要更聪明得引入索引或分词，属新功能 |
+| 2 | 旧版式的搜索框 / 弹窗 partial 已删除，重复 `id="search"` 随之消失 | — | 无需处理 |
 | 3 | 所有 logo 都是外链，加载失败只回退到 `default.webp` | `webstack.yml` | 外链失效时只显示默认图；不要因此批量换 logo |
 | 4 | 和风天气 key 明文 | `exampleSite/config.toml` | 公开仓库可见；如需保密改为不提交或代理 |
-| 5 | 侧栏、回到顶部、搜索分组、移动端抽屉仍由 jQuery 主题脚本驱动 | `static/assets/js/app-mini.js`、`app-anim.js` | 与 `site.js` 分工；不要为了“去 jQuery”重写它们 |
-| 6 | 主题默认值来自 `nightMode`，用户选择存 `localStorage`，不跟随系统 | `header.html`、`sidebar.html`、`site.js` | 要改“跟随系统”是产品决策，先确认；不要恢复 22:00–06:00 自动切换 |
+| 5 | 全站已无 jQuery / Bootstrap / iconfont | — | 主题图标改成内联 SVG（由 body 的 `io-grey-mode` 切换），不要再引回旧依赖 |
+| 6 | 主题默认值来自 `nightMode`，用户选择存 `localStorage`，不跟随系统 | `header.html`、`site.js` | 要改“跟随系统”是产品决策，先确认；不要恢复 22:00–06:00 自动切换 |
 | 7 | `io-black-mode` / `io-grey-mode` 是第三方 CSS 依赖的 class | 全站 | 不要改名；新样式沿用这两个 class |
-| 8 | About 页为独立窄版式（无侧边栏）；404 已改为完整布局 | `single.html`、`404.html` | 现状如此；要统一版式属改版需求 |
-| 9 | `qrcode` 字段当前无人使用 | `webstack.yml`、`content_main.html` | 启用前先验证按钮/提示结构，当前卡片使用 `button` 包块级内容 |
+| 8 | About 与 404 共用首页的顶栏与浮动按钮，但没有分类栏 | `single.html`、`404.html`、`desk_boot.html` | 版式已统一；改动 `desk.css` 时要三处一起看 |
+| 9 | `qrcode` 字段当前无人使用，且新版 `desk_row.html` **没有实现**它 | `webstack.yml`、`desk_row.html` | 数据里没人用所以没有回归；要用得先在 `desk_row.html` 里加分支并验键盘可达 |
 | 10 | `mine` 是与 `main` 分叉的旧分支（大幅删减条目） | 分支 | 不要在其上发布或直接合并 |
+| 11 | `desk.css` 里把 `html{scroll-behavior:auto}` 显式写死 | `desk.css` | 上游 `custom-style.css` 是 `smooth`。改成 smooth 会让锚点跳转整段动画化，长页面上还会出现"松手后页面继续自己走"（浏览器会重新瞄准移动中的布局）。平滑滚动只由 `site.js` 的返回顶部做 |
+| 12 | 静态资源用 `?v={{ now.Unix }}` 打破缓存 | `header.html`、`desk_home.html`、`single.html`、`404.html` | `static/` 里的文件 Hugo 不做指纹，不加版本参数时浏览器会长时间用旧 CSS/JS，改完看不到效果 |
 
 ## 9.1 浏览器支持策略
 
 - 目标：**Baseline Widely Available**（Chrome/Edge 121+、Firefox 121+、Safari 17.4+ 一类的现代浏览器）。
-- 使用但不引入 polyfill：原生 `<dialog>`、`color-scheme`、`:has()`、`appearance: none`、`loading="lazy"`、`scrollbar-color`、`scroll-behavior`。
-- 唯一显式降级：`closedby="any"` 在旧浏览器不存在时，由 `site.js` 用 pointerdown/pointerup 补“点击遮罩关闭”；不要为此引入弹窗库。
-- 不支持原生 `<dialog>` 的浏览器不在支持范围内；不要用 `overflow:hidden` 锁定页面滚动来模拟模态。
+- 使用但不引入 polyfill：`color-scheme`、`:has()`、`appearance: none`、`loading="lazy"`、`scrollbar-color`、`font-size-adjust`、`column-count`、`mask-image`。
+- 全站已无模态框；要加弹层优先用原生 `<dialog>` + `closedby`，不要引弹窗库，也不要用 `overflow:hidden` 锁滚动来模拟。
 
 ## 10. 不要做的事
 
 - ❌ 不要为了“整理”而重命名/删除分类、批量改描述或批量换 logo（会产生巨大 diff，且破坏深链）。
-- ❌ 不要升级/替换 jQuery、Bootstrap、Font Awesome、Fancybox 等 vendor 文件（没有回归测试，风险高）。
+- ❌ 不要再引入 jQuery / Bootstrap / Fancybox / 图标字体（已清理干净）；Font Awesome 保持现状，不升级。
 - ❌ 不要改 `.history/`、`public/`、`resources/`、`gh-pages`。
-- ❌ 不要写内联事件处理器或 `javascript:` 链接；交互统一放 `site.js` / `content-search.js` 并用 `addEventListener`。
+- ❌ 不要写内联事件处理器或 `javascript:` 链接；交互统一放 `desk.js` / `site.js` 并用 `addEventListener`。
 - ❌ 不要把主题逻辑改回按时间（22:00–06:00）自动切换。
 - ❌ 不要在没有本地构建验证的情况下 push `main`（等于直接上线）。
 - ❌ 不要把本项目重构成 Astro/Next/其他框架，除非用户明确要求。
@@ -271,7 +278,7 @@ node --check static/assets/js/content-search.js
 完成标准（修改导航数据时）：
 
 - [ ] `hugo` 构建成功，无 ERROR
-- [ ] 首页卡片数 = 原数量 + 新增数
+- [ ] 首页索引行数 = 原数量 + 新增数
 - [ ] 新 URL / logo 可访问（Cloudflare 站点返回 403 可接受，但要人工确认域名正确）
 - [ ] 无重复 URL
 - [ ] `git diff` 只含预期改动

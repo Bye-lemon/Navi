@@ -1,0 +1,10 @@
+{{- /* 品牌字标：日语字形 + 振假名。
+       注释不用原生 <ruby>：各引擎对 ruby 的注释位置不一致，容易被行盒顶端裁掉。
+       这里用 5 列网格把两段假名压在对应汉字上，位置自己说了算。
+       任意門 的假名取「どこでもドア」——这是它在日语里的本名（哆啦A梦的任意门）。 */ -}}
+<a class="desk-brand" href="{{ .Site.Home.RelPermalink }}" aria-label="英平的任意门">
+    <span class="wordmark" lang="ja">
+        <span class="wm-rt" aria-hidden="true"><span>えいへい</span><span>どこでもドア</span></span>
+        <span class="wm-base" aria-hidden="true">英平的任意門</span>
+    </span>
+</a>

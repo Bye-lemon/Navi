@@ -1,0 +1,168 @@
+{{ partial "desk_boot.html" . }}
+
+{{- $data := .Site.Data.webstack -}}
+{{- $fallback := "" -}}
+{{- with .Site.Params.defaultLogo }}{{ $fallback = absURL . }}{{ end -}}
+{{- $total := 0 -}}
+{{- range $data -}}
+    {{- if .list -}}{{- range .list -}}{{- $total = add $total (len .links) -}}{{- end -}}{{- else -}}{{- $total = add $total (len .links) -}}{{- end -}}
+{{- end -}}
+
+<div class="desk" id="desk">
+    <header class="desk-top">
+        {{ partial "desk_brand.html" . }}
+
+        {{/* 引擎清单：copy 为 true 表示该站不支持把查询塞进 URL，改成交给剪贴板 */}}
+        {{- $engines := slice
+            (dict "name" "谷歌" "url" "https://www.google.com/search?q=" "copy" false)
+            (dict "name" "百度" "url" "https://www.baidu.com/s?wd=" "copy" false)
+            (dict "name" "雅虎日本" "url" "https://search.yahoo.co.jp/search?p=" "copy" false)
+            (dict "name" "DeepSeek" "url" "https://chat.deepseek.com/" "copy" true)
+            (dict "name" "必应" "url" "https://cn.bing.com/search?q=" "copy" false)
+            (dict "name" "文献" "url" "https://scholar.google.com/scholar?q=" "copy" false)
+        -}}
+        <div class="desk-filter">
+            <svg class="f-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="7" />
+                <path d="m20.5 20.5-4.2-4.2" />
+            </svg>
+            <label class="desk-sr" for="desk-filter">筛选站点或搜索网页</label>
+            <input id="desk-filter" type="search" placeholder="筛选站名、描述或域名" autocomplete="off"
+                spellcheck="false" enterkeyhint="search" />
+            <button type="button" class="desk-filter-clear" data-desk-clear aria-label="清空筛选">&#10005;</button>
+            <kbd class="desk-kbd" data-kbd>&#8984;K</kbd>
+
+            {{/* 搜索引擎选择器：与站内筛选共用同一个输入框 */}}
+            <div class="desk-engine-wrap">
+                <button type="button" class="desk-engine" data-engine-toggle aria-haspopup="listbox"
+                    aria-expanded="false"
+                    title="输入关键词后回车筛选站内，Shift+Enter 搜索网页；点这里换搜索引擎">
+                    <span data-engine-name>{{ (index $engines 0).name }}</span>
+                    <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="3" stroke-linecap="round" aria-hidden="true">
+                        <path d="m5 9 7 7 7-7" />
+                    </svg>
+                </button>
+                <div class="desk-engine-menu" data-engine-menu hidden>
+                    <p class="em-label">网页搜索</p>
+                    {{- range $engines }}
+                    <button type="button" class="em-item" role="option" data-engine-url="{{ .url }}"
+                        data-engine-name="{{ .name }}"{{ if .copy }} data-engine-copy="true"{{ end }}>{{ .name }}</button>
+                    {{- end }}
+                    <button type="button" class="em-search" data-engine-search hidden></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="desk-count" id="desk-count" aria-live="polite"><b>{{ $total }}</b> 条</div>
+        <span class="desk-hint" data-desk-hint aria-hidden="true"></span>
+
+        <div class="desk-actions">
+            <a class="desk-link-sm" href="{{ "/about/" | relURL }}">关于</a>
+        </div>
+    </header>
+
+    <div class="desk-toast" data-desk-toast hidden role="status" aria-live="polite"></div>
+
+    <div class="desk-body">
+        <nav class="desk-rail" aria-label="分类">
+            <p class="desk-rail-label">分类</p>
+            <ul class="desk-groups">
+                {{- range $data -}}
+                {{- $count := 0 -}}
+                {{- $anchor := "" -}}
+                {{- $gh := md5 .taxonomy -}}
+                {{- if .list -}}
+                    {{- range .list -}}{{- $count = add $count (len .links) -}}{{- end -}}
+                    {{- range first 1 .list -}}{{- $anchor = md5 .term -}}{{- end -}}
+                {{- else -}}
+                    {{- $count = len .links -}}
+                    {{- $anchor = $gh -}}
+                {{- end }}
+                <li class="desk-group">
+                    <a class="desk-group-link" href="#{{ $anchor }}" data-group="{{ $gh }}">
+                        <i class="{{ .icon }}" aria-hidden="true"></i>
+                        <span class="g-name">{{ .taxonomy }}</span>
+                        <span class="g-count">{{ $count }}</span>
+                    </a>
+                    {{- with .list }}
+                    <ul class="desk-sub">
+                        {{- range . }}
+                        <li><a href="#{{ md5 .term }}" data-term="{{ md5 .term }}"><span>{{ .term }}</span><span
+                                    class="s-count">{{ len .links }}</span></a></li>
+                        {{- end }}
+                    </ul>
+                    {{- end }}
+                </li>
+                {{- end }}
+            </ul>
+        </nav>
+
+        <main class="desk-main" id="content">
+            <h1 class="desk-sr">{{ .Site.Title }} - {{ .Site.Params.description }}</h1>
+            {{- range $data -}}
+            {{- $count := 0 -}}
+            {{- $anchor := "" -}}
+            {{- $gh := md5 .taxonomy -}}
+            {{- if .list -}}
+                {{- range .list -}}{{- $count = add $count (len .links) -}}{{- end -}}
+                {{- range first 1 .list -}}{{- $anchor = md5 .term -}}{{- end -}}
+            {{- else -}}
+                {{- $count = len .links -}}
+                {{- $anchor = $gh -}}
+            {{- end }}
+            <section class="desk-section" id="{{ $anchor }}" data-group="{{ $gh }}">
+                <header class="desk-section-head">
+                    <i class="{{ .icon }}" aria-hidden="true"></i>
+                    <h2>{{ .taxonomy }}</h2>
+                    <span class="desk-section-count">{{ $count }}</span>
+                </header>
+                <div class="desk-section-body">
+                {{- if .list -}}
+                    {{- range .list }}
+                    {{- $subId := md5 .term -}}
+                    {{- $subName := .term }}
+                <section class="desk-subsection" id="{{ $subId }}" data-term="{{ $subId }}">
+                    <h3 class="desk-sub-head">{{ $subName }}<span>{{ len .links }}</span></h3>
+                    <ol class="desk-list">
+                        {{- range .links }}
+                        {{ partial "desk_row.html" (dict "link" . "term" $subId "tname" $subName "label" $subName "group" $gh "fallback" $fallback "logosPath" $.Site.Params.logosPath) }}
+                        {{- end }}
+                    </ol>
+                </section>
+                    {{- end -}}
+                {{- else }}
+                    {{- $gname := .taxonomy }}
+                <ol class="desk-list">
+                    {{- range .links }}
+                    {{ partial "desk_row.html" (dict "link" . "term" $gh "tname" $gname "label" "" "group" $gh "fallback" $fallback "logosPath" $.Site.Params.logosPath) }}
+                    {{- end }}
+                </ol>
+                {{- end }}
+                </div>
+            </section>
+            {{- end }}
+
+            <div class="desk-empty">
+                <h2>站内没有匹配的站点</h2>
+                <p>「<strong data-desk-empty-query></strong>」不在 {{ $total }} 条收藏里，去网页上搜它。</p>
+                <button type="button" class="desk-empty-go" data-desk-empty-search>用「<span
+                        data-desk-empty-engine>谷歌</span>」搜一下 ↗</button>
+            </div>
+
+            <footer class="desk-foot">
+                {{ replace .Site.Params.footer.copyright "{year}" now.Year | markdownify }}
+                <a class="desk-foot-link" href="{{ "/about/" | relURL }}">关于这个站</a>
+            </footer>
+        </main>
+    </div>
+</div>
+
+{{ partial "desk_fabs.html" (dict "page" . "searchHref" "") }}
+
+<script type="text/javascript" src="{{ absURL "assets/js/site.js" }}?v={{ now.Unix }}" defer></script>
+<script type="text/javascript" src="{{ absURL "assets/js/desk.js" }}?v={{ now.Unix }}" defer></script>
+</body>
+
+</html>

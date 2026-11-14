@@ -1,0 +1,38 @@
+{{- /* 右下角浮动按钮：回到顶部 / 搜索（或回到索引）/ 深色浅色 */ -}}
+<div class="desk-fabs">
+    <button type="button" class="desk-fab desk-fab--top" data-desk-top aria-label="回到顶部" title="回到顶部" hidden>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 19V5" />
+            <path d="m5 12 7-7 7 7" />
+        </svg>
+    </button>
+    {{- $label := "搜索站内站点" }}{{ with .searchLabel }}{{ $label = . }}{{ end }}
+    {{- if .searchHref }}
+    <a class="desk-fab" href="{{ .searchHref }}" aria-label="{{ $label }}" title="{{ $label }}">
+    {{- else }}
+    <button type="button" class="desk-fab" data-search-open aria-label="{{ $label }}"
+        title="{{ $label }}（Ctrl/⌘ K）">
+    {{- end }}
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m20.5 20.5-4.2-4.2" />
+        </svg>
+    {{- if .searchHref }}</a>{{ else }}</button>{{ end }}
+    <button type="button" id="theme-toggle" class="desk-fab"
+        aria-pressed="{{ if .page.Site.Params.nightMode }}true{{ else }}false{{ end }}"
+        aria-label="{{ if .page.Site.Params.nightMode }}切换到浅色模式{{ else }}切换到深色模式{{ end }}"
+        title="切换深色 / 浅色主题">
+        {{- /* 图标由 body 的 io-black-mode / io-grey-mode 切换，见 desk.css */ -}}
+        <svg class="ico-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.2" />
+            <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5 5l1.6 1.6M17.4 17.4 19 19M19 5l-1.6 1.6M6.6 17.4 5 19" />
+        </svg>
+        <svg class="ico-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.5 14.5A8.6 8.6 0 0 1 9.5 3.5a8.6 8.6 0 1 0 11 11Z" />
+        </svg>
+    </button>
+</div>

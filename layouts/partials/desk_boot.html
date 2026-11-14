@@ -1,0 +1,19 @@
+{{- /* 主题在首次绘制前生效 + 图片兜底监听，三个页面共用 */ -}}
+<body class="desk-page {{ if .Site.Params.nightMode }}io-black-mode{{ else }}io-grey-mode{{ end }}">
+<script>
+    (() => {
+        const scheme = document.querySelector('meta[name="color-scheme"]')?.content;
+        const dark = scheme !== "light";
+        document.body.classList.toggle("io-black-mode", dark);
+        document.body.classList.toggle("io-grey-mode", !dark);
+    })();
+    document.addEventListener("error", (event) => {
+        const image = event.target;
+        if (!(image instanceof HTMLImageElement)) return;
+        const fallback = image.dataset.fallback;
+        if (!fallback || image.dataset.fallbackApplied === "true") return;
+        image.dataset.fallbackApplied = "true";
+        image.removeAttribute("srcset");
+        image.src = fallback;
+    }, true);
+</script>

@@ -3,3 +3,7 @@ public/
 resources/
 .hugo_build.lock
 .DS_Store
+
+# 代理/浏览器的工作目录（截图、临时构建、字体源文件）
+.oil-ui/
+.walker/

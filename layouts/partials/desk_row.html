@@ -1,0 +1,16 @@
+{{- $l := .link -}}
+{{- $logo := $l.logo -}}
+{{- if not (hasPrefix $logo "http") -}}
+    {{- $logo = absURL (printf "%s/%s" .logosPath $logo) -}}
+{{- end -}}
+{{- $host := replaceRE `^(?:https?://)?(?:www.)?([^/?#]+).*$` "$1" $l.url -}}
+<li class="desk-row" data-name="{{ $l.title }}" data-host="{{ $host }}" data-desc="{{ $l.description }}" data-term="{{ .term }}" data-tname="{{ .tname }}" data-group="{{ .group }}">
+                                    <a class="desk-row-link" href="{{ $l.url }}" target="_blank" rel="noopener noreferrer"{{ with $l.description }} title="{{ . }}"{{ end }}>
+                                        <span class="r-logo"><img src="{{ $logo }}" alt="" width="24" height="24" loading="lazy" decoding="async"{{ with .fallback }} data-fallback="{{ . }}"{{ end }}></span>
+                                        <span class="r-name">{{ $l.title }}</span>
+                                        <span class="r-host">{{ $host }}</span>
+                                        <span class="r-desc">{{ $l.description }}</span>
+                                        <span class="r-term" aria-hidden="true">{{ .label }}</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>

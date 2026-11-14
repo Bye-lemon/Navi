@@ -1,11 +1,10 @@
-// 站点交互：主题切换、搜索对话框、图片兜底与滚动辅助。
-// 原生 ES2020+，不依赖 jQuery；jQuery/Bootstrap 仅用于兼容旧侧边栏弹层。
+// 站点交互：主题切换、回到顶部、图片兜底。
+// 原生 ES2020，不依赖任何库。首页 / 关于 / 404 共用。
 (() => {
     "use strict";
 
     const THEME_KEY = "color-scheme";
     const themeToggle = document.getElementById("theme-toggle");
-    const themeIcon = themeToggle?.querySelector(".mode-ico");
     const metaScheme = document.querySelector('meta[name="color-scheme"]');
     const metaThemeColor = document.querySelector('meta[name="theme-color"]');
 
@@ -15,6 +14,7 @@
         return metaScheme?.content === "dark";
     };
 
+    // 图标由 body 上的 io-black-mode / io-grey-mode 决定（见 desk.css），这里不再改图标 class
     const applyTheme = (scheme) => {
         const dark = scheme === "dark";
         document.body.classList.toggle("io-black-mode", dark);
@@ -24,10 +24,6 @@
         if (themeToggle) {
             themeToggle.setAttribute("aria-pressed", String(dark));
             themeToggle.setAttribute("aria-label", dark ? "切换到浅色模式" : "切换到深色模式");
-        }
-        if (themeIcon) {
-            themeIcon.classList.toggle("icon-light", dark);
-            themeIcon.classList.toggle("icon-night", !dark);
         }
     };
 
@@ -47,55 +43,58 @@
 
     applyTheme(isDark() ? "dark" : "light");
 
-    // 搜索对话框：原生 <dialog>，Esc 关闭、焦点回收由浏览器处理。
-    const dialog = document.getElementById("search-modal");
-    if (dialog) {
-        const focusSearch = () => dialog.querySelector('input[type="search"]')?.focus();
+    // 图片加载失败时回退到 data-fallback 指向的默认 logo（监听在 desk_boot.html 预先挂好）
 
-        document.querySelectorAll("[data-search-open]").forEach((button) => {
-            button.addEventListener("click", () => {
-                if (dialog.open) return;
-                dialog.showModal();
-                focusSearch();
-            });
-        });
+    // 右下角「回到顶部」：滚动超过一屏再出现。缓动自己算，时长封顶，可被用户滚动打断。
+    const topButton = document.querySelector("[data-desk-top]");
+    if (topButton) {
+        const syncTopButton = () => {
+            const show = window.scrollY > 360;
+            if (topButton.hidden === !show) return;
+            topButton.hidden = !show;
+            topButton.classList.toggle("is-on", show);
+        };
+        window.addEventListener("scroll", syncTopButton, { passive: true });
+        syncTopButton();
 
-        dialog.querySelectorAll("[data-search-close]").forEach((button) => {
-            button.addEventListener("click", () => dialog.close());
-        });
-
-        // Safari 等尚未支持 closedby="any" 时，补上点击遮罩关闭。
-        if (typeof HTMLDialogElement === "undefined" || !("closedBy" in HTMLDialogElement.prototype)) {
-            const outside = (event) => {
-                const rect = dialog.getBoundingClientRect();
-                return event.clientX < rect.left || event.clientX > rect.right ||
-                    event.clientY < rect.top || event.clientY > rect.bottom;
+        const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+        let cancelScroll = null;
+        const scrollToTop = () => {
+            const start = window.scrollY;
+            if (start <= 0) return;
+            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                window.scrollTo(0, 0);
+                return;
+            }
+            const root = document.documentElement;
+            const previousBehavior = root.style.scrollBehavior;
+            root.style.scrollBehavior = "auto";
+            const duration = Math.min(420, 200 + start * 0.08);
+            const startedAt = performance.now();
+            const finish = (snapToTop) => {
+                if (cancelScroll === null) return;
+                cancelScroll = null;
+                window.removeEventListener("wheel", cancel);
+                window.removeEventListener("touchstart", cancel);
+                root.style.scrollBehavior = previousBehavior;
+                if (snapToTop) window.scrollTo(0, 0);
             };
-            let pressedOutside = false;
-            dialog.addEventListener("pointerdown", (event) => {
-                pressedOutside = outside(event);
-            });
-            dialog.addEventListener("pointerup", (event) => {
-                if (pressedOutside && outside(event)) dialog.close();
-            });
-        }
+            const cancel = () => finish(false);
+            const step = (now) => {
+                if (cancelScroll !== step) return;
+                const progress = Math.min(1, (now - startedAt) / duration);
+                window.scrollTo(0, Math.round(start * (1 - easeOutCubic(progress))));
+                if (progress < 1) requestAnimationFrame(step);
+                else finish(true);
+            };
+            cancelScroll = step;
+            window.addEventListener("wheel", cancel, { passive: true });
+            window.addEventListener("touchstart", cancel, { passive: true });
+            requestAnimationFrame(step);
+        };
+        topButton.addEventListener("click", () => {
+            scrollToTop();
+            topButton.blur();
+        });
     }
-
-    // 加载动画：保持原有视觉，改成原生实现。
-    const loader = document.getElementById("loading");
-    if (loader) {
-        loader.classList.add("close");
-        window.setTimeout(() => loader.remove(), 600);
-    }
-
-    // 移动端点击锚点后收起侧边栏；滚动本身交给 CSS scroll-behavior。
-    document.addEventListener("click", (event) => {
-        const link = event.target.closest("a.smooth");
-        if (!link) return;
-        const sidebar = document.getElementById("sidebar");
-        if (!sidebar?.classList.contains("show") || link.classList.contains("change-href")) return;
-        if (window.jQuery?.fn?.modal) {
-            window.jQuery(sidebar).modal("toggle");
-        }
-    });
 })();

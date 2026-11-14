@@ -218,6 +218,10 @@
           logo: https://a.favicon.im/phistory.cc
           url: https://phistory.cc/
           description: CC 等 CLI Agent 系统提示词 Trace。
+        - title: HF Viewer
+          logo: https://hfviewer.com/assets/hfviewer-favicon.svg
+          url: https://hfviewer.com/
+          description: 粘贴 Hugging Face 模型链接，交互式查看模型结构图。
     - term: LLM Leaderboard
       links:
         - title: LLM Stat
@@ -412,6 +416,10 @@
           logo: https://paperswithcode.co/favicon-32.png?v=2
           url: https://paperswithcode.co/
           description: AI 前沿论文跟踪。
+        - title: Papers.Data.Code
+          logo: https://papersdatacode.com/icon-192.png
+          url: https://papersdatacode.com/
+          description: 每周精选 ML 论文、代码与数据集，按主题整理成可追踪的信号。
         - title: Sci-Hub
           logo: https://sci-hub.se/pictures/ravenround.png
           url: https://sci-hub.box/
@@ -573,6 +581,10 @@
           url: https://ai.daily.yangsir.net/daily
           logo: https://ai.daily.yangsir.net/favicon.ico
           description: 专注 AI 领域的精选日报，每日整合最新进展、工具发现与深度观点。
+        - title: Oil Book
+          logo: https://book.oiloil.org/assets/icons/oil-book-mark.webp
+          url: https://book.oiloil.org/
+          description: Oil 的 AI 实战指南与模型选型笔记，覆盖 Agent、前端与图片生成。
     - term: 大厂博客
       links:
         - title: Manus Blog
