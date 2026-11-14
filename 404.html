@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#111111" />
+    <script>
+        
+        try {
+            const saved = localStorage.getItem("color-scheme");
+            if (saved === "light" || saved === "dark") {
+                document.querySelector('meta[name="color-scheme"]').content = saved;
+                document.querySelector('meta[name="theme-color"]').content = saved === "dark" ? "#111111" : "#f9f9f9";
+            }
+        } catch (_) {   }
+    </script><title>404 · LML - Li&#39;s Misc Library</title>
+    <meta name="description" content="英平的任意门" />
+    <meta property="og:title" content="404 · LML - Li&#39;s Misc Library" />
+    <meta property="og:description" content="英平的任意门" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://bye-lemon.github.io/Navi/404.html" />
+
+    <link rel="icon" href="https://bye-lemon.github.io/Navi/assets/images/favicon.ico" />
+    <meta name="keywords" content="LML - Li&#39;s Misc Library" />
+    
+
+    
+    <link rel="stylesheet" id="fortawesome-css" href="https://bye-lemon.github.io/Navi/assets/fontawesome-5.15.4/css/all.min.css"
+        type="text/css" media="all" />
+
+    
+    
+    <link rel="stylesheet" id="desk-css" href="https://bye-lemon.github.io/Navi/assets/css/desk.css?v=1794659599" type="text/css"
+        media="all" />
+
+</head>
+<body class="desk-page io-black-mode">
+<script>
+    (() => {
+        const scheme = document.querySelector('meta[name="color-scheme"]')?.content;
+        const dark = scheme !== "light";
+        document.body.classList.toggle("io-black-mode", dark);
+        document.body.classList.toggle("io-grey-mode", !dark);
+    })();
+    document.addEventListener("error", (event) => {
+        const image = event.target;
+        if (!(image instanceof HTMLImageElement)) return;
+        const fallback = image.dataset.fallback;
+        if (!fallback || image.dataset.fallbackApplied === "true") return;
+        image.dataset.fallbackApplied = "true";
+        image.removeAttribute("srcset");
+        image.src = fallback;
+    }, true);
+</script>
+
+
+<header class="desk-top desk-top--simple">
+    <a class="desk-brand" href="/Navi/" aria-label="英平的任意门">
+    <span class="wordmark" lang="ja">
+        <span class="wm-rt" aria-hidden="true"><span>えいへい</span><span>どこでもドア</span></span>
+        <span class="wm-base" aria-hidden="true">英平的任意門</span>
+    </span>
+</a>
+
+    <div class="desk-actions">
+        <a class="desk-link-sm" href="/Navi/">返回索引</a>
+    </div>
+</header>
+
+<main class="desk-notfound">
+    <p class="nf-code">404</p>
+    <h1>这个页面不在了</h1>
+    <p>链接可能已经失效，或者地址打错了。索引里的 143 条还在。</p>
+    <a class="desk-empty-go" href="/Navi/">回到索引 ↗</a>
+</main>
+
+<div class="desk-fabs">
+    <button type="button" class="desk-fab desk-fab--top" data-desk-top aria-label="回到顶部" title="回到顶部" hidden>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 19V5" />
+            <path d="m5 12 7-7 7 7" />
+        </svg>
+    </button>
+    <a class="desk-fab" href="/Navi/" aria-label="回到索引" title="回到索引">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m20.5 20.5-4.2-4.2" />
+        </svg></a>
+    <button type="button" id="theme-toggle" class="desk-fab"
+        aria-pressed="true"
+        aria-label="切换到浅色模式"
+        title="切换深色 / 浅色主题"><svg class="ico-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.2" />
+            <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5 5l1.6 1.6M17.4 17.4 19 19M19 5l-1.6 1.6M6.6 17.4 5 19" />
+        </svg>
+        <svg class="ico-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.5 14.5A8.6 8.6 0 0 1 9.5 3.5a8.6 8.6 0 1 0 11 11Z" />
+        </svg>
+    </button>
+</div>
+
+
+<script type="text/javascript" src="https://bye-lemon.github.io/Navi/assets/js/site.js?v=1794659599" defer></script>
+</body>
+
+</html>

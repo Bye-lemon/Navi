@@ -1,0 +1,2006 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta name="generator" content="Hugo 0.122.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#111111" />
+    <script>
+        
+        try {
+            const saved = localStorage.getItem("color-scheme");
+            if (saved === "light" || saved === "dark") {
+                document.querySelector('meta[name="color-scheme"]').content = saved;
+                document.querySelector('meta[name="theme-color"]').content = saved === "dark" ? "#111111" : "#f9f9f9";
+            }
+        } catch (_) {   }
+    </script><title>LML - Li&#39;s Misc Library</title>
+    <meta name="description" content="英平的任意门" />
+    <meta property="og:title" content="LML - Li&#39;s Misc Library" />
+    <meta property="og:description" content="英平的任意门" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bye-lemon.github.io/Navi/" />
+
+    <link rel="icon" href="https://bye-lemon.github.io/Navi/assets/images/favicon.ico" />
+    <meta name="keywords" content="LML - Li&#39;s Misc Library" />
+    
+
+    
+    <link rel="stylesheet" id="fortawesome-css" href="https://bye-lemon.github.io/Navi/assets/fontawesome-5.15.4/css/all.min.css"
+        type="text/css" media="all" />
+
+    
+    
+    <link rel="stylesheet" id="desk-css" href="https://bye-lemon.github.io/Navi/assets/css/desk.css?v=1794659599" type="text/css"
+        media="all" />
+
+</head>
+
+<body class="desk-page io-black-mode">
+<script>
+    (() => {
+        const scheme = document.querySelector('meta[name="color-scheme"]')?.content;
+        const dark = scheme !== "light";
+        document.body.classList.toggle("io-black-mode", dark);
+        document.body.classList.toggle("io-grey-mode", !dark);
+    })();
+    document.addEventListener("error", (event) => {
+        const image = event.target;
+        if (!(image instanceof HTMLImageElement)) return;
+        const fallback = image.dataset.fallback;
+        if (!fallback || image.dataset.fallbackApplied === "true") return;
+        image.dataset.fallbackApplied = "true";
+        image.removeAttribute("srcset");
+        image.src = fallback;
+    }, true);
+</script>
+<div class="desk" id="desk">
+    <header class="desk-top">
+        <a class="desk-brand" href="/Navi/" aria-label="英平的任意门">
+    <span class="wordmark" lang="ja">
+        <span class="wm-rt" aria-hidden="true"><span>えいへい</span><span>どこでもドア</span></span>
+        <span class="wm-base" aria-hidden="true">英平的任意門</span>
+    </span>
+</a>
+
+
+        <div class="desk-filter">
+            <svg class="f-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="7" />
+                <path d="m20.5 20.5-4.2-4.2" />
+            </svg>
+            <label class="desk-sr" for="desk-filter">筛选站点或搜索网页</label>
+            <input id="desk-filter" type="search" placeholder="筛选站名、描述或域名" autocomplete="off"
+                spellcheck="false" enterkeyhint="search" />
+            <button type="button" class="desk-filter-clear" data-desk-clear aria-label="清空筛选">&#10005;</button>
+            <kbd class="desk-kbd" data-kbd>&#8984;K</kbd>
+
+            
+            <div class="desk-engine-wrap">
+                <button type="button" class="desk-engine" data-engine-toggle aria-haspopup="listbox"
+                    aria-expanded="false"
+                    title="输入关键词后回车筛选站内，Shift+Enter 搜索网页；点这里换搜索引擎">
+                    <span data-engine-name>谷歌</span>
+                    <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="3" stroke-linecap="round" aria-hidden="true">
+                        <path d="m5 9 7 7 7-7" />
+                    </svg>
+                </button>
+                <div class="desk-engine-menu" data-engine-menu hidden>
+                    <p class="em-label">网页搜索</p>
+                    <button type="button" class="em-item" role="option" data-engine-url="https://www.google.com/search?q="
+                        data-engine-name="谷歌">谷歌</button>
+                    <button type="button" class="em-item" role="option" data-engine-url="https://www.baidu.com/s?wd="
+                        data-engine-name="百度">百度</button>
+                    <button type="button" class="em-item" role="option" data-engine-url="https://search.yahoo.co.jp/search?p="
+                        data-engine-name="雅虎日本">雅虎日本</button>
+                    <button type="button" class="em-item" role="option" data-engine-url="https://chat.deepseek.com/"
+                        data-engine-name="DeepSeek" data-engine-copy="true">DeepSeek</button>
+                    <button type="button" class="em-item" role="option" data-engine-url="https://cn.bing.com/search?q="
+                        data-engine-name="必应">必应</button>
+                    <button type="button" class="em-item" role="option" data-engine-url="https://scholar.google.com/scholar?q="
+                        data-engine-name="文献">文献</button>
+                    <button type="button" class="em-search" data-engine-search hidden></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="desk-count" id="desk-count" aria-live="polite"><b>143</b> 条</div>
+        <span class="desk-hint" data-desk-hint aria-hidden="true"></span>
+
+        <div class="desk-actions">
+            <a class="desk-link-sm" href="/about/">关于</a>
+        </div>
+    </header>
+
+    <div class="desk-toast" data-desk-toast hidden role="status" aria-live="polite"></div>
+
+    <div class="desk-body">
+        <nav class="desk-rail" aria-label="分类">
+            <p class="desk-rail-label">分类</p>
+            <ul class="desk-groups">
+                <li class="desk-group">
+                    <a class="desk-group-link" href="#366a7288b80ec8882b88467447296837" data-group="366a7288b80ec8882b88467447296837">
+                        <i class="far fa-star" aria-hidden="true"></i>
+                        <span class="g-name">常用推荐</span>
+                        <span class="g-count">11</span>
+                    </a>
+                </li>
+                <li class="desk-group">
+                    <a class="desk-group-link" href="#34dd8486af108e037f606b15bbb2ad34" data-group="13dcc046faf355379bc1165e61e6878f">
+                        <i class="far fa-gem fa-lg" aria-hidden="true"></i>
+                        <span class="g-name">AI 相关</span>
+                        <span class="g-count">53</span>
+                    </a>
+                    <ul class="desk-sub">
+                        <li><a href="#34dd8486af108e037f606b15bbb2ad34" data-term="34dd8486af108e037f606b15bbb2ad34"><span>AI 产品</span><span
+                                    class="s-count">17</span></a></li>
+                        <li><a href="#57963660a4497b2291f16d1245e02992" data-term="57963660a4497b2291f16d1245e02992"><span>LLM 服务平台</span><span
+                                    class="s-count">8</span></a></li>
+                        <li><a href="#0cd5ad2ad24a09348c5e05df0211ecdb" data-term="0cd5ad2ad24a09348c5e05df0211ecdb"><span>Agent 服务</span><span
+                                    class="s-count">3</span></a></li>
+                        <li><a href="#83a24a901093f28ac394dd6027afcfcb" data-term="83a24a901093f28ac394dd6027afcfcb"><span>LLM 工具</span><span
+                                    class="s-count">12</span></a></li>
+                        <li><a href="#9bfc71ecb0d36478d4c65895f334d998" data-term="9bfc71ecb0d36478d4c65895f334d998"><span>LLM Leaderboard</span><span
+                                    class="s-count">13</span></a></li>
+                    </ul>
+                </li>
+                <li class="desk-group">
+                    <a class="desk-group-link" href="#9c2232288caaa8ec40948cef6a786ac2" data-group="7c5b9182d43ec30f191cb2cf4bee42ee">
+                        <i class="far fa-file-code fa-lg" aria-hidden="true"></i>
+                        <span class="g-name">开发相关</span>
+                        <span class="g-count">27</span>
+                    </a>
+                    <ul class="desk-sub">
+                        <li><a href="#9c2232288caaa8ec40948cef6a786ac2" data-term="9c2232288caaa8ec40948cef6a786ac2"><span>在线工具</span><span
+                                    class="s-count">17</span></a></li>
+                        <li><a href="#dd7972a1cd67fb2e655a2ec64feeac33" data-term="dd7972a1cd67fb2e655a2ec64feeac33"><span>云平台</span><span
+                                    class="s-count">3</span></a></li>
+                        <li><a href="#910e84e84534892cc7dc70c55baf3cd5" data-term="910e84e84534892cc7dc70c55baf3cd5"><span>Mirror 镜像</span><span
+                                    class="s-count">6</span></a></li>
+                        <li><a href="#e8ebdcd9d0ff32de3315133309f0e5eb" data-term="e8ebdcd9d0ff32de3315133309f0e5eb"><span>开发者文档</span><span
+                                    class="s-count">1</span></a></li>
+                    </ul>
+                </li>
+                <li class="desk-group">
+                    <a class="desk-group-link" href="#de5e3d92a963c37479c7cf6adac1cbcc" data-group="d14d18a4e7b98b5791d256165baa2de2">
+                        <i class="fas fa-flask fa-lg" aria-hidden="true"></i>
+                        <span class="g-name">科研办公</span>
+                        <span class="g-count">22</span>
+                    </a>
+                    <ul class="desk-sub">
+                        <li><a href="#de5e3d92a963c37479c7cf6adac1cbcc" data-term="de5e3d92a963c37479c7cf6adac1cbcc"><span>论文科研</span><span
+                                    class="s-count">13</span></a></li>
+                        <li><a href="#311360350f67155951bd23bcbd2a1b34" data-term="311360350f67155951bd23bcbd2a1b34"><span>信息聚合</span><span
+                                    class="s-count">9</span></a></li>
+                    </ul>
+                </li>
+                <li class="desk-group">
+                    <a class="desk-group-link" href="#7866a35b09d466b9cf0295af54d30d53" data-group="baf371c05e7de0a1cd43395f2820b073">
+                        <i class="far fa-folder-open fa-lg" aria-hidden="true"></i>
+                        <span class="g-name">素材资源</span>
+                        <span class="g-count">7</span>
+                    </a>
+                    <ul class="desk-sub">
+                        <li><a href="#7866a35b09d466b9cf0295af54d30d53" data-term="7866a35b09d466b9cf0295af54d30d53"><span>图标素材</span><span
+                                    class="s-count">6</span></a></li>
+                        <li><a href="#722d3693fc0b9344bb46ee220beac1b6" data-term="722d3693fc0b9344bb46ee220beac1b6"><span>字体资源</span><span
+                                    class="s-count">1</span></a></li>
+                    </ul>
+                </li>
+                <li class="desk-group">
+                    <a class="desk-group-link" href="#c7a9a750a4a636f0bb3e982b5ea9141c" data-group="b19b233db73ba870f8dadd9fcd02f9a8">
+                        <i class="fas fa-pencil-alt fa-lg" aria-hidden="true"></i>
+                        <span class="g-name">资讯学习</span>
+                        <span class="g-count">20</span>
+                    </a>
+                    <ul class="desk-sub">
+                        <li><a href="#c7a9a750a4a636f0bb3e982b5ea9141c" data-term="c7a9a750a4a636f0bb3e982b5ea9141c"><span>博客论坛</span><span
+                                    class="s-count">12</span></a></li>
+                        <li><a href="#d8c10d78b18506c5dadd1911736cdebf" data-term="d8c10d78b18506c5dadd1911736cdebf"><span>大厂博客</span><span
+                                    class="s-count">3</span></a></li>
+                        <li><a href="#7b375b8236d0c82c005c97b599e8a05a" data-term="7b375b8236d0c82c005c97b599e8a05a"><span>日语辞典</span><span
+                                    class="s-count">3</span></a></li>
+                        <li><a href="#bb96d261b1ab1c280d54d23c761cc33c" data-term="bb96d261b1ab1c280d54d23c761cc33c"><span>生活百科</span><span
+                                    class="s-count">2</span></a></li>
+                    </ul>
+                </li>
+                <li class="desk-group">
+                    <a class="desk-group-link" href="#de24c248653e40ffc1b65898b03b1a4c" data-group="90c9e022a0285557f4df7d813c1409e8">
+                        <i class="fas fa-archive fa-lg" aria-hidden="true"></i>
+                        <span class="g-name">冷备份</span>
+                        <span class="g-count">3</span>
+                    </a>
+                    <ul class="desk-sub">
+                        <li><a href="#de24c248653e40ffc1b65898b03b1a4c" data-term="de24c248653e40ffc1b65898b03b1a4c"><span>杂项工具</span><span
+                                    class="s-count">3</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="desk-main" id="content">
+            <h1 class="desk-sr">LML - Li&#39;s Misc Library - 英平的任意门</h1>
+            <section class="desk-section" id="366a7288b80ec8882b88467447296837" data-group="366a7288b80ec8882b88467447296837">
+                <header class="desk-section-head">
+                    <i class="far fa-star" aria-hidden="true"></i>
+                    <h2>常用推荐</h2>
+                    <span class="desk-section-count">11</span>
+                </header>
+                <div class="desk-section-body">
+                <ol class="desk-list">
+                    <li class="desk-row" data-name="GitHub" data-host="github.com" data-desc="" data-term="366a7288b80ec8882b88467447296837" data-tname="常用推荐" data-group="366a7288b80ec8882b88467447296837">
+                                    <a class="desk-row-link" href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://github.githubassets.com/favicons/favicon-dark.svg" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">GitHub</span>
+                                        <span class="r-host">github.com</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true"></span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                    <li class="desk-row" data-name="Arxiv" data-host="arxiv.org" data-desc="" data-term="366a7288b80ec8882b88467447296837" data-tname="常用推荐" data-group="366a7288b80ec8882b88467447296837">
+                                    <a class="desk-row-link" href="https://arxiv.org/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://arxiv.org/static/browse/0.3.4/images/icons/favicon-32x32.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Arxiv</span>
+                                        <span class="r-host">arxiv.org</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true"></span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                    <li class="desk-row" data-name="Google Scholar" data-host="scholar.google.com" data-desc="" data-term="366a7288b80ec8882b88467447296837" data-tname="常用推荐" data-group="366a7288b80ec8882b88467447296837">
+                                    <a class="desk-row-link" href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://scholar.google.com/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Google Scholar</span>
+                                        <span class="r-host">scholar.google.com</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true"></span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                    <li class="desk-row" data-name="Hugging Face" data-host="huggingface.co" data-desc="" data-term="366a7288b80ec8882b88467447296837" data-tname="常用推荐" data-group="366a7288b80ec8882b88467447296837">
+                                    <a class="desk-row-link" href="https://huggingface.co/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Hugging Face</span>
+                                        <span class="r-host">huggingface.co</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true"></span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                    <li class="desk-row" data-name="Docker Hub" data-host="hub.docker.com" data-desc="Docker Hub" data-term="366a7288b80ec8882b88467447296837" data-tname="常用推荐" data-group="366a7288b80ec8882b88467447296837">
+                                    <a class="desk-row-link" href="https://hub.docker.com/explore" target="_blank" rel="noopener noreferrer" title="Docker Hub">
+                                        <span class="r-logo"><img src="https://hub.docker.com/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Docker Hub</span>
+                                        <span class="r-host">hub.docker.com</span>
+                                        <span class="r-desc">Docker Hub</span>
+                                        <span class="r-term" aria-hidden="true"></span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                    <li class="desk-row" data-name="Cloudflare Dashboard" data-host="dash.cloudflare.com" data-desc="" data-term="366a7288b80ec8882b88467447296837" data-tname="常用推荐" data-group="366a7288b80ec8882b88467447296837">
+                                    <a class="desk-row-link" href="https://dash.cloudflare.com/login" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://dash.cloudflare.com/favicon-196x196.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Cloudflare Dashboard</span>
+                                        <span class="r-host">dash.cloudflare.com</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true"></span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                    <li class="desk-row" data-name="PyPI" data-host="pypi.org" data-desc="" data-term="366a7288b80ec8882b88467447296837" data-tname="常用推荐" data-group="366a7288b80ec8882b88467447296837">
+                                    <a class="desk-row-link" href="https://pypi.org/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://pypi.org/static/images/favicon.35549fe8.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">PyPI</span>
+                                        <span class="r-host">pypi.org</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true"></span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                    <li class="desk-row" data-name="ModelScope" data-host="modelscope.cn" data-desc="" data-term="366a7288b80ec8882b88467447296837" data-tname="常用推荐" data-group="366a7288b80ec8882b88467447296837">
+                                    <a class="desk-row-link" href="https://www.modelscope.cn/home" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://g.alicdn.com/sail-web/maas/2.7.30/favicon/128.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">ModelScope</span>
+                                        <span class="r-host">modelscope.cn</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true"></span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                    <li class="desk-row" data-name="Zotero Web Library" data-host="zotero.org" data-desc="" data-term="366a7288b80ec8882b88467447296837" data-tname="常用推荐" data-group="366a7288b80ec8882b88467447296837">
+                                    <a class="desk-row-link" href="https://www.zotero.org/mylibrary" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://www.zotero.org/static/images/home/privacy.svg" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Zotero Web Library</span>
+                                        <span class="r-host">zotero.org</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true"></span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                    <li class="desk-row" data-name="Python Extension Packages for Windows" data-host="cgohlke.com" data-desc="Windows 平台下 Python 第三方库预编译二进制轮子下载" data-term="366a7288b80ec8882b88467447296837" data-tname="常用推荐" data-group="366a7288b80ec8882b88467447296837">
+                                    <a class="desk-row-link" href="https://www.cgohlke.com/" target="_blank" rel="noopener noreferrer" title="Windows 平台下 Python 第三方库预编译二进制轮子下载">
+                                        <span class="r-logo"><img src="https://www.cgohlke.com/cgohlke.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Python Extension Packages for Windows</span>
+                                        <span class="r-host">cgohlke.com</span>
+                                        <span class="r-desc">Windows 平台下 Python 第三方库预编译二进制轮子下载</span>
+                                        <span class="r-term" aria-hidden="true"></span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                    <li class="desk-row" data-name="知乎" data-host="zhihu.com" data-desc="" data-term="366a7288b80ec8882b88467447296837" data-tname="常用推荐" data-group="366a7288b80ec8882b88467447296837">
+                                    <a class="desk-row-link" href="https://www.zhihu.com/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://static.zhihu.com/heifetz/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">知乎</span>
+                                        <span class="r-host">zhihu.com</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true"></span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                </ol>
+                </div>
+            </section>
+            <section class="desk-section" id="34dd8486af108e037f606b15bbb2ad34" data-group="13dcc046faf355379bc1165e61e6878f">
+                <header class="desk-section-head">
+                    <i class="far fa-gem fa-lg" aria-hidden="true"></i>
+                    <h2>AI 相关</h2>
+                    <span class="desk-section-count">53</span>
+                </header>
+                <div class="desk-section-body">
+                <section class="desk-subsection" id="34dd8486af108e037f606b15bbb2ad34" data-term="34dd8486af108e037f606b15bbb2ad34">
+                    <h3 class="desk-sub-head">AI 产品<span>17</span></h3>
+                    <ol class="desk-list">
+                        <li class="desk-row" data-name="ChatGPT" data-host="chat.openai.com" data-desc="" data-term="34dd8486af108e037f606b15bbb2ad34" data-tname="AI 产品" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://chat.openai.com/chat" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://chatgpt.com/cdn/assets/favicon-eex17e9e.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">ChatGPT</span>
+                                        <span class="r-host">chat.openai.com</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">AI 产品</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Manus" data-host="manus.im" data-desc="" data-term="34dd8486af108e037f606b15bbb2ad34" data-tname="AI 产品" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://manus.im/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://manus.im/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Manus</span>
+                                        <span class="r-host">manus.im</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">AI 产品</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Cursor" data-host="cursor.com" data-desc="" data-term="34dd8486af108e037f606b15bbb2ad34" data-tname="AI 产品" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://www.cursor.com/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://www.cursor.com/favicon.svg" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Cursor</span>
+                                        <span class="r-host">cursor.com</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">AI 产品</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Gemini" data-host="gemini.google.com" data-desc="" data-term="34dd8486af108e037f606b15bbb2ad34" data-tname="AI 产品" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://gemini.google.com/app" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Gemini</span>
+                                        <span class="r-host">gemini.google.com</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">AI 产品</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Grok" data-host="grok.com" data-desc="" data-term="34dd8486af108e037f606b15bbb2ad34" data-tname="AI 产品" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://grok.com/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://grok.com/images/favicon.svg" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Grok</span>
+                                        <span class="r-host">grok.com</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">AI 产品</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="DeepSeek" data-host="chat.deepseek.com" data-desc="" data-term="34dd8486af108e037f606b15bbb2ad34" data-tname="AI 产品" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://chat.deepseek.com/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://fe-static.deepseek.com/chat/favicon.svg" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">DeepSeek</span>
+                                        <span class="r-host">chat.deepseek.com</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">AI 产品</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Kimi" data-host="kimi.moonshot.cn" data-desc="" data-term="34dd8486af108e037f606b15bbb2ad34" data-tname="AI 产品" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://kimi.moonshot.cn/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://statics.moonshot.cn/kimi-chat/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Kimi</span>
+                                        <span class="r-host">kimi.moonshot.cn</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">AI 产品</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Qwen" data-host="chat.qwen.ai" data-desc="" data-term="34dd8486af108e037f606b15bbb2ad34" data-tname="AI 产品" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://chat.qwen.ai/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://assets.alicdn.com/g/qwenweb/qwen-webui-fe/0.0.87/favicon.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Qwen</span>
+                                        <span class="r-host">chat.qwen.ai</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">AI 产品</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="秘塔AI搜索" data-host="metaso.cn" data-desc="" data-term="34dd8486af108e037f606b15bbb2ad34" data-tname="AI 产品" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://metaso.cn/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://favicon.im/metaso.cn?larger=true" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">秘塔AI搜索</span>
+                                        <span class="r-host">metaso.cn</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">AI 产品</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="MiroThinker" data-host="dr.miromind.ai" data-desc="" data-term="34dd8486af108e037f606b15bbb2ad34" data-tname="AI 产品" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://dr.miromind.ai/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://dr.miromind.ai/favicon.svg" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">MiroThinker</span>
+                                        <span class="r-host">dr.miromind.ai</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">AI 产品</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="NotebookLM" data-host="notebooklm.google.com" data-desc="" data-term="34dd8486af108e037f606b15bbb2ad34" data-tname="AI 产品" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://notebooklm.google.com/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://notebooklm.google.com/_/static/branding/v5/light_mode/favicon/favicon.svg" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">NotebookLM</span>
+                                        <span class="r-host">notebooklm.google.com</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">AI 产品</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="DeepWiki" data-host="deepwiki.com" data-desc="Devin 团队开发 Github 主流仓库 Wiki 和问答平台" data-term="34dd8486af108e037f606b15bbb2ad34" data-tname="AI 产品" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://deepwiki.com/" target="_blank" rel="noopener noreferrer" title="Devin 团队开发 Github 主流仓库 Wiki 和问答平台">
+                                        <span class="r-logo"><img src="https://deepwiki.com/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">DeepWiki</span>
+                                        <span class="r-host">deepwiki.com</span>
+                                        <span class="r-desc">Devin 团队开发 Github 主流仓库 Wiki 和问答平台</span>
+                                        <span class="r-term" aria-hidden="true">AI 产品</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Midjourney" data-host="midjourney.com" data-desc="" data-term="34dd8486af108e037f606b15bbb2ad34" data-tname="AI 产品" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://www.midjourney.com/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://cdn.svgporn.com/logos/midjourney.svg" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Midjourney</span>
+                                        <span class="r-host">midjourney.com</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">AI 产品</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Civitai" data-host="civitai.com" data-desc="" data-term="34dd8486af108e037f606b15bbb2ad34" data-tname="AI 产品" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://civitai.com/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://civitai.com/favicon-blue.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Civitai</span>
+                                        <span class="r-host">civitai.com</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">AI 产品</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Civitai Green" data-host="civitai.green" data-desc="Civitai 的 Safe for Work 版本" data-term="34dd8486af108e037f606b15bbb2ad34" data-tname="AI 产品" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://civitai.green/" target="_blank" rel="noopener noreferrer" title="Civitai 的 Safe for Work 版本">
+                                        <span class="r-logo"><img src="https://civitai.com/favicon-green.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Civitai Green</span>
+                                        <span class="r-host">civitai.green</span>
+                                        <span class="r-desc">Civitai 的 Safe for Work 版本</span>
+                                        <span class="r-term" aria-hidden="true">AI 产品</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="海螺AI" data-host="hailuoai.com" data-desc="MiniMax 发布图像视频生成平台" data-term="34dd8486af108e037f606b15bbb2ad34" data-tname="AI 产品" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://hailuoai.com/" target="_blank" rel="noopener noreferrer" title="MiniMax 发布图像视频生成平台">
+                                        <span class="r-logo"><img src="https://cdn.hailuoai.com/hailuo-video-web/public_assets/favicon.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">海螺AI</span>
+                                        <span class="r-host">hailuoai.com</span>
+                                        <span class="r-desc">MiniMax 发布图像视频生成平台</span>
+                                        <span class="r-term" aria-hidden="true">AI 产品</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="即梦AI" data-host="jimeng.jianying.com" data-desc="字节剪映旗下全功能 AIGC 平台" data-term="34dd8486af108e037f606b15bbb2ad34" data-tname="AI 产品" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://jimeng.jianying.com/" target="_blank" rel="noopener noreferrer" title="字节剪映旗下全功能 AIGC 平台">
+                                        <span class="r-logo"><img src="https://lf3-lv-buz.vlabstatic.com/obj/image-lvweb-buz/common/images/dreamina-v5.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">即梦AI</span>
+                                        <span class="r-host">jimeng.jianying.com</span>
+                                        <span class="r-desc">字节剪映旗下全功能 AIGC 平台</span>
+                                        <span class="r-term" aria-hidden="true">AI 产品</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                    </ol>
+                </section>
+                <section class="desk-subsection" id="57963660a4497b2291f16d1245e02992" data-term="57963660a4497b2291f16d1245e02992">
+                    <h3 class="desk-sub-head">LLM 服务平台<span>8</span></h3>
+                    <ol class="desk-list">
+                        <li class="desk-row" data-name="OpenRouter" data-host="openrouter.ai" data-desc="LLM API 统一调用平台。" data-term="57963660a4497b2291f16d1245e02992" data-tname="LLM 服务平台" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://openrouter.ai/" target="_blank" rel="noopener noreferrer" title="LLM API 统一调用平台。">
+                                        <span class="r-logo"><img src="https://openrouter.ai/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">OpenRouter</span>
+                                        <span class="r-host">openrouter.ai</span>
+                                        <span class="r-desc">LLM API 统一调用平台。</span>
+                                        <span class="r-term" aria-hidden="true">LLM 服务平台</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="硅基流动" data-host="account.siliconflow.cn" data-desc="" data-term="57963660a4497b2291f16d1245e02992" data-tname="LLM 服务平台" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://account.siliconflow.cn/zh/login" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://favicon.im/www.siliconflow.cn" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">硅基流动</span>
+                                        <span class="r-host">account.siliconflow.cn</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">LLM 服务平台</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Google AI Studio" data-host="aistudio.google.com" data-desc="" data-term="57963660a4497b2291f16d1245e02992" data-tname="LLM 服务平台" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://aistudio.google.com/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://www.gstatic.com/aistudio/ai_studio_favicon_256x256.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Google AI Studio</span>
+                                        <span class="r-host">aistudio.google.com</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">LLM 服务平台</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="xAI Cloud Console" data-host="console.x.ai" data-desc="" data-term="57963660a4497b2291f16d1245e02992" data-tname="LLM 服务平台" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://console.x.ai/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://console.x.ai/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">xAI Cloud Console</span>
+                                        <span class="r-host">console.x.ai</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">LLM 服务平台</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="阿里云百炼" data-host="bailian.console.aliyun.com" data-desc="" data-term="57963660a4497b2291f16d1245e02992" data-tname="LLM 服务平台" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://bailian.console.aliyun.com/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://img.alicdn.com/tfs/TB1_ZXuNcfpK1RjSZFOXXa6nFXa-32-32.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">阿里云百炼</span>
+                                        <span class="r-host">bailian.console.aliyun.com</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">LLM 服务平台</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="MiniMax 开放平台" data-host="platform.minimaxi.com" data-desc="" data-term="57963660a4497b2291f16d1245e02992" data-tname="LLM 服务平台" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://platform.minimaxi.com/login" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://filecdn.minimax.chat/public/25289820-59cd-4365-9829-a3f32b365451.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">MiniMax 开放平台</span>
+                                        <span class="r-host">platform.minimaxi.com</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">LLM 服务平台</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Moonshot 开放平台" data-host="platform.moonshot.cn" data-desc="" data-term="57963660a4497b2291f16d1245e02992" data-tname="LLM 服务平台" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://platform.moonshot.cn/console/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://statics.moonshot.cn/moonshot-ai/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Moonshot 开放平台</span>
+                                        <span class="r-host">platform.moonshot.cn</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">LLM 服务平台</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="DeepSeek 开放平台" data-host="platform.deepseek.com" data-desc="" data-term="57963660a4497b2291f16d1245e02992" data-tname="LLM 服务平台" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://platform.deepseek.com/sign_in" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://platform.deepseek.com/favicon.svg" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">DeepSeek 开放平台</span>
+                                        <span class="r-host">platform.deepseek.com</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">LLM 服务平台</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                    </ol>
+                </section>
+                <section class="desk-subsection" id="0cd5ad2ad24a09348c5e05df0211ecdb" data-term="0cd5ad2ad24a09348c5e05df0211ecdb">
+                    <h3 class="desk-sub-head">Agent 服务<span>3</span></h3>
+                    <ol class="desk-list">
+                        <li class="desk-row" data-name="Agent Mail" data-host="agent.qq.com" data-desc="腾讯 Agent 独立邮箱。" data-term="0cd5ad2ad24a09348c5e05df0211ecdb" data-tname="Agent 服务" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://agent.qq.com/" target="_blank" rel="noopener noreferrer" title="腾讯 Agent 独立邮箱。">
+                                        <span class="r-logo"><img src="https://res.wx.qq.com/t/webmail/webmail/res/static/images/public/index_bot/favicon/favicon_48h.d14be67.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Agent Mail</span>
+                                        <span class="r-host">agent.qq.com</span>
+                                        <span class="r-desc">腾讯 Agent 独立邮箱。</span>
+                                        <span class="r-term" aria-hidden="true">Agent 服务</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="AnySearch" data-host="anysearch.com" data-desc="AI 搜索 MCP 和 Skill 基础设施。" data-term="0cd5ad2ad24a09348c5e05df0211ecdb" data-tname="Agent 服务" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://www.anysearch.com/home" target="_blank" rel="noopener noreferrer" title="AI 搜索 MCP 和 Skill 基础设施。">
+                                        <span class="r-logo"><img src="https://www.anysearch.com/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">AnySearch</span>
+                                        <span class="r-host">anysearch.com</span>
+                                        <span class="r-desc">AI 搜索 MCP 和 Skill 基础设施。</span>
+                                        <span class="r-term" aria-hidden="true">Agent 服务</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Context7" data-host="context7.com" data-desc="代码文档检索基础设施。" data-term="0cd5ad2ad24a09348c5e05df0211ecdb" data-tname="Agent 服务" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://context7.com/" target="_blank" rel="noopener noreferrer" title="代码文档检索基础设施。">
+                                        <span class="r-logo"><img src="https://context7.com/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Context7</span>
+                                        <span class="r-host">context7.com</span>
+                                        <span class="r-desc">代码文档检索基础设施。</span>
+                                        <span class="r-term" aria-hidden="true">Agent 服务</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                    </ol>
+                </section>
+                <section class="desk-subsection" id="83a24a901093f28ac394dd6027afcfcb" data-term="83a24a901093f28ac394dd6027afcfcb">
+                    <h3 class="desk-sub-head">LLM 工具<span>12</span></h3>
+                    <ol class="desk-list">
+                        <li class="desk-row" data-name="XSCT Bench" data-host="xsct.ai" data-desc="社区驱动的业务场景评测和选型平台。" data-term="83a24a901093f28ac394dd6027afcfcb" data-tname="LLM 工具" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://xsct.ai/" target="_blank" rel="noopener noreferrer" title="社区驱动的业务场景评测和选型平台。">
+                                        <span class="r-logo"><img src="https://a.favicon.im/xsct.ai" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">XSCT Bench</span>
+                                        <span class="r-host">xsct.ai</span>
+                                        <span class="r-desc">社区驱动的业务场景评测和选型平台。</span>
+                                        <span class="r-term" aria-hidden="true">LLM 工具</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="LLM API Pricing Calculator" data-host="helicone.ai" data-desc="大模型调用价格计算器。" data-term="83a24a901093f28ac394dd6027afcfcb" data-tname="LLM 工具" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://www.helicone.ai/llm-cost" target="_blank" rel="noopener noreferrer" title="大模型调用价格计算器。">
+                                        <span class="r-logo"><img src="https://www.helicone.ai/_next/image?url=%2Fstatic%2Fpricing-calc%2Fcoins.webp&amp;w=256&amp;q=100" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">LLM API Pricing Calculator</span>
+                                        <span class="r-host">helicone.ai</span>
+                                        <span class="r-desc">大模型调用价格计算器。</span>
+                                        <span class="r-term" aria-hidden="true">LLM 工具</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Models.dev" data-host="models.dev" data-desc="开源 LLM/Provider 信息和价格数据库。" data-term="83a24a901093f28ac394dd6027afcfcb" data-tname="LLM 工具" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://models.dev/" target="_blank" rel="noopener noreferrer" title="开源 LLM/Provider 信息和价格数据库。">
+                                        <span class="r-logo"><img src="https://models.dev/favicon-aq6crjze.svg" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Models.dev</span>
+                                        <span class="r-host">models.dev</span>
+                                        <span class="r-desc">开源 LLM/Provider 信息和价格数据库。</span>
+                                        <span class="r-term" aria-hidden="true">LLM 工具</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="MCP Registry Registry" data-host="mastra.ai" data-desc="MCP 服务器列表合集站。" data-term="83a24a901093f28ac394dd6027afcfcb" data-tname="LLM 工具" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://mastra.ai/mcp-registry-registry" target="_blank" rel="noopener noreferrer" title="MCP 服务器列表合集站。">
+                                        <span class="r-logo"><img src="https://mastra.ai/favicon/new-brand/icon.svg" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">MCP Registry Registry</span>
+                                        <span class="r-host">mastra.ai</span>
+                                        <span class="r-desc">MCP 服务器列表合集站。</span>
+                                        <span class="r-term" aria-hidden="true">LLM 工具</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="SkillsMP" data-host="skillsmp.com" data-desc="SKILL.MD 市场。" data-term="83a24a901093f28ac394dd6027afcfcb" data-tname="LLM 工具" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://skillsmp.com/" target="_blank" rel="noopener noreferrer" title="SKILL.MD 市场。">
+                                        <span class="r-logo"><img src="https://skillsmp.com/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">SkillsMP</span>
+                                        <span class="r-host">skillsmp.com</span>
+                                        <span class="r-desc">SKILL.MD 市场。</span>
+                                        <span class="r-term" aria-hidden="true">LLM 工具</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Skills.sh" data-host="skills.sh" data-desc="Vercel 收录开源 Skills 目录。" data-term="83a24a901093f28ac394dd6027afcfcb" data-tname="LLM 工具" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://skills.sh/" target="_blank" rel="noopener noreferrer" title="Vercel 收录开源 Skills 目录。">
+                                        <span class="r-logo"><img src="https://skills.sh/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Skills.sh</span>
+                                        <span class="r-host">skills.sh</span>
+                                        <span class="r-desc">Vercel 收录开源 Skills 目录。</span>
+                                        <span class="r-term" aria-hidden="true">LLM 工具</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="SkillForge" data-host="skills.yangsir.net" data-desc="按职业查找适合的 Skill" data-term="83a24a901093f28ac394dd6027afcfcb" data-tname="LLM 工具" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://skills.yangsir.net/" target="_blank" rel="noopener noreferrer" title="按职业查找适合的 Skill">
+                                        <span class="r-logo"><img src="https://skills.yangsir.net/favicon.ico?favicon.0b3bf435.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">SkillForge</span>
+                                        <span class="r-host">skills.yangsir.net</span>
+                                        <span class="r-desc">按职业查找适合的 Skill</span>
+                                        <span class="r-term" aria-hidden="true">LLM 工具</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="ACP Registry" data-host="agentclientprotocol.com" data-desc="ACP 协议应用列表。" data-term="83a24a901093f28ac394dd6027afcfcb" data-tname="LLM 工具" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://agentclientprotocol.com/get-started/registry" target="_blank" rel="noopener noreferrer" title="ACP 协议应用列表。">
+                                        <span class="r-logo"><img src="https://agentclientprotocol.com/mintlify-assets/_mintlify/favicons/zed-685ed6d6/FRQhP3nE5XCe1eY2/_generated/favicon-dark/favicon-16x16.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">ACP Registry</span>
+                                        <span class="r-host">agentclientprotocol.com</span>
+                                        <span class="r-desc">ACP 协议应用列表。</span>
+                                        <span class="r-term" aria-hidden="true">LLM 工具</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="ClawHub" data-host="clawhub.ai" data-desc="OpenClaw 官方 Skill 仓库" data-term="83a24a901093f28ac394dd6027afcfcb" data-tname="LLM 工具" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://clawhub.ai/" target="_blank" rel="noopener noreferrer" title="OpenClaw 官方 Skill 仓库">
+                                        <span class="r-logo"><img src="https://a.favicon.im/clawhub.ai" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">ClawHub</span>
+                                        <span class="r-host">clawhub.ai</span>
+                                        <span class="r-desc">OpenClaw 官方 Skill 仓库</span>
+                                        <span class="r-term" aria-hidden="true">LLM 工具</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="n8n 官方工作流模板库" data-host="n8n.io" data-desc="" data-term="83a24a901093f28ac394dd6027afcfcb" data-tname="LLM 工具" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://n8n.io/workflows/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://raw.githubusercontent.com/lobehub/lobe-icons/refs/heads/master/packages/static-png/light/n8n-color.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">n8n 官方工作流模板库</span>
+                                        <span class="r-host">n8n.io</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">LLM 工具</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Phistory" data-host="phistory.cc" data-desc="CC 等 CLI Agent 系统提示词 Trace。" data-term="83a24a901093f28ac394dd6027afcfcb" data-tname="LLM 工具" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://phistory.cc/" target="_blank" rel="noopener noreferrer" title="CC 等 CLI Agent 系统提示词 Trace。">
+                                        <span class="r-logo"><img src="https://a.favicon.im/phistory.cc" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Phistory</span>
+                                        <span class="r-host">phistory.cc</span>
+                                        <span class="r-desc">CC 等 CLI Agent 系统提示词 Trace。</span>
+                                        <span class="r-term" aria-hidden="true">LLM 工具</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="HF Viewer" data-host="hfviewer.com" data-desc="粘贴 Hugging Face 模型链接，交互式查看模型结构图。" data-term="83a24a901093f28ac394dd6027afcfcb" data-tname="LLM 工具" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://hfviewer.com/" target="_blank" rel="noopener noreferrer" title="粘贴 Hugging Face 模型链接，交互式查看模型结构图。">
+                                        <span class="r-logo"><img src="https://hfviewer.com/assets/hfviewer-favicon.svg" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">HF Viewer</span>
+                                        <span class="r-host">hfviewer.com</span>
+                                        <span class="r-desc">粘贴 Hugging Face 模型链接，交互式查看模型结构图。</span>
+                                        <span class="r-term" aria-hidden="true">LLM 工具</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                    </ol>
+                </section>
+                <section class="desk-subsection" id="9bfc71ecb0d36478d4c65895f334d998" data-term="9bfc71ecb0d36478d4c65895f334d998">
+                    <h3 class="desk-sub-head">LLM Leaderboard<span>13</span></h3>
+                    <ol class="desk-list">
+                        <li class="desk-row" data-name="LLM Stat" data-host="llm-stats.com" data-desc="汇总 MMLU、GPQA、HumanEval、DROP、MATH 基准结果" data-term="9bfc71ecb0d36478d4c65895f334d998" data-tname="LLM Leaderboard" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://llm-stats.com/" target="_blank" rel="noopener noreferrer" title="汇总 MMLU、GPQA、HumanEval、DROP、MATH 基准结果">
+                                        <span class="r-logo"><img src="https://llm-stats.com/icon.svg" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">LLM Stat</span>
+                                        <span class="r-host">llm-stats.com</span>
+                                        <span class="r-desc">汇总 MMLU、GPQA、HumanEval、DROP、MATH 基准结果</span>
+                                        <span class="r-term" aria-hidden="true">LLM Leaderboard</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Artificial Analysis" data-host="artificialanalysis.ai" data-desc="LLM、Image、Audio、Video 等多任务综合竞技场" data-term="9bfc71ecb0d36478d4c65895f334d998" data-tname="LLM Leaderboard" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://artificialanalysis.ai/" target="_blank" rel="noopener noreferrer" title="LLM、Image、Audio、Video 等多任务综合竞技场">
+                                        <span class="r-logo"><img src="https://artificialanalysis.ai/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Artificial Analysis</span>
+                                        <span class="r-host">artificialanalysis.ai</span>
+                                        <span class="r-desc">LLM、Image、Audio、Video 等多任务综合竞技场</span>
+                                        <span class="r-term" aria-hidden="true">LLM Leaderboard</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="LiveBench" data-host="livebench.ai" data-desc="LLM 综合能力榜单" data-term="9bfc71ecb0d36478d4c65895f334d998" data-tname="LLM Leaderboard" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://livebench.ai/" target="_blank" rel="noopener noreferrer" title="LLM 综合能力榜单">
+                                        <span class="r-logo"><img src="https://livebench.ai/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">LiveBench</span>
+                                        <span class="r-host">livebench.ai</span>
+                                        <span class="r-desc">LLM 综合能力榜单</span>
+                                        <span class="r-term" aria-hidden="true">LLM Leaderboard</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="LMSYS LMArena" data-host="beta.lmarena.ai" data-desc="LLM 综合竞技场（文本、图像、Web、Copilot、文生图）" data-term="9bfc71ecb0d36478d4c65895f334d998" data-tname="LLM Leaderboard" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://beta.lmarena.ai/leaderboard" target="_blank" rel="noopener noreferrer" title="LLM 综合竞技场（文本、图像、Web、Copilot、文生图）">
+                                        <span class="r-logo"><img src="https://avatars.githubusercontent.com/u/126381704?s=200&amp;v=4" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">LMSYS LMArena</span>
+                                        <span class="r-host">beta.lmarena.ai</span>
+                                        <span class="r-desc">LLM 综合竞技场（文本、图像、Web、Copilot、文生图）</span>
+                                        <span class="r-term" aria-hidden="true">LLM Leaderboard</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Design Arena" data-host="designarena.ai" data-desc="LLM UI 设计能力竞技场（网站、数据可视化、SVG等）" data-term="9bfc71ecb0d36478d4c65895f334d998" data-tname="LLM Leaderboard" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://www.designarena.ai/leaderboard" target="_blank" rel="noopener noreferrer" title="LLM UI 设计能力竞技场（网站、数据可视化、SVG等）">
+                                        <span class="r-logo"><img src="https://www.designarena.ai/design-arena.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Design Arena</span>
+                                        <span class="r-host">designarena.ai</span>
+                                        <span class="r-desc">LLM UI 设计能力竞技场（网站、数据可视化、SVG等）</span>
+                                        <span class="r-term" aria-hidden="true">LLM Leaderboard</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="EQ-Bench" data-host="eqbench.com" data-desc="LLM 情商和创意写作榜单" data-term="9bfc71ecb0d36478d4c65895f334d998" data-tname="LLM Leaderboard" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://eqbench.com/index.html" target="_blank" rel="noopener noreferrer" title="LLM 情商和创意写作榜单">
+                                        <span class="r-logo"><img src="https://eqbench.com/images/eqbench_logo_sml.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">EQ-Bench</span>
+                                        <span class="r-host">eqbench.com</span>
+                                        <span class="r-desc">LLM 情商和创意写作榜单</span>
+                                        <span class="r-term" aria-hidden="true">LLM Leaderboard</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="MTEB" data-host="huggingface.co" data-desc="Embeddings 和文本检索基准" data-term="9bfc71ecb0d36478d4c65895f334d998" data-tname="LLM Leaderboard" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://huggingface.co/spaces/mteb/leaderboard" target="_blank" rel="noopener noreferrer" title="Embeddings 和文本检索基准">
+                                        <span class="r-logo"><img src="https://avatars.githubusercontent.com/u/103029531?s=200&amp;v=4" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">MTEB</span>
+                                        <span class="r-host">huggingface.co</span>
+                                        <span class="r-desc">Embeddings 和文本检索基准</span>
+                                        <span class="r-term" aria-hidden="true">LLM Leaderboard</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Aider Leaderboard" data-host="aider.chat" data-desc="基于 Aider 的代码编写和重构榜单" data-term="9bfc71ecb0d36478d4c65895f334d998" data-tname="LLM Leaderboard" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://aider.chat/docs/leaderboards/" target="_blank" rel="noopener noreferrer" title="基于 Aider 的代码编写和重构榜单">
+                                        <span class="r-logo"><img src="https://aider.chat/assets/icons/favicon-32x32.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Aider Leaderboard</span>
+                                        <span class="r-host">aider.chat</span>
+                                        <span class="r-desc">基于 Aider 的代码编写和重构榜单</span>
+                                        <span class="r-term" aria-hidden="true">LLM Leaderboard</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="BFCL Leaderboard" data-host="gorilla.cs.berkeley.edu" data-desc="LLM 函数调用能力评价榜单" data-term="9bfc71ecb0d36478d4c65895f334d998" data-tname="LLM Leaderboard" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://gorilla.cs.berkeley.edu/leaderboard.html" target="_blank" rel="noopener noreferrer" title="LLM 函数调用能力评价榜单">
+                                        <span class="r-logo"><img src="https://gorilla.cs.berkeley.edu/assets/img/Cal.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">BFCL Leaderboard</span>
+                                        <span class="r-host">gorilla.cs.berkeley.edu</span>
+                                        <span class="r-desc">LLM 函数调用能力评价榜单</span>
+                                        <span class="r-term" aria-hidden="true">LLM Leaderboard</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Open Japanese LLM Leaderboard V2" data-host="huggingface.co" data-desc="LLM-JP 日本开源 LLM 榜单" data-term="9bfc71ecb0d36478d4c65895f334d998" data-tname="LLM Leaderboard" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://huggingface.co/spaces/llm-jp/open-japanese-llm-leaderboard-v2" target="_blank" rel="noopener noreferrer" title="LLM-JP 日本开源 LLM 榜单">
+                                        <span class="r-logo"><img src="https://avatars.githubusercontent.com/u/134031702?s=200&amp;v=4" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Open Japanese LLM Leaderboard V2</span>
+                                        <span class="r-host">huggingface.co</span>
+                                        <span class="r-desc">LLM-JP 日本开源 LLM 榜单</span>
+                                        <span class="r-term" aria-hidden="true">LLM Leaderboard</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Swallow LLM Leaderboard v2" data-host="swallow-llm.github.io" data-desc="Swallow LLM 日本语榜单" data-term="9bfc71ecb0d36478d4c65895f334d998" data-tname="LLM Leaderboard" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://swallow-llm.github.io/leaderboard/index-post.ja.html" target="_blank" rel="noopener noreferrer" title="Swallow LLM 日本语榜单">
+                                        <span class="r-logo"><img src="https://swallow-llm.github.io/static/favicon.svg" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Swallow LLM Leaderboard v2</span>
+                                        <span class="r-host">swallow-llm.github.io</span>
+                                        <span class="r-desc">Swallow LLM 日本语榜单</span>
+                                        <span class="r-term" aria-hidden="true">LLM Leaderboard</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Ultralytics Benchmarks" data-host="ultralytics.com" data-desc="YOLO26 在 NVIDIA GPU 与手机 CPU/GPU/NPU 上的训练吞吐、推理延迟和能效基准。" data-term="9bfc71ecb0d36478d4c65895f334d998" data-tname="LLM Leaderboard" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://www.ultralytics.com/benchmarks" target="_blank" rel="noopener noreferrer" title="YOLO26 在 NVIDIA GPU 与手机 CPU/GPU/NPU 上的训练吞吐、推理延迟和能效基准。">
+                                        <span class="r-logo"><img src="https://www.ultralytics.com/icon.svg" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Ultralytics Benchmarks</span>
+                                        <span class="r-host">ultralytics.com</span>
+                                        <span class="r-desc">YOLO26 在 NVIDIA GPU 与手机 CPU/GPU/NPU 上的训练吞吐、推理延迟和能效基准。</span>
+                                        <span class="r-term" aria-hidden="true">LLM Leaderboard</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Ultralytics VLM Leaderboard" data-host="ultralytics.com" data-desc="46 个视觉语言模型在真实检测数据集自动标注任务上的准确率、成本与速度排行。" data-term="9bfc71ecb0d36478d4c65895f334d998" data-tname="LLM Leaderboard" data-group="13dcc046faf355379bc1165e61e6878f">
+                                    <a class="desk-row-link" href="https://www.ultralytics.com/benchmarks/vlm" target="_blank" rel="noopener noreferrer" title="46 个视觉语言模型在真实检测数据集自动标注任务上的准确率、成本与速度排行。">
+                                        <span class="r-logo"><img src="https://www.ultralytics.com/icon.svg" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Ultralytics VLM Leaderboard</span>
+                                        <span class="r-host">ultralytics.com</span>
+                                        <span class="r-desc">46 个视觉语言模型在真实检测数据集自动标注任务上的准确率、成本与速度排行。</span>
+                                        <span class="r-term" aria-hidden="true">LLM Leaderboard</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                    </ol>
+                </section>
+                </div>
+            </section>
+            <section class="desk-section" id="9c2232288caaa8ec40948cef6a786ac2" data-group="7c5b9182d43ec30f191cb2cf4bee42ee">
+                <header class="desk-section-head">
+                    <i class="far fa-file-code fa-lg" aria-hidden="true"></i>
+                    <h2>开发相关</h2>
+                    <span class="desk-section-count">27</span>
+                </header>
+                <div class="desk-section-body">
+                <section class="desk-subsection" id="9c2232288caaa8ec40948cef6a786ac2" data-term="9c2232288caaa8ec40948cef6a786ac2">
+                    <h3 class="desk-sub-head">在线工具<span>17</span></h3>
+                    <ol class="desk-list">
+                        <li class="desk-row" data-name="ProgrammingMusic" data-host="musicforprogramming.net" data-desc="" data-term="9c2232288caaa8ec40948cef6a786ac2" data-tname="在线工具" data-group="7c5b9182d43ec30f191cb2cf4bee42ee">
+                                    <a class="desk-row-link" href="https://musicforprogramming.net/latest/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://musicforprogramming.net/favicon.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">ProgrammingMusic</span>
+                                        <span class="r-host">musicforprogramming.net</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">在线工具</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="JSON Viewer" data-host="jsonviewer.arianv.com" data-desc="JSON 格式化工具" data-term="9c2232288caaa8ec40948cef6a786ac2" data-tname="在线工具" data-group="7c5b9182d43ec30f191cb2cf4bee42ee">
+                                    <a class="desk-row-link" href="https://jsonviewer.arianv.com/" target="_blank" rel="noopener noreferrer" title="JSON 格式化工具">
+                                        <span class="r-logo"><img src="https://jsonviewer.arianv.com/favicon-96x96.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">JSON Viewer</span>
+                                        <span class="r-host">jsonviewer.arianv.com</span>
+                                        <span class="r-desc">JSON 格式化工具</span>
+                                        <span class="r-term" aria-hidden="true">在线工具</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Regex 101" data-host="regex101.com" data-desc="正则表达式在线测试工具" data-term="9c2232288caaa8ec40948cef6a786ac2" data-tname="在线工具" data-group="7c5b9182d43ec30f191cb2cf4bee42ee">
+                                    <a class="desk-row-link" href="https://regex101.com/" target="_blank" rel="noopener noreferrer" title="正则表达式在线测试工具">
+                                        <span class="r-logo"><img src="https://regex101.com/static/assets/icons/favicon-196.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Regex 101</span>
+                                        <span class="r-host">regex101.com</span>
+                                        <span class="r-desc">正则表达式在线测试工具</span>
+                                        <span class="r-term" aria-hidden="true">在线工具</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="SVG Viewer" data-host="svgviewer.dev" data-desc="SVG 压缩、预览和格式化工具" data-term="9c2232288caaa8ec40948cef6a786ac2" data-tname="在线工具" data-group="7c5b9182d43ec30f191cb2cf4bee42ee">
+                                    <a class="desk-row-link" href="https://www.svgviewer.dev/" target="_blank" rel="noopener noreferrer" title="SVG 压缩、预览和格式化工具">
+                                        <span class="r-logo"><img src="https://www.svgviewer.dev/images/logo.svg" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">SVG Viewer</span>
+                                        <span class="r-host">svgviewer.dev</span>
+                                        <span class="r-desc">SVG 压缩、预览和格式化工具</span>
+                                        <span class="r-term" aria-hidden="true">在线工具</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Mermaid Live Editor" data-host="mermaid.live" data-desc="Mermaid 官方在线编辑器" data-term="9c2232288caaa8ec40948cef6a786ac2" data-tname="在线工具" data-group="7c5b9182d43ec30f191cb2cf4bee42ee">
+                                    <a class="desk-row-link" href="https://mermaid.live/edit/" target="_blank" rel="noopener noreferrer" title="Mermaid 官方在线编辑器">
+                                        <span class="r-logo"><img src="https://mermaid.live/favicon.svg" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Mermaid Live Editor</span>
+                                        <span class="r-host">mermaid.live</span>
+                                        <span class="r-desc">Mermaid 官方在线编辑器</span>
+                                        <span class="r-term" aria-hidden="true">在线工具</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="TableConvert" data-host="tableconvert.com" data-desc="在线转换 CSV、DB、MD、Latex 等各种类型表格数据" data-term="9c2232288caaa8ec40948cef6a786ac2" data-tname="在线工具" data-group="7c5b9182d43ec30f191cb2cf4bee42ee">
+                                    <a class="desk-row-link" href="https://tableconvert.com/" target="_blank" rel="noopener noreferrer" title="在线转换 CSV、DB、MD、Latex 等各种类型表格数据">
+                                        <span class="r-logo"><img src="https://tableconvert.com/images/favicon.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">TableConvert</span>
+                                        <span class="r-host">tableconvert.com</span>
+                                        <span class="r-desc">在线转换 CSV、DB、MD、Latex 等各种类型表格数据</span>
+                                        <span class="r-term" aria-hidden="true">在线工具</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Excalidraw" data-host="excalidraw.com" data-desc="在线手绘风图表绘制工具" data-term="9c2232288caaa8ec40948cef6a786ac2" data-tname="在线工具" data-group="7c5b9182d43ec30f191cb2cf4bee42ee">
+                                    <a class="desk-row-link" href="https://excalidraw.com/" target="_blank" rel="noopener noreferrer" title="在线手绘风图表绘制工具">
+                                        <span class="r-logo"><img src="https://excalidraw.com/favicon-32x32.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Excalidraw</span>
+                                        <span class="r-host">excalidraw.com</span>
+                                        <span class="r-desc">在线手绘风图表绘制工具</span>
+                                        <span class="r-term" aria-hidden="true">在线工具</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Convertio" data-host="convertio.co" data-desc="在线文件格式转换工具" data-term="9c2232288caaa8ec40948cef6a786ac2" data-tname="在线工具" data-group="7c5b9182d43ec30f191cb2cf4bee42ee">
+                                    <a class="desk-row-link" href="https://convertio.co/zh/" target="_blank" rel="noopener noreferrer" title="在线文件格式转换工具">
+                                        <span class="r-logo"><img src="https://static.convertio.co/img/apple-touch-icon-76x76-precomposed.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Convertio</span>
+                                        <span class="r-host">convertio.co</span>
+                                        <span class="r-desc">在线文件格式转换工具</span>
+                                        <span class="r-term" aria-hidden="true">在线工具</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Composerizer" data-host="composerize.com" data-desc="Docker 命令转 Docker-Compose 文件" data-term="9c2232288caaa8ec40948cef6a786ac2" data-tname="在线工具" data-group="7c5b9182d43ec30f191cb2cf4bee42ee">
+                                    <a class="desk-row-link" href="https://www.composerize.com/" target="_blank" rel="noopener noreferrer" title="Docker 命令转 Docker-Compose 文件">
+                                        <span class="r-logo"><img src="https://www.composerize.com/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Composerizer</span>
+                                        <span class="r-host">composerize.com</span>
+                                        <span class="r-desc">Docker 命令转 Docker-Compose 文件</span>
+                                        <span class="r-term" aria-hidden="true">在线工具</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Decomposer" data-host="decomposerize.com" data-desc="Docker-Compose 文件转 Docker 命令" data-term="9c2232288caaa8ec40948cef6a786ac2" data-tname="在线工具" data-group="7c5b9182d43ec30f191cb2cf4bee42ee">
+                                    <a class="desk-row-link" href="https://www.decomposerize.com/" target="_blank" rel="noopener noreferrer" title="Docker-Compose 文件转 Docker 命令">
+                                        <span class="r-logo"><img src="https://www.decomposerize.com/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Decomposer</span>
+                                        <span class="r-host">decomposerize.com</span>
+                                        <span class="r-desc">Docker-Compose 文件转 Docker 命令</span>
+                                        <span class="r-term" aria-hidden="true">在线工具</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Composeverter" data-host="composeverter.com" data-desc="Docker-Compose 文件 v1 转 v2 转换器" data-term="9c2232288caaa8ec40948cef6a786ac2" data-tname="在线工具" data-group="7c5b9182d43ec30f191cb2cf4bee42ee">
+                                    <a class="desk-row-link" href="https://www.composeverter.com/" target="_blank" rel="noopener noreferrer" title="Docker-Compose 文件 v1 转 v2 转换器">
+                                        <span class="r-logo"><img src="https://www.composeverter.com/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Composeverter</span>
+                                        <span class="r-host">composeverter.com</span>
+                                        <span class="r-desc">Docker-Compose 文件 v1 转 v2 转换器</span>
+                                        <span class="r-term" aria-hidden="true">在线工具</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Favicon.im" data-host="favicon.im" data-desc="获取网站的 Favicon" data-term="9c2232288caaa8ec40948cef6a786ac2" data-tname="在线工具" data-group="7c5b9182d43ec30f191cb2cf4bee42ee">
+                                    <a class="desk-row-link" href="https://favicon.im/" target="_blank" rel="noopener noreferrer" title="获取网站的 Favicon">
+                                        <span class="r-logo"><img src="https://favicon.im/favicon.im" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Favicon.im</span>
+                                        <span class="r-host">favicon.im</span>
+                                        <span class="r-desc">获取网站的 Favicon</span>
+                                        <span class="r-term" aria-hidden="true">在线工具</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Favicon.io" data-host="favicon.io" data-desc="在线转换和生成 Favicon 图标" data-term="9c2232288caaa8ec40948cef6a786ac2" data-tname="在线工具" data-group="7c5b9182d43ec30f191cb2cf4bee42ee">
+                                    <a class="desk-row-link" href="https://favicon.io/" target="_blank" rel="noopener noreferrer" title="在线转换和生成 Favicon 图标">
+                                        <span class="r-logo"><img src="https://favicon.io/assets/static/favicon.b9532cc.ed88c65f76fa003989a0c683d668c765.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Favicon.io</span>
+                                        <span class="r-host">favicon.io</span>
+                                        <span class="r-desc">在线转换和生成 Favicon 图标</span>
+                                        <span class="r-term" aria-hidden="true">在线工具</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Lorem Ipsum" data-host="cn.lipsum.com" data-desc="乱数假文生成器" data-term="9c2232288caaa8ec40948cef6a786ac2" data-tname="在线工具" data-group="7c5b9182d43ec30f191cb2cf4bee42ee">
+                                    <a class="desk-row-link" href="https://cn.lipsum.com/" target="_blank" rel="noopener noreferrer" title="乱数假文生成器">
+                                        <span class="r-logo"><img src="https://cn.lipsum.com/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Lorem Ipsum</span>
+                                        <span class="r-host">cn.lipsum.com</span>
+                                        <span class="r-desc">乱数假文生成器</span>
+                                        <span class="r-term" aria-hidden="true">在线工具</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Placeholder Image Generator" data-host="placeholderimage.dev" data-desc="在线生成占位图像" data-term="9c2232288caaa8ec40948cef6a786ac2" data-tname="在线工具" data-group="7c5b9182d43ec30f191cb2cf4bee42ee">
+                                    <a class="desk-row-link" href="https://placeholderimage.dev/" target="_blank" rel="noopener noreferrer" title="在线生成占位图像">
+                                        <span class="r-logo"><img src="https://placeholderimage.dev/statics/icons/favicon-32x32.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Placeholder Image Generator</span>
+                                        <span class="r-host">placeholderimage.dev</span>
+                                        <span class="r-desc">在线生成占位图像</span>
+                                        <span class="r-term" aria-hidden="true">在线工具</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Compiler Explorer" data-host="godbolt.org" data-desc="多语言在线编译器" data-term="9c2232288caaa8ec40948cef6a786ac2" data-tname="在线工具" data-group="7c5b9182d43ec30f191cb2cf4bee42ee">
+                                    <a class="desk-row-link" href="https://godbolt.org/" target="_blank" rel="noopener noreferrer" title="多语言在线编译器">
+                                        <span class="r-logo"><img src="https://static.ce-cdn.net/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Compiler Explorer</span>
+                                        <span class="r-host">godbolt.org</span>
+                                        <span class="r-desc">多语言在线编译器</span>
+                                        <span class="r-term" aria-hidden="true">在线工具</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="TextKool ASCII Art Generator" data-host="textkool.com" data-desc="在线文字转换 ASCII 字符画" data-term="9c2232288caaa8ec40948cef6a786ac2" data-tname="在线工具" data-group="7c5b9182d43ec30f191cb2cf4bee42ee">
+                                    <a class="desk-row-link" href="https://textkool.com/en/ascii-art-generator?hl=default&amp;vl=default&amp;font=Red%20Phoenix&amp;text=Your%20text%20here%20" target="_blank" rel="noopener noreferrer" title="在线文字转换 ASCII 字符画">
+                                        <span class="r-logo"><img src="https://textkool.com/static/icons/favicon-32x32.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">TextKool ASCII Art Generator</span>
+                                        <span class="r-host">textkool.com</span>
+                                        <span class="r-desc">在线文字转换 ASCII 字符画</span>
+                                        <span class="r-term" aria-hidden="true">在线工具</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                    </ol>
+                </section>
+                <section class="desk-subsection" id="dd7972a1cd67fb2e655a2ec64feeac33" data-term="dd7972a1cd67fb2e655a2ec64feeac33">
+                    <h3 class="desk-sub-head">云平台<span>3</span></h3>
+                    <ol class="desk-list">
+                        <li class="desk-row" data-name="AWS 定价计算器" data-host="calculator.aws" data-desc="AWS 服务定价计算器。" data-term="dd7972a1cd67fb2e655a2ec64feeac33" data-tname="云平台" data-group="7c5b9182d43ec30f191cb2cf4bee42ee">
+                                    <a class="desk-row-link" href="https://calculator.aws/" target="_blank" rel="noopener noreferrer" title="AWS 服务定价计算器。">
+                                        <span class="r-logo"><img src="https://calculator.aws/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">AWS 定价计算器</span>
+                                        <span class="r-host">calculator.aws</span>
+                                        <span class="r-desc">AWS 服务定价计算器。</span>
+                                        <span class="r-term" aria-hidden="true">云平台</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Azure 定价计算器" data-host="azure.microsoft.com" data-desc="Azure 服务定价计算器。" data-term="dd7972a1cd67fb2e655a2ec64feeac33" data-tname="云平台" data-group="7c5b9182d43ec30f191cb2cf4bee42ee">
+                                    <a class="desk-row-link" href="https://azure.microsoft.com/en-us/pricing/calculator/" target="_blank" rel="noopener noreferrer" title="Azure 服务定价计算器。">
+                                        <span class="r-logo"><img src="https://azure.microsoft.com/cdn-classic/cvt-44c7363d160faed86fa1280ef1458c84ef2c4f9d94108e844d31f46693f38b02/images/shared/social/azure-icon-250x250.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Azure 定价计算器</span>
+                                        <span class="r-host">azure.microsoft.com</span>
+                                        <span class="r-desc">Azure 服务定价计算器。</span>
+                                        <span class="r-term" aria-hidden="true">云平台</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="GCP 定价计算器" data-host="cloud.google.com" data-desc="GCP 服务定价计算器。" data-term="dd7972a1cd67fb2e655a2ec64feeac33" data-tname="云平台" data-group="7c5b9182d43ec30f191cb2cf4bee42ee">
+                                    <a class="desk-row-link" href="https://cloud.google.com/products/calculator" target="_blank" rel="noopener noreferrer" title="GCP 服务定价计算器。">
+                                        <span class="r-logo"><img src="https://www.gstatic.com/devrel-devsite/prod/v0d244f667a3683225cca86d0ecf9b9b81b1e734e55a030bdcd3f3094b835c987/cloud/images/favicons/onecloud/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">GCP 定价计算器</span>
+                                        <span class="r-host">cloud.google.com</span>
+                                        <span class="r-desc">GCP 服务定价计算器。</span>
+                                        <span class="r-term" aria-hidden="true">云平台</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                    </ol>
+                </section>
+                <section class="desk-subsection" id="910e84e84534892cc7dc70c55baf3cd5" data-term="910e84e84534892cc7dc70c55baf3cd5">
+                    <h3 class="desk-sub-head">Mirror 镜像<span>6</span></h3>
+                    <ol class="desk-list">
+                        <li class="desk-row" data-name="TUNA 镜像站" data-host="mirrors.tuna.tsinghua.edu.cn" data-desc="" data-term="910e84e84534892cc7dc70c55baf3cd5" data-tname="Mirror 镜像" data-group="7c5b9182d43ec30f191cb2cf4bee42ee">
+                                    <a class="desk-row-link" href="https://mirrors.tuna.tsinghua.edu.cn/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://mirrors.tuna.tsinghua.edu.cn/static/img/logo-small-dark.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">TUNA 镜像站</span>
+                                        <span class="r-host">mirrors.tuna.tsinghua.edu.cn</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">Mirror 镜像</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="HF Mirror" data-host="hf-mirror.com" data-desc="Hugging Face 镜像站" data-term="910e84e84534892cc7dc70c55baf3cd5" data-tname="Mirror 镜像" data-group="7c5b9182d43ec30f191cb2cf4bee42ee">
+                                    <a class="desk-row-link" href="https://hf-mirror.com/" target="_blank" rel="noopener noreferrer" title="Hugging Face 镜像站">
+                                        <span class="r-logo"><img src="https://hf-mirror.com/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">HF Mirror</span>
+                                        <span class="r-host">hf-mirror.com</span>
+                                        <span class="r-desc">Hugging Face 镜像站</span>
+                                        <span class="r-term" aria-hidden="true">Mirror 镜像</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="GH-Proxy" data-host="gh-proxy.com" data-desc="GitHub、SourceForge 镜像站" data-term="910e84e84534892cc7dc70c55baf3cd5" data-tname="Mirror 镜像" data-group="7c5b9182d43ec30f191cb2cf4bee42ee">
+                                    <a class="desk-row-link" href="https://gh-proxy.com/" target="_blank" rel="noopener noreferrer" title="GitHub、SourceForge 镜像站">
+                                        <span class="r-logo"><img src="https://gh-proxy.com/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">GH-Proxy</span>
+                                        <span class="r-host">gh-proxy.com</span>
+                                        <span class="r-desc">GitHub、SourceForge 镜像站</span>
+                                        <span class="r-term" aria-hidden="true">Mirror 镜像</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="NPM Mirror" data-host="npmmirror.com" data-desc="阿里巴巴 NPM 镜像站。" data-term="910e84e84534892cc7dc70c55baf3cd5" data-tname="Mirror 镜像" data-group="7c5b9182d43ec30f191cb2cf4bee42ee">
+                                    <a class="desk-row-link" href="https://npmmirror.com/" target="_blank" rel="noopener noreferrer" title="阿里巴巴 NPM 镜像站。">
+                                        <span class="r-logo"><img src="https://npmmirror.com/cnpm.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">NPM Mirror</span>
+                                        <span class="r-host">npmmirror.com</span>
+                                        <span class="r-desc">阿里巴巴 NPM 镜像站。</span>
+                                        <span class="r-term" aria-hidden="true">Mirror 镜像</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="RsProxy" data-host="rsproxy.cn" data-desc="字节跳动 Rust crates.io 镜像站。" data-term="910e84e84534892cc7dc70c55baf3cd5" data-tname="Mirror 镜像" data-group="7c5b9182d43ec30f191cb2cf4bee42ee">
+                                    <a class="desk-row-link" href="https://rsproxy.cn/" target="_blank" rel="noopener noreferrer" title="字节跳动 Rust crates.io 镜像站。">
+                                        <span class="r-logo"><img src="https://lf-cdn-tos.bytescm.com/obj/static/rsproxy/favicon.svg" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">RsProxy</span>
+                                        <span class="r-host">rsproxy.cn</span>
+                                        <span class="r-desc">字节跳动 Rust crates.io 镜像站。</span>
+                                        <span class="r-term" aria-hidden="true">Mirror 镜像</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="MSDN I Tell You" data-host="msdn.itellyou.cn" data-desc="" data-term="910e84e84534892cc7dc70c55baf3cd5" data-tname="Mirror 镜像" data-group="7c5b9182d43ec30f191cb2cf4bee42ee">
+                                    <a class="desk-row-link" href="https://msdn.itellyou.cn/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://static.itellyou.cn/images/logo.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">MSDN I Tell You</span>
+                                        <span class="r-host">msdn.itellyou.cn</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">Mirror 镜像</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                    </ol>
+                </section>
+                <section class="desk-subsection" id="e8ebdcd9d0ff32de3315133309f0e5eb" data-term="e8ebdcd9d0ff32de3315133309f0e5eb">
+                    <h3 class="desk-sub-head">开发者文档<span>1</span></h3>
+                    <ol class="desk-list">
+                        <li class="desk-row" data-name="Mozilla 开发者网络" data-host="developer.mozilla.org" data-desc="MDN Web Docs 是由 Mozilla 提供的 Web 开发者文档。" data-term="e8ebdcd9d0ff32de3315133309f0e5eb" data-tname="开发者文档" data-group="7c5b9182d43ec30f191cb2cf4bee42ee">
+                                    <a class="desk-row-link" href="https://developer.mozilla.org/en-US/" target="_blank" rel="noopener noreferrer" title="MDN Web Docs 是由 Mozilla 提供的 Web 开发者文档。">
+                                        <span class="r-logo"><img src="https://developer.mozilla.org/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Mozilla 开发者网络</span>
+                                        <span class="r-host">developer.mozilla.org</span>
+                                        <span class="r-desc">MDN Web Docs 是由 Mozilla 提供的 Web 开发者文档。</span>
+                                        <span class="r-term" aria-hidden="true">开发者文档</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                    </ol>
+                </section>
+                </div>
+            </section>
+            <section class="desk-section" id="de5e3d92a963c37479c7cf6adac1cbcc" data-group="d14d18a4e7b98b5791d256165baa2de2">
+                <header class="desk-section-head">
+                    <i class="fas fa-flask fa-lg" aria-hidden="true"></i>
+                    <h2>科研办公</h2>
+                    <span class="desk-section-count">22</span>
+                </header>
+                <div class="desk-section-body">
+                <section class="desk-subsection" id="de5e3d92a963c37479c7cf6adac1cbcc" data-term="de5e3d92a963c37479c7cf6adac1cbcc">
+                    <h3 class="desk-sub-head">论文科研<span>13</span></h3>
+                    <ol class="desk-list">
+                        <li class="desk-row" data-name="AlphaXiv" data-host="alphaxiv.org" data-desc="Chat with axriv papers." data-term="de5e3d92a963c37479c7cf6adac1cbcc" data-tname="论文科研" data-group="d14d18a4e7b98b5791d256165baa2de2">
+                                    <a class="desk-row-link" href="https://www.alphaxiv.org/" target="_blank" rel="noopener noreferrer" title="Chat with axriv papers.">
+                                        <span class="r-logo"><img src="https://static.alphaxiv.org/logos/alphaxiv_logo.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">AlphaXiv</span>
+                                        <span class="r-host">alphaxiv.org</span>
+                                        <span class="r-desc">Chat with axriv papers.</span>
+                                        <span class="r-term" aria-hidden="true">论文科研</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Papers Cool" data-host="papers.cool" data-desc="苏剑林的 Arxiv 论文 AI 解读列表。" data-term="de5e3d92a963c37479c7cf6adac1cbcc" data-tname="论文科研" data-group="d14d18a4e7b98b5791d256165baa2de2">
+                                    <a class="desk-row-link" href="https://papers.cool/" target="_blank" rel="noopener noreferrer" title="苏剑林的 Arxiv 论文 AI 解读列表。">
+                                        <span class="r-logo"><img src="https://papers.cool/static/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Papers Cool</span>
+                                        <span class="r-host">papers.cool</span>
+                                        <span class="r-desc">苏剑林的 Arxiv 论文 AI 解读列表。</span>
+                                        <span class="r-term" aria-hidden="true">论文科研</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Papers with Code" data-host="paperswithcode.co" data-desc="AI 前沿论文跟踪。" data-term="de5e3d92a963c37479c7cf6adac1cbcc" data-tname="论文科研" data-group="d14d18a4e7b98b5791d256165baa2de2">
+                                    <a class="desk-row-link" href="https://paperswithcode.co/" target="_blank" rel="noopener noreferrer" title="AI 前沿论文跟踪。">
+                                        <span class="r-logo"><img src="https://paperswithcode.co/favicon-32.png?v=2" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Papers with Code</span>
+                                        <span class="r-host">paperswithcode.co</span>
+                                        <span class="r-desc">AI 前沿论文跟踪。</span>
+                                        <span class="r-term" aria-hidden="true">论文科研</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Papers.Data.Code" data-host="papersdatacode.com" data-desc="每周精选 ML 论文、代码与数据集，按主题整理成可追踪的信号。" data-term="de5e3d92a963c37479c7cf6adac1cbcc" data-tname="论文科研" data-group="d14d18a4e7b98b5791d256165baa2de2">
+                                    <a class="desk-row-link" href="https://papersdatacode.com/" target="_blank" rel="noopener noreferrer" title="每周精选 ML 论文、代码与数据集，按主题整理成可追踪的信号。">
+                                        <span class="r-logo"><img src="https://papersdatacode.com/icon-192.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Papers.Data.Code</span>
+                                        <span class="r-host">papersdatacode.com</span>
+                                        <span class="r-desc">每周精选 ML 论文、代码与数据集，按主题整理成可追踪的信号。</span>
+                                        <span class="r-term" aria-hidden="true">论文科研</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Sci-Hub" data-host="sci-hub.box" data-desc="" data-term="de5e3d92a963c37479c7cf6adac1cbcc" data-tname="论文科研" data-group="d14d18a4e7b98b5791d256165baa2de2">
+                                    <a class="desk-row-link" href="https://sci-hub.box/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://sci-hub.se/pictures/ravenround.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Sci-Hub</span>
+                                        <span class="r-host">sci-hub.box</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">论文科研</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Sci-Bot" data-host="sci-bot.ru" data-desc="Sci-Hub 的 AI 论文知识库问答。" data-term="de5e3d92a963c37479c7cf6adac1cbcc" data-tname="论文科研" data-group="d14d18a4e7b98b5791d256165baa2de2">
+                                    <a class="desk-row-link" href="https://sci-bot.ru/" target="_blank" rel="noopener noreferrer" title="Sci-Hub 的 AI 论文知识库问答。">
+                                        <span class="r-logo"><img src="https://a.favicon.im/sci-bot.ru" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Sci-Bot</span>
+                                        <span class="r-host">sci-bot.ru</span>
+                                        <span class="r-desc">Sci-Hub 的 AI 论文知识库问答。</span>
+                                        <span class="r-term" aria-hidden="true">论文科研</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Engineering Village" data-host="engineeringvillage.com" data-desc="EI 索引数据库。" data-term="de5e3d92a963c37479c7cf6adac1cbcc" data-tname="论文科研" data-group="d14d18a4e7b98b5791d256165baa2de2">
+                                    <a class="desk-row-link" href="https://www.engineeringvillage.com/app/search/quick/" target="_blank" rel="noopener noreferrer" title="EI 索引数据库。">
+                                        <span class="r-logo"><img src="https://www.engineeringvillage.com/app/static/images/ei_x.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Engineering Village</span>
+                                        <span class="r-host">engineeringvillage.com</span>
+                                        <span class="r-desc">EI 索引数据库。</span>
+                                        <span class="r-term" aria-hidden="true">论文科研</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="STORM" data-host="storm.genie.stanford.edu" data-desc="斯坦福STORM学术引擎" data-term="de5e3d92a963c37479c7cf6adac1cbcc" data-tname="论文科研" data-group="d14d18a4e7b98b5791d256165baa2de2">
+                                    <a class="desk-row-link" href="https://storm.genie.stanford.edu/" target="_blank" rel="noopener noreferrer" title="斯坦福STORM学术引擎">
+                                        <span class="r-logo"><img src="https://favicon.im/storm.genie.stanford.edu?larger=true" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">STORM</span>
+                                        <span class="r-host">storm.genie.stanford.edu</span>
+                                        <span class="r-desc">斯坦福STORM学术引擎</span>
+                                        <span class="r-term" aria-hidden="true">论文科研</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="PaSa" data-host="pasa-agent.ai" data-desc="字节跳动开发的AI学术论文搜索引擎" data-term="de5e3d92a963c37479c7cf6adac1cbcc" data-tname="论文科研" data-group="d14d18a4e7b98b5791d256165baa2de2">
+                                    <a class="desk-row-link" href="https://pasa-agent.ai/" target="_blank" rel="noopener noreferrer" title="字节跳动开发的AI学术论文搜索引擎">
+                                        <span class="r-logo"><img src="https://lf3-transtudio.bytetos.com/obj/lab-mt-public/lab-academic/static/image/logo.55bf6955.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">PaSa</span>
+                                        <span class="r-host">pasa-agent.ai</span>
+                                        <span class="r-desc">字节跳动开发的AI学术论文搜索引擎</span>
+                                        <span class="r-term" aria-hidden="true">论文科研</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Google Dataset Search" data-host="datasetsearch.research.google.com" data-desc="" data-term="de5e3d92a963c37479c7cf6adac1cbcc" data-tname="论文科研" data-group="d14d18a4e7b98b5791d256165baa2de2">
+                                    <a class="desk-row-link" href="https://datasetsearch.research.google.com/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://www.gstatic.com/images/branding/product/ico/googleg_lodp.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Google Dataset Search</span>
+                                        <span class="r-host">datasetsearch.research.google.com</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">论文科研</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="国家自然科学基金大数据知识管理服务门户" data-host="kd.nsfc.cn" data-desc="" data-term="de5e3d92a963c37479c7cf6adac1cbcc" data-tname="论文科研" data-group="d14d18a4e7b98b5791d256165baa2de2">
+                                    <a class="desk-row-link" href="https://kd.nsfc.cn/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://kd.nsfc.cn/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">国家自然科学基金大数据知识管理服务门户</span>
+                                        <span class="r-host">kd.nsfc.cn</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">论文科研</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Letpub" data-host="letpub.com.cn" data-desc="第三方国家自然科学基金项目查询系统" data-term="de5e3d92a963c37479c7cf6adac1cbcc" data-tname="论文科研" data-group="d14d18a4e7b98b5791d256165baa2de2">
+                                    <a class="desk-row-link" href="https://www.letpub.com.cn/index.php?page=grant" target="_blank" rel="noopener noreferrer" title="第三方国家自然科学基金项目查询系统">
+                                        <span class="r-logo"><img src="https://www.letpub.com.cn/images/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Letpub</span>
+                                        <span class="r-host">letpub.com.cn</span>
+                                        <span class="r-desc">第三方国家自然科学基金项目查询系统</span>
+                                        <span class="r-term" aria-hidden="true">论文科研</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="发表云" data-host="fabiao.com.cn" data-desc="期刊杂志收录情况和影响因子查询" data-term="de5e3d92a963c37479c7cf6adac1cbcc" data-tname="论文科研" data-group="d14d18a4e7b98b5791d256165baa2de2">
+                                    <a class="desk-row-link" href="https://www.fabiao.com.cn/" target="_blank" rel="noopener noreferrer" title="期刊杂志收录情况和影响因子查询">
+                                        <span class="r-logo"><img src="https://www.fabiao.com.cn/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">发表云</span>
+                                        <span class="r-host">fabiao.com.cn</span>
+                                        <span class="r-desc">期刊杂志收录情况和影响因子查询</span>
+                                        <span class="r-term" aria-hidden="true">论文科研</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                    </ol>
+                </section>
+                <section class="desk-subsection" id="311360350f67155951bd23bcbd2a1b34" data-term="311360350f67155951bd23bcbd2a1b34">
+                    <h3 class="desk-sub-head">信息聚合<span>9</span></h3>
+                    <ol class="desk-list">
+                        <li class="desk-row" data-name="专利之星" data-host="cprs.patentstar.com.cn" data-desc="" data-term="311360350f67155951bd23bcbd2a1b34" data-tname="信息聚合" data-group="d14d18a4e7b98b5791d256165baa2de2">
+                                    <a class="desk-row-link" href="https://cprs.patentstar.com.cn/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://a.favicon.im/prs.patentstar.com.cn" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">专利之星</span>
+                                        <span class="r-host">cprs.patentstar.com.cn</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">信息聚合</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="中国及多国专利审查信息查询" data-host="cpquery.cponline.cnipa.gov.cn" data-desc="专利审查进度查询" data-term="311360350f67155951bd23bcbd2a1b34" data-tname="信息聚合" data-group="d14d18a4e7b98b5791d256165baa2de2">
+                                    <a class="desk-row-link" href="https://cpquery.cponline.cnipa.gov.cn/chinesepatent/index" target="_blank" rel="noopener noreferrer" title="专利审查进度查询">
+                                        <span class="r-logo"><img src="https://cpquery.cponline.cnipa.gov.cn/imgs/logo/logoNew.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">中国及多国专利审查信息查询</span>
+                                        <span class="r-host">cpquery.cponline.cnipa.gov.cn</span>
+                                        <span class="r-desc">专利审查进度查询</span>
+                                        <span class="r-term" aria-hidden="true">信息聚合</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="中国版权登记查询服务平台" data-host="register.ccopyright.com.cn" data-desc="软件著作权登记查询" data-term="311360350f67155951bd23bcbd2a1b34" data-tname="信息聚合" data-group="d14d18a4e7b98b5791d256165baa2de2">
+                                    <a class="desk-row-link" href="https://register.ccopyright.com.cn/query.html" target="_blank" rel="noopener noreferrer" title="软件著作权登记查询">
+                                        <span class="r-logo"><img src="https://register.ccopyright.com.cn/logo.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">中国版权登记查询服务平台</span>
+                                        <span class="r-host">register.ccopyright.com.cn</span>
+                                        <span class="r-desc">软件著作权登记查询</span>
+                                        <span class="r-term" aria-hidden="true">信息聚合</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="行业标准信息服务平台" data-host="hbba.sacinfo.org.cn" data-desc="" data-term="311360350f67155951bd23bcbd2a1b34" data-tname="信息聚合" data-group="d14d18a4e7b98b5791d256165baa2de2">
+                                    <a class="desk-row-link" href="https://hbba.sacinfo.org.cn/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://hbba.sacinfo.org.cn/statics/hb/shareLogo.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">行业标准信息服务平台</span>
+                                        <span class="r-host">hbba.sacinfo.org.cn</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">信息聚合</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="国家市场监督管理总局合同示范文本库" data-host="htsfwb.samr.gov.cn" data-desc="" data-term="311360350f67155951bd23bcbd2a1b34" data-tname="信息聚合" data-group="d14d18a4e7b98b5791d256165baa2de2">
+                                    <a class="desk-row-link" href="https://htsfwb.samr.gov.cn/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://a.favicon.im/htsfwb.samr.gov.cn" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">国家市场监督管理总局合同示范文本库</span>
+                                        <span class="r-host">htsfwb.samr.gov.cn</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">信息聚合</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="e-Gov 法令検索" data-host="laws.e-gov.go.jp" data-desc="日本国法律法规官方搜索引擎" data-term="311360350f67155951bd23bcbd2a1b34" data-tname="信息聚合" data-group="d14d18a4e7b98b5791d256165baa2de2">
+                                    <a class="desk-row-link" href="https://laws.e-gov.go.jp/" target="_blank" rel="noopener noreferrer" title="日本国法律法规官方搜索引擎">
+                                        <span class="r-logo"><img src="https://www.e-gov.go.jp/sites/default/files/filebrowser/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">e-Gov 法令検索</span>
+                                        <span class="r-host">laws.e-gov.go.jp</span>
+                                        <span class="r-desc">日本国法律法规官方搜索引擎</span>
+                                        <span class="r-term" aria-hidden="true">信息聚合</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="IPA 情報処理推進機構" data-host="ipa.go.jp" data-desc="日本信息处理推进机构" data-term="311360350f67155951bd23bcbd2a1b34" data-tname="信息聚合" data-group="d14d18a4e7b98b5791d256165baa2de2">
+                                    <a class="desk-row-link" href="https://www.ipa.go.jp/" target="_blank" rel="noopener noreferrer" title="日本信息处理推进机构">
+                                        <span class="r-logo"><img src="https://www.ipa.go.jp/icon-192x192.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">IPA 情報処理推進機構</span>
+                                        <span class="r-host">ipa.go.jp</span>
+                                        <span class="r-desc">日本信息处理推进机构</span>
+                                        <span class="r-term" aria-hidden="true">信息聚合</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Open Alternative" data-host="openalternative.co" data-desc="软件的开源替代品搜索引擎" data-term="311360350f67155951bd23bcbd2a1b34" data-tname="信息聚合" data-group="d14d18a4e7b98b5791d256165baa2de2">
+                                    <a class="desk-row-link" href="https://openalternative.co/" target="_blank" rel="noopener noreferrer" title="软件的开源替代品搜索引擎">
+                                        <span class="r-logo"><img src="https://openalternative.co/favicon.svg" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Open Alternative</span>
+                                        <span class="r-host">openalternative.co</span>
+                                        <span class="r-desc">软件的开源替代品搜索引擎</span>
+                                        <span class="r-term" aria-hidden="true">信息聚合</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="World Monitor" data-host="worldmonitor.app" data-desc="告诉你世界正在发生什么的面板" data-term="311360350f67155951bd23bcbd2a1b34" data-tname="信息聚合" data-group="d14d18a4e7b98b5791d256165baa2de2">
+                                    <a class="desk-row-link" href="https://www.worldmonitor.app/" target="_blank" rel="noopener noreferrer" title="告诉你世界正在发生什么的面板">
+                                        <span class="r-logo"><img src="https://www.worldmonitor.app/favico/favicon-32x32.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">World Monitor</span>
+                                        <span class="r-host">worldmonitor.app</span>
+                                        <span class="r-desc">告诉你世界正在发生什么的面板</span>
+                                        <span class="r-term" aria-hidden="true">信息聚合</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                    </ol>
+                </section>
+                </div>
+            </section>
+            <section class="desk-section" id="7866a35b09d466b9cf0295af54d30d53" data-group="baf371c05e7de0a1cd43395f2820b073">
+                <header class="desk-section-head">
+                    <i class="far fa-folder-open fa-lg" aria-hidden="true"></i>
+                    <h2>素材资源</h2>
+                    <span class="desk-section-count">7</span>
+                </header>
+                <div class="desk-section-body">
+                <section class="desk-subsection" id="7866a35b09d466b9cf0295af54d30d53" data-term="7866a35b09d466b9cf0295af54d30d53">
+                    <h3 class="desk-sub-head">图标素材<span>6</span></h3>
+                    <ol class="desk-list">
+                        <li class="desk-row" data-name="Freepik" data-host="freepik.com" data-desc="2,100,000&#43; free and premium vector icons." data-term="7866a35b09d466b9cf0295af54d30d53" data-tname="图标素材" data-group="baf371c05e7de0a1cd43395f2820b073">
+                                    <a class="desk-row-link" href="https://www.freepik.com/icons" target="_blank" rel="noopener noreferrer" title="2,100,000&#43; free and premium vector icons.">
+                                        <span class="r-logo"><img src="https://cdn-front.freepik.com/favicons/favicon-96x96.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Freepik</span>
+                                        <span class="r-host">freepik.com</span>
+                                        <span class="r-desc">2,100,000&#43; free and premium vector icons.</span>
+                                        <span class="r-term" aria-hidden="true">图标素材</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="iconfont" data-host="iconfont.cn" data-desc="阿里巴巴矢量图标库。" data-term="7866a35b09d466b9cf0295af54d30d53" data-tname="图标素材" data-group="baf371c05e7de0a1cd43395f2820b073">
+                                    <a class="desk-row-link" href="http://www.iconfont.cn/" target="_blank" rel="noopener noreferrer" title="阿里巴巴矢量图标库。">
+                                        <span class="r-logo"><img src="https://img.alicdn.com/imgextra/i4/O1CN01Z5paLz1O0zuCC7osS_!!6000000001644-55-tps-83-82.svg" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">iconfont</span>
+                                        <span class="r-host">iconfont.cn</span>
+                                        <span class="r-desc">阿里巴巴矢量图标库。</span>
+                                        <span class="r-term" aria-hidden="true">图标素材</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Yesicon" data-host="yesicon.app" data-desc="开源矢量 icon 库。" data-term="7866a35b09d466b9cf0295af54d30d53" data-tname="图标素材" data-group="baf371c05e7de0a1cd43395f2820b073">
+                                    <a class="desk-row-link" href="https://yesicon.app/" target="_blank" rel="noopener noreferrer" title="开源矢量 icon 库。">
+                                        <span class="r-logo"><img src="https://yesicon.app/favicon.svg" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Yesicon</span>
+                                        <span class="r-host">yesicon.app</span>
+                                        <span class="r-desc">开源矢量 icon 库。</span>
+                                        <span class="r-term" aria-hidden="true">图标素材</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Svgl" data-host="svgl.app" data-desc="SVG Logo 库" data-term="7866a35b09d466b9cf0295af54d30d53" data-tname="图标素材" data-group="baf371c05e7de0a1cd43395f2820b073">
+                                    <a class="desk-row-link" href="https://svgl.app/" target="_blank" rel="noopener noreferrer" title="SVG Logo 库">
+                                        <span class="r-logo"><img src="https://svgl.app/images/svgl_ico.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Svgl</span>
+                                        <span class="r-host">svgl.app</span>
+                                        <span class="r-desc">SVG Logo 库</span>
+                                        <span class="r-term" aria-hidden="true">图标素材</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="SVG LOGOS" data-host="svglogos.dev" data-desc="SVG Logo 库" data-term="7866a35b09d466b9cf0295af54d30d53" data-tname="图标素材" data-group="baf371c05e7de0a1cd43395f2820b073">
+                                    <a class="desk-row-link" href="https://svglogos.dev/" target="_blank" rel="noopener noreferrer" title="SVG Logo 库">
+                                        <span class="r-logo"><img src="https://svglogos.dev/brand/favicon-32x32.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">SVG LOGOS</span>
+                                        <span class="r-host">svglogos.dev</span>
+                                        <span class="r-desc">SVG Logo 库</span>
+                                        <span class="r-term" aria-hidden="true">图标素材</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Lobehub Icons" data-host="lobehub.com" data-desc="AI / LLM 模型图标集" data-term="7866a35b09d466b9cf0295af54d30d53" data-tname="图标素材" data-group="baf371c05e7de0a1cd43395f2820b073">
+                                    <a class="desk-row-link" href="https://lobehub.com/zh/icons" target="_blank" rel="noopener noreferrer" title="AI / LLM 模型图标集">
+                                        <span class="r-logo"><img src="https://web-assets.lobehub.com/landing-rr/prod/assets/logo-DauBOjoN.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Lobehub Icons</span>
+                                        <span class="r-host">lobehub.com</span>
+                                        <span class="r-desc">AI / LLM 模型图标集</span>
+                                        <span class="r-term" aria-hidden="true">图标素材</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                    </ol>
+                </section>
+                <section class="desk-subsection" id="722d3693fc0b9344bb46ee220beac1b6" data-term="722d3693fc0b9344bb46ee220beac1b6">
+                    <h3 class="desk-sub-head">字体资源<span>1</span></h3>
+                    <ol class="desk-list">
+                        <li class="desk-row" data-name="Google Font" data-host="fonts.google.com" data-desc="Making the web more beautiful, fast, and open through great typography." data-term="722d3693fc0b9344bb46ee220beac1b6" data-tname="字体资源" data-group="baf371c05e7de0a1cd43395f2820b073">
+                                    <a class="desk-row-link" href="https://fonts.google.com/" target="_blank" rel="noopener noreferrer" title="Making the web more beautiful, fast, and open through great typography.">
+                                        <span class="r-logo"><img src="https://www.gstatic.com/images/icons/material/apps/fonts/1x/catalog/v5/favicon.svg" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Google Font</span>
+                                        <span class="r-host">fonts.google.com</span>
+                                        <span class="r-desc">Making the web more beautiful, fast, and open through great typography.</span>
+                                        <span class="r-term" aria-hidden="true">字体资源</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                    </ol>
+                </section>
+                </div>
+            </section>
+            <section class="desk-section" id="c7a9a750a4a636f0bb3e982b5ea9141c" data-group="b19b233db73ba870f8dadd9fcd02f9a8">
+                <header class="desk-section-head">
+                    <i class="fas fa-pencil-alt fa-lg" aria-hidden="true"></i>
+                    <h2>资讯学习</h2>
+                    <span class="desk-section-count">20</span>
+                </header>
+                <div class="desk-section-body">
+                <section class="desk-subsection" id="c7a9a750a4a636f0bb3e982b5ea9141c" data-term="c7a9a750a4a636f0bb3e982b5ea9141c">
+                    <h3 class="desk-sub-head">博客论坛<span>12</span></h3>
+                    <ol class="desk-list">
+                        <li class="desk-row" data-name="Hacker News" data-host="news.ycombinator.com" data-desc="一家关于计算机黑客和创业公司的社会化新闻网站。" data-term="c7a9a750a4a636f0bb3e982b5ea9141c" data-tname="博客论坛" data-group="b19b233db73ba870f8dadd9fcd02f9a8">
+                                    <a class="desk-row-link" href="https://news.ycombinator.com/" target="_blank" rel="noopener noreferrer" title="一家关于计算机黑客和创业公司的社会化新闻网站。">
+                                        <span class="r-logo"><img src="https://news.ycombinator.com/y18.svg" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Hacker News</span>
+                                        <span class="r-host">news.ycombinator.com</span>
+                                        <span class="r-desc">一家关于计算机黑客和创业公司的社会化新闻网站。</span>
+                                        <span class="r-term" aria-hidden="true">博客论坛</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="阮一峰的网络日志" data-host="ruanyifeng.com" data-desc="阮一峰，科技爱好者周刊。" data-term="c7a9a750a4a636f0bb3e982b5ea9141c" data-tname="博客论坛" data-group="b19b233db73ba870f8dadd9fcd02f9a8">
+                                    <a class="desk-row-link" href="http://www.ruanyifeng.com/blog/" target="_blank" rel="noopener noreferrer" title="阮一峰，科技爱好者周刊。">
+                                        <span class="r-logo"><img src="https://favicon.im/www.ruanyifeng.com" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">阮一峰的网络日志</span>
+                                        <span class="r-host">ruanyifeng.com</span>
+                                        <span class="r-desc">阮一峰，科技爱好者周刊。</span>
+                                        <span class="r-term" aria-hidden="true">博客论坛</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="通往AGI之路" data-host="waytoagi.com" data-desc="通往AGI之路，探索人工智能的未来。" data-term="c7a9a750a4a636f0bb3e982b5ea9141c" data-tname="博客论坛" data-group="b19b233db73ba870f8dadd9fcd02f9a8">
+                                    <a class="desk-row-link" href="https://www.waytoagi.com/zh" target="_blank" rel="noopener noreferrer" title="通往AGI之路，探索人工智能的未来。">
+                                        <span class="r-logo"><img src="https://www.waytoagi.com/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">通往AGI之路</span>
+                                        <span class="r-host">waytoagi.com</span>
+                                        <span class="r-desc">通往AGI之路，探索人工智能的未来。</span>
+                                        <span class="r-term" aria-hidden="true">博客论坛</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Lil&#39;Log" data-host="lilianweng.github.io" data-desc="Lilian Weng 的博客。" data-term="c7a9a750a4a636f0bb3e982b5ea9141c" data-tname="博客论坛" data-group="b19b233db73ba870f8dadd9fcd02f9a8">
+                                    <a class="desk-row-link" href="https://lilianweng.github.io/" target="_blank" rel="noopener noreferrer" title="Lilian Weng 的博客。">
+                                        <span class="r-logo"><img src="https://lilianweng.github.io/favicon_wine.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Lil&#39;Log</span>
+                                        <span class="r-host">lilianweng.github.io</span>
+                                        <span class="r-desc">Lilian Weng 的博客。</span>
+                                        <span class="r-term" aria-hidden="true">博客论坛</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="科学空间|Scientific Spaces" data-host="spaces.ac.cn" data-desc="苏剑林的个人博客" data-term="c7a9a750a4a636f0bb3e982b5ea9141c" data-tname="博客论坛" data-group="b19b233db73ba870f8dadd9fcd02f9a8">
+                                    <a class="desk-row-link" href="https://spaces.ac.cn/" target="_blank" rel="noopener noreferrer" title="苏剑林的个人博客">
+                                        <span class="r-logo"><img src="https://spaces.ac.cn/usr/themes/geekg/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">科学空间|Scientific Spaces</span>
+                                        <span class="r-host">spaces.ac.cn</span>
+                                        <span class="r-desc">苏剑林的个人博客</span>
+                                        <span class="r-term" aria-hidden="true">博客论坛</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Ahead of AI" data-host="magazine.sebastianraschka.com" data-desc="Sebastian Raschka 博士的 LLM 技术博客" data-term="c7a9a750a4a636f0bb3e982b5ea9141c" data-tname="博客论坛" data-group="b19b233db73ba870f8dadd9fcd02f9a8">
+                                    <a class="desk-row-link" href="https://magazine.sebastianraschka.com/" target="_blank" rel="noopener noreferrer" title="Sebastian Raschka 博士的 LLM 技术博客">
+                                        <span class="r-logo"><img src="https://substackcdn.com/image/fetch/$s_!ktrK!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F342e39ec-514c-4b4d-8a76-6acf0cbd8248%2Ffavicon-48x48.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Ahead of AI</span>
+                                        <span class="r-host">magazine.sebastianraschka.com</span>
+                                        <span class="r-desc">Sebastian Raschka 博士的 LLM 技术博客</span>
+                                        <span class="r-term" aria-hidden="true">博客论坛</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Matrix67 The Aha Moments" data-host="matrix67.com" data-desc="" data-term="c7a9a750a4a636f0bb3e982b5ea9141c" data-tname="博客论坛" data-group="b19b233db73ba870f8dadd9fcd02f9a8">
+                                    <a class="desk-row-link" href="https://matrix67.com/blog/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://pbs.twimg.com/profile_images/2315765843/Matrix67_bg_400x400.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Matrix67 The Aha Moments</span>
+                                        <span class="r-host">matrix67.com</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">博客论坛</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Hello Github" data-host="hellogithub.com" data-desc="Hello GitHub 是一个开源项目推荐平台，致力于帮助开发者发现和学习优秀的开源项目。" data-term="c7a9a750a4a636f0bb3e982b5ea9141c" data-tname="博客论坛" data-group="b19b233db73ba870f8dadd9fcd02f9a8">
+                                    <a class="desk-row-link" href="https://hellogithub.com/" target="_blank" rel="noopener noreferrer" title="Hello GitHub 是一个开源项目推荐平台，致力于帮助开发者发现和学习优秀的开源项目。">
+                                        <span class="r-logo"><img src="https://hellogithub.com/favicon/favicon-96x96.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Hello Github</span>
+                                        <span class="r-host">hellogithub.com</span>
+                                        <span class="r-desc">Hello GitHub 是一个开源项目推荐平台，致力于帮助开发者发现和学习优秀的开源项目。</span>
+                                        <span class="r-term" aria-hidden="true">博客论坛</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Latent.Space" data-host="latent.space" data-desc="每工作日更新的 AI 日刊" data-term="c7a9a750a4a636f0bb3e982b5ea9141c" data-tname="博客论坛" data-group="b19b233db73ba870f8dadd9fcd02f9a8">
+                                    <a class="desk-row-link" href="https://www.latent.space/" target="_blank" rel="noopener noreferrer" title="每工作日更新的 AI 日刊">
+                                        <span class="r-logo"><img src="https://latentspace.ai/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Latent.Space</span>
+                                        <span class="r-host">latent.space</span>
+                                        <span class="r-desc">每工作日更新的 AI 日刊</span>
+                                        <span class="r-term" aria-hidden="true">博客论坛</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="DailyBit" data-host="dailybit.cc" data-desc="HN Popularity Contest 2025 独立博客的每日更新日报" data-term="c7a9a750a4a636f0bb3e982b5ea9141c" data-tname="博客论坛" data-group="b19b233db73ba870f8dadd9fcd02f9a8">
+                                    <a class="desk-row-link" href="https://www.dailybit.cc/home" target="_blank" rel="noopener noreferrer" title="HN Popularity Contest 2025 独立博客的每日更新日报">
+                                        <span class="r-logo"><img src="https://dailybit.ai/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">DailyBit</span>
+                                        <span class="r-host">dailybit.cc</span>
+                                        <span class="r-desc">HN Popularity Contest 2025 独立博客的每日更新日报</span>
+                                        <span class="r-term" aria-hidden="true">博客论坛</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="智语观潮·Daily" data-host="ai.daily.yangsir.net" data-desc="专注 AI 领域的精选日报，每日整合最新进展、工具发现与深度观点。" data-term="c7a9a750a4a636f0bb3e982b5ea9141c" data-tname="博客论坛" data-group="b19b233db73ba870f8dadd9fcd02f9a8">
+                                    <a class="desk-row-link" href="https://ai.daily.yangsir.net/daily" target="_blank" rel="noopener noreferrer" title="专注 AI 领域的精选日报，每日整合最新进展、工具发现与深度观点。">
+                                        <span class="r-logo"><img src="https://ai.daily.yangsir.net/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">智语观潮·Daily</span>
+                                        <span class="r-host">ai.daily.yangsir.net</span>
+                                        <span class="r-desc">专注 AI 领域的精选日报，每日整合最新进展、工具发现与深度观点。</span>
+                                        <span class="r-term" aria-hidden="true">博客论坛</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Oil Book" data-host="book.oiloil.org" data-desc="Oil 的 AI 实战指南与模型选型笔记，覆盖 Agent、前端与图片生成。" data-term="c7a9a750a4a636f0bb3e982b5ea9141c" data-tname="博客论坛" data-group="b19b233db73ba870f8dadd9fcd02f9a8">
+                                    <a class="desk-row-link" href="https://book.oiloil.org/" target="_blank" rel="noopener noreferrer" title="Oil 的 AI 实战指南与模型选型笔记，覆盖 Agent、前端与图片生成。">
+                                        <span class="r-logo"><img src="https://book.oiloil.org/assets/icons/oil-book-mark.webp" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Oil Book</span>
+                                        <span class="r-host">book.oiloil.org</span>
+                                        <span class="r-desc">Oil 的 AI 实战指南与模型选型笔记，覆盖 Agent、前端与图片生成。</span>
+                                        <span class="r-term" aria-hidden="true">博客论坛</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                    </ol>
+                </section>
+                <section class="desk-subsection" id="d8c10d78b18506c5dadd1911736cdebf" data-term="d8c10d78b18506c5dadd1911736cdebf">
+                    <h3 class="desk-sub-head">大厂博客<span>3</span></h3>
+                    <ol class="desk-list">
+                        <li class="desk-row" data-name="Manus Blog" data-host="manus.im" data-desc="Manus 产品及 Agent 技术" data-term="d8c10d78b18506c5dadd1911736cdebf" data-tname="大厂博客" data-group="b19b233db73ba870f8dadd9fcd02f9a8">
+                                    <a class="desk-row-link" href="https://manus.im/zh-cn/blog" target="_blank" rel="noopener noreferrer" title="Manus 产品及 Agent 技术">
+                                        <span class="r-logo"><img src="https://manus.im/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Manus Blog</span>
+                                        <span class="r-host">manus.im</span>
+                                        <span class="r-desc">Manus 产品及 Agent 技术</span>
+                                        <span class="r-term" aria-hidden="true">大厂博客</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Zilliz Blog" data-host="zilliz.com" data-desc="Milvus 产品及向量搜索和 RAG 技术" data-term="d8c10d78b18506c5dadd1911736cdebf" data-tname="大厂博客" data-group="b19b233db73ba870f8dadd9fcd02f9a8">
+                                    <a class="desk-row-link" href="https://zilliz.com/blog" target="_blank" rel="noopener noreferrer" title="Milvus 产品及向量搜索和 RAG 技术">
+                                        <span class="r-logo"><img src="https://zilliz.com/favicon.svg" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Zilliz Blog</span>
+                                        <span class="r-host">zilliz.com</span>
+                                        <span class="r-desc">Milvus 产品及向量搜索和 RAG 技术</span>
+                                        <span class="r-term" aria-hidden="true">大厂博客</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="BentoML Blog" data-host="bentoml.com" data-desc="BentoML 产品及 LLM 模型和部署技术" data-term="d8c10d78b18506c5dadd1911736cdebf" data-tname="大厂博客" data-group="b19b233db73ba870f8dadd9fcd02f9a8">
+                                    <a class="desk-row-link" href="https://www.bentoml.com/blog" target="_blank" rel="noopener noreferrer" title="BentoML 产品及 LLM 模型和部署技术">
+                                        <span class="r-logo"><img src="https://www.bentoml.com/bentoml-favicon/favicon-16x16.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">BentoML Blog</span>
+                                        <span class="r-host">bentoml.com</span>
+                                        <span class="r-desc">BentoML 产品及 LLM 模型和部署技术</span>
+                                        <span class="r-term" aria-hidden="true">大厂博客</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                    </ol>
+                </section>
+                <section class="desk-subsection" id="7b375b8236d0c82c005c97b599e8a05a" data-term="7b375b8236d0c82c005c97b599e8a05a">
+                    <h3 class="desk-sub-head">日语辞典<span>3</span></h3>
+                    <ol class="desk-list">
+                        <li class="desk-row" data-name="辞典横断検索 Metapedia" data-host="metapedia.jp" data-desc="491の辞典・辞書・事典・用語集・図鑑を一括検索" data-term="7b375b8236d0c82c005c97b599e8a05a" data-tname="日语辞典" data-group="b19b233db73ba870f8dadd9fcd02f9a8">
+                                    <a class="desk-row-link" href="http://metapedia.jp/" target="_blank" rel="noopener noreferrer" title="491の辞典・辞書・事典・用語集・図鑑を一括検索">
+                                        <span class="r-logo"><img src="https://favicon.im/metapedia.jp" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">辞典横断検索 Metapedia</span>
+                                        <span class="r-host">metapedia.jp</span>
+                                        <span class="r-desc">491の辞典・辞書・事典・用語集・図鑑を一括検索</span>
+                                        <span class="r-term" aria-hidden="true">日语辞典</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="IT 用语辞典" data-host="e-words.jp" data-desc="" data-term="7b375b8236d0c82c005c97b599e8a05a" data-tname="日语辞典" data-group="b19b233db73ba870f8dadd9fcd02f9a8">
+                                    <a class="desk-row-link" href="https://e-words.jp/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://p.e-words.jp/favicon.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">IT 用语辞典</span>
+                                        <span class="r-host">e-words.jp</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">日语辞典</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="NINJAL-LWP for BCCWJ" data-host="nlb.ninjal.ac.jp" data-desc="日本语词频用法语料库" data-term="7b375b8236d0c82c005c97b599e8a05a" data-tname="日语辞典" data-group="b19b233db73ba870f8dadd9fcd02f9a8">
+                                    <a class="desk-row-link" href="https://nlb.ninjal.ac.jp/" target="_blank" rel="noopener noreferrer" title="日本语词频用法语料库">
+                                        <span class="r-logo"><img src="https://nlb.ninjal.ac.jp/static/images/toppage/top.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">NINJAL-LWP for BCCWJ</span>
+                                        <span class="r-host">nlb.ninjal.ac.jp</span>
+                                        <span class="r-desc">日本语词频用法语料库</span>
+                                        <span class="r-term" aria-hidden="true">日语辞典</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                    </ol>
+                </section>
+                <section class="desk-subsection" id="bb96d261b1ab1c280d54d23c761cc33c" data-term="bb96d261b1ab1c280d54d23c761cc33c">
+                    <h3 class="desk-sub-head">生活百科<span>2</span></h3>
+                    <ol class="desk-list">
+                        <li class="desk-row" data-name="默沙东医学手册" data-host="msdmanuals.cn" data-desc="默沙东医学手册是一本权威的医学参考书，提供了丰富的医学知识和临床信息，帮助医疗专业人员和患者更好地理解疾病和治疗方案。" data-term="bb96d261b1ab1c280d54d23c761cc33c" data-tname="生活百科" data-group="b19b233db73ba870f8dadd9fcd02f9a8">
+                                    <a class="desk-row-link" href="https://www.msdmanuals.cn/" target="_blank" rel="noopener noreferrer" title="默沙东医学手册是一本权威的医学参考书，提供了丰富的医学知识和临床信息，帮助医疗专业人员和患者更好地理解疾病和治疗方案。">
+                                        <span class="r-logo"><img src="https://www.msdmanuals.cn/_next/static/media/favicon.f7343459.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">默沙东医学手册</span>
+                                        <span class="r-host">msdmanuals.cn</span>
+                                        <span class="r-desc">默沙东医学手册是一本权威的医学参考书，提供了丰富的医学知识和临床信息，帮助医疗专业人员和患者更好地理解疾病和治疗方案。</span>
+                                        <span class="r-term" aria-hidden="true">生活百科</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Chronas" data-host="chronas.org" data-desc="交互式世界历史地图" data-term="bb96d261b1ab1c280d54d23c761cc33c" data-tname="生活百科" data-group="b19b233db73ba870f8dadd9fcd02f9a8">
+                                    <a class="desk-row-link" href="https://chronas.org/" target="_blank" rel="noopener noreferrer" title="交互式世界历史地图">
+                                        <span class="r-logo"><img src="https://chronas.org/images/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Chronas</span>
+                                        <span class="r-host">chronas.org</span>
+                                        <span class="r-desc">交互式世界历史地图</span>
+                                        <span class="r-term" aria-hidden="true">生活百科</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                    </ol>
+                </section>
+                </div>
+            </section>
+            <section class="desk-section" id="de24c248653e40ffc1b65898b03b1a4c" data-group="90c9e022a0285557f4df7d813c1409e8">
+                <header class="desk-section-head">
+                    <i class="fas fa-archive fa-lg" aria-hidden="true"></i>
+                    <h2>冷备份</h2>
+                    <span class="desk-section-count">3</span>
+                </header>
+                <div class="desk-section-body">
+                <section class="desk-subsection" id="de24c248653e40ffc1b65898b03b1a4c" data-term="de24c248653e40ffc1b65898b03b1a4c">
+                    <h3 class="desk-sub-head">杂项工具<span>3</span></h3>
+                    <ol class="desk-list">
+                        <li class="desk-row" data-name="Z.ai" data-host="chat.z.ai" data-desc="" data-term="de24c248653e40ffc1b65898b03b1a4c" data-tname="杂项工具" data-group="90c9e022a0285557f4df7d813c1409e8">
+                                    <a class="desk-row-link" href="https://chat.z.ai/" target="_blank" rel="noopener noreferrer">
+                                        <span class="r-logo"><img src="https://z-cdn.chatglm.cn/z-ai/frontend/static/apple-touch-icon.png" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Z.ai</span>
+                                        <span class="r-host">chat.z.ai</span>
+                                        <span class="r-desc"></span>
+                                        <span class="r-term" aria-hidden="true">杂项工具</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Firebase Studio" data-host="studio.firebase.google.com" data-desc="Google 快速原型 APP 开发平台" data-term="de24c248653e40ffc1b65898b03b1a4c" data-tname="杂项工具" data-group="90c9e022a0285557f4df7d813c1409e8">
+                                    <a class="desk-row-link" href="https://studio.firebase.google.com/" target="_blank" rel="noopener noreferrer" title="Google 快速原型 APP 开发平台">
+                                        <span class="r-logo"><img src="https://www.gstatic.com/monospace/250314/favicon.ico" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Firebase Studio</span>
+                                        <span class="r-host">studio.firebase.google.com</span>
+                                        <span class="r-desc">Google 快速原型 APP 开发平台</span>
+                                        <span class="r-term" aria-hidden="true">杂项工具</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                        <li class="desk-row" data-name="Napkin" data-host="napkin.ai" data-desc="可视化图形/PPT 生成工具" data-term="de24c248653e40ffc1b65898b03b1a4c" data-tname="杂项工具" data-group="90c9e022a0285557f4df7d813c1409e8">
+                                    <a class="desk-row-link" href="https://www.napkin.ai/" target="_blank" rel="noopener noreferrer" title="可视化图形/PPT 生成工具">
+                                        <span class="r-logo"><img src="https://www.napkin.ai/favicon-32x32.png?v=2" alt="" width="24" height="24" loading="lazy" decoding="async" data-fallback="https://bye-lemon.github.io/Navi/assets/images/logos/default.webp"></span>
+                                        <span class="r-name">Napkin</span>
+                                        <span class="r-host">napkin.ai</span>
+                                        <span class="r-desc">可视化图形/PPT 生成工具</span>
+                                        <span class="r-term" aria-hidden="true">杂项工具</span>
+                                        <span class="r-go" aria-hidden="true">↗</span>
+                                    </a>
+                                </li>
+
+                    </ol>
+                </section>
+                </div>
+            </section>
+
+            <div class="desk-empty">
+                <h2>站内没有匹配的站点</h2>
+                <p>「<strong data-desk-empty-query></strong>」不在 143 条收藏里，去网页上搜它。</p>
+                <button type="button" class="desk-empty-go" data-desk-empty-search>用「<span
+                        data-desk-empty-engine>谷歌</span>」搜一下 ↗</button>
+            </div>
+
+            <footer class="desk-foot">
+                © 2025 - 2026 By Li.
+                <a class="desk-foot-link" href="/about/">关于这个站</a>
+            </footer>
+        </main>
+    </div>
+</div>
+
+<div class="desk-fabs">
+    <button type="button" class="desk-fab desk-fab--top" data-desk-top aria-label="回到顶部" title="回到顶部" hidden>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 19V5" />
+            <path d="m5 12 7-7 7 7" />
+        </svg>
+    </button>
+    <button type="button" class="desk-fab" data-search-open aria-label="搜索站内站点"
+        title="搜索站内站点（Ctrl/⌘ K）">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m20.5 20.5-4.2-4.2" />
+        </svg></button>
+    <button type="button" id="theme-toggle" class="desk-fab"
+        aria-pressed="true"
+        aria-label="切换到浅色模式"
+        title="切换深色 / 浅色主题"><svg class="ico-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.2" />
+            <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5 5l1.6 1.6M17.4 17.4 19 19M19 5l-1.6 1.6M6.6 17.4 5 19" />
+        </svg>
+        <svg class="ico-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.5 14.5A8.6 8.6 0 0 1 9.5 3.5a8.6 8.6 0 1 0 11 11Z" />
+        </svg>
+    </button>
+</div>
+
+
+<script type="text/javascript" src="https://bye-lemon.github.io/Navi/assets/js/site.js?v=1794659599" defer></script>
+<script type="text/javascript" src="https://bye-lemon.github.io/Navi/assets/js/desk.js?v=1794659599" defer></script>
+</body>
+
+</html>
